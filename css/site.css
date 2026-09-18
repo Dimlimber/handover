@@ -165,8 +165,8 @@ a:hover { text-decoration-thickness: 2px; }
 
 .prose h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin: 2em 0 0.6em; }
 .prose h2:first-child { margin-top: 0; }
-.prose ul { max-width: var(--measure); padding-left: 1.2em; margin: 0 0 1em; }
-.prose li { margin-bottom: 0.4em; }
+.prose ul:not(.ticks) { max-width: var(--measure); padding-left: 1.2em; margin: 0 0 1em; }
+.prose ul:not(.ticks) li { margin-bottom: 0.4em; }
 .pledge { font: 400 clamp(1.5rem, 3vw, 2.2rem)/1.3 var(--serif); letter-spacing: -0.01em; max-width: 26ch; margin-bottom: 0; }
 
 .people { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
