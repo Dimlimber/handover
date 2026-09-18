@@ -154,6 +154,8 @@ $('lead').addEventListener('submit', async (e) => {
   const error = $('lead-error');
   error.hidden = true;
 
+  if (form.elements.website.value) return; // honeypot
+
   if (!FORM_ENDPOINT) {
     error.textContent = 'The form isn’t connected yet. Set FORM_ENDPOINT in js/config.js.';
     error.hidden = false;
@@ -162,18 +164,23 @@ $('lead').addEventListener('submit', async (e) => {
 
   $('send').disabled = true;
   try {
+    // A Google Apps Script endpoint only accepts a "simple" request, so the JSON goes as plain text.
+    const google = FORM_ENDPOINT.includes('script.google.com');
     const res = await fetch(FORM_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: google
+        ? { 'Content-Type': 'text/plain;charset=utf-8' }
+        : { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(payload(form)),
     });
     if (!res.ok) throw new Error(String(res.status));
+    if (google && !(await res.json()).ok) throw new Error('rejected');
     const thanks = document.createElement('p');
     thanks.className = 'thanks';
     thanks.textContent = 'Thank you. Your report will be with you within one working day.';
     $('report').replaceChildren(thanks);
   } catch {
-    error.textContent = 'That didn’t send. Please try again, or email hello@handoveradvisors.com.';
+    error.textContent = 'That didn’t send. Please try again, or email contact@handoveradvisors.com.';
     error.hidden = false;
     $('send').disabled = false;
   }
