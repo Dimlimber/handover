@@ -53,7 +53,8 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Header */
 
-.site-head { border-bottom: 1px solid var(--rule); }
+.site-head { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--rule); }
+[id] { scroll-margin-top: 104px; }
 .site-head .wrap {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 12px 32px;
@@ -247,8 +248,14 @@ a:hover { text-decoration-thickness: 2px; }
 }
 @media (max-width: 720px) {
   body { font-size: 19px; }
-  .site-nav { gap: 4px 22px; width: 100%; }
-  .site-nav__cta { margin-left: auto; }
+  /* Docked header, kept short: wordmark and buttons on one row, links beneath. */
+  .site-head .wrap { position: relative; gap: 0; padding-top: 10px; padding-bottom: 4px; }
+  .wordmark { display: flex; align-items: center; height: 44px; font-size: 1.45rem; }
+  .site-nav { gap: 0 22px; width: 100%; font-size: 16px; }
+  .site-nav a:not(.btn) { padding: 8px 0; }
+  .site-nav__cta { position: absolute; top: 10px; right: var(--gutter); gap: 8px; }
+  .site-nav .btn--small { min-height: 44px; padding: 8px 12px; font-size: 15px; }
+  [id] { scroll-margin-top: 112px; }
   .reasons, .people, .fields { grid-template-columns: 1fr; }
   .tiers { grid-template-columns: 1fr; }
   .tier, .tier + .tier { padding: 24px 0; border-left: 0; }
