@@ -8,7 +8,7 @@ export const AREAS = [
   { key: 'operations', label: 'Operations and paperwork', weight: 15,
     advice: 'Written-down processes and leases, contracts and licences that transfer cleanly are what let a sale survive the buyer’s checks.' },
   { key: 'story', label: 'Your story and your price', weight: 15,
-    advice: 'A price needs evidence behind it, and a buyer needs a clear reason to want the business and a believable path to growth. Most stalled listings are missing one or both.' },
+    advice: 'A price needs evidence behind it, and a buyer needs a clear reason to want the business and a believable path to growth. Listings that stall are often missing one or both.' },
 ];
 
 const q = (id, area, text, labels) => ({
