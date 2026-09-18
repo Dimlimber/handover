@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Your sale-readiness report — Handover</title>
+  <meta name="description" content="Your written sale-readiness report from Handover.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%231f4d3a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23f6f3ec%27%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Handover</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#how">How it works</a>
+      <a href="brokers.html">For brokers</a>
+      <a href="about.html">About</a>
+      <span class="site-nav__cta">
+        <a class="btn btn--quiet btn--small" href="mailto:hello@handoveradvisors.com?subject=Getting%20my%20business%20ready%20to%20sell">Contact</a>
+        <a class="btn btn--small" href="score.html">Get your score</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main class="score-main report-page">
+  <div class="wrap">
+
+    <section id="missing" hidden>
+      <p class="eyebrow">Sale-readiness report</p>
+      <h1>This report link isn’t complete.</h1>
+      <p class="lede" style="margin-top:28px">Take the readiness score and we’ll prepare your report.</p>
+      <div class="actions"><a class="btn" href="score.html">Get your free readiness score</a></div>
+    </section>
+
+    <article id="report" hidden>
+      <header class="rep-head">
+        <p class="wordmark rep-brand">Handover</p>
+        <p class="eyebrow">Sale-readiness report · <span id="rep-date"></span></p>
+        <h1>Your business, as a buyer would see it</h1>
+        <p class="note" id="rep-profile"></p>
+      </header>
+
+      <section class="rep-block result">
+        <p class="result__score" id="r-total"></p>
+        <h2 id="r-band"></h2>
+        <p class="lede" id="r-summary"></p>
+        <ul class="bars" id="r-bars"></ul>
+        <p class="note">How to read this. Each of your answers was scored as a buyer, or a buyer’s bank, would weigh it. Financial records count for 30 of the 100 points, dependence on you for 25, and customers, operations and your story for 15 each. The score measures how ready the business is to be sold. It says nothing about how good a business it is.</p>
+      </section>
+
+      <section class="rep-block" id="rep-actions-block">
+        <h2>Where to start</h2>
+        <p class="lede">The changes that would move your score, and a buyer’s opinion, the most. In order.</p>
+        <ol class="gaps rep-actions" id="rep-actions"></ol>
+      </section>
+
+      <section class="rep-block">
+        <h2>Area by area</h2>
+        <p class="lede">Every answer you gave, what a buyer makes of it, and what to do. Weakest area first.</p>
+        <div id="rep-sections"></div>
+      </section>
+
+      <section class="rep-block rep-next">
+        <h2>What happens next</h2>
+        <p>The next step is a free 45-minute call with one of us. We’ll go through this report with you, answer your questions, and give you an indicative range for what the business could be worth today and what it could be worth with these gaps closed. There is no obligation, and everything stays between us.</p>
+        <p>If you’d then like help, our Sale-Ready Package does the work: we recast three years of financials to show true owner earnings, analyse your customers and revenue, write the story of your business for buyers, organise your documents, and introduce you to a broker who suits your business. It is a fixed fee, from $4,000, $12,000 or $30,000 depending on the size of the business. We take no percentage of your sale.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:hello@handoveradvisors.com?subject=My%20readiness%20review">Book your free review</a>
+          <button class="btn btn--quiet" type="button" id="rep-print">Print or save as PDF</button>
+        </div>
+        <p class="note" style="margin-top:36px">This report is based only on the answers you gave, which we have not checked. Any value range we discuss is indicative and is not a formal valuation. Handover is not a business broker, appraiser, or tax or legal adviser. Everything you share with us is confidential: we never contact your staff, customers or suppliers.</p>
+      </section>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Handover</a>
+    <div>
+      <p>We get businesses ready to sell.</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+        <a href="brokers.html">For brokers</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p>Everything you tell us is confidential. We never contact your staff, customers or suppliers.</p>
+      <p>© 2026 Handover</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/report-ui.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 import { AREAS, QUESTIONS, PROFILE_QUESTIONS } from './questions.js';
 import { score } from './scoring.js';
+import { encodeAnswers } from './report.js';
 import { FORM_ENDPOINT } from './config.js';
 
 const $ = (id) => document.getElementById(id);
@@ -124,22 +125,27 @@ $('q-form').addEventListener('submit', (e) => {
   renderQuestion();
 });
 
+// Flat, readable fields: this is what lands in our inbox.
 function payload(form) {
   const data = new FormData(form);
   const profile = (id) => PROFILE_QUESTIONS.find((p) => p.id === id).options[chosen[id]];
-  return {
-    name: data.get('name').trim(),
-    email: data.get('email').trim(),
-    phone: data.get('phone').trim(),
-    business: data.get('business').trim(),
-    industry: profile('industry'),
-    revenue: profile('revenue'),
-    total: result.total,
-    band: result.band.label,
-    areas: Object.fromEntries(result.areas.map((a) => [a.label, `${a.percent}%`])),
-    gaps: result.gaps.map((g) => g.label),
-    answers: Object.fromEntries(QUESTIONS.map((q) => [q.id, q.options[chosen[q.id]].label])),
+  const name = data.get('name').trim();
+  const link = new URL(`report.html#${encodeAnswers(chosen)}`, location.href).href;
+  const fields = {
+    _subject: `Readiness score ${result.total}: ${name} (${profile('industry')})`,
+    Name: name,
+    Email: data.get('email').trim(),
+    Phone: data.get('phone').trim() || 'Not given',
+    Business: data.get('business').trim() || 'Not given',
+    Industry: profile('industry'),
+    Revenue: profile('revenue'),
+    Score: `${result.total} out of 100 (${result.band.label})`,
+    'Biggest gaps': result.gaps.map((g) => g.label).join(', ') || 'None',
+    'Full report': link,
   };
+  for (const a of result.areas) fields[`Area: ${a.label}`] = `${a.percent}%`;
+  for (const q of QUESTIONS) fields[q.text] = q.options[chosen[q.id]].label;
+  return fields;
 }
 
 $('lead').addEventListener('submit', async (e) => {
