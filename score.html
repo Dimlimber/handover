@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your readiness score — Handover</title>
+  <meta name="description" content="Fourteen questions, about ten minutes. See how ready your business is to sell and where the gaps are. Free and confidential.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Handover</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#how">How it works</a>
+      <a href="brokers.html">For brokers</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="score-main">
+  <div class="wrap">
+
+    <section id="intro">
+      <p class="eyebrow">Readiness score</p>
+      <h1>How ready is your business to sell?</h1>
+      <p class="lede" style="margin-top:28px">Fourteen questions, about ten minutes. You’ll see your score straight away. Nothing you enter is shared with anyone.</p>
+      <div class="actions"><button class="btn" id="start" type="button">Start</button></div>
+      <noscript><p class="error">This page needs JavaScript switched on in your browser.</p></noscript>
+    </section>
+
+    <section id="quiz" hidden>
+      <div class="q__meta">
+        <p class="eyebrow" id="q-area"></p>
+        <p class="eyebrow" id="q-count"></p>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress__bar" id="q-bar"></div></div>
+      <form id="q-form" novalidate>
+        <fieldset class="q">
+          <legend id="q-text" tabindex="-1"></legend>
+          <div class="q__options" id="q-options"></div>
+        </fieldset>
+        <div class="q__nav">
+          <button class="btn btn--quiet" id="back" type="button">Back</button>
+          <button class="btn" id="next" type="submit" disabled>Next</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="result" hidden>
+      <p class="eyebrow">Your readiness score</p>
+      <p class="result__score" id="r-total" tabindex="-1"></p>
+      <h2 id="r-band"></h2>
+      <p class="lede" id="r-summary"></p>
+      <ul class="bars" id="r-bars"></ul>
+      <h2 class="sub">Where you’d gain the most</h2>
+      <ol class="gaps" id="r-gaps" style="margin-top:28px"></ol>
+
+      <div class="report" id="report">
+        <h2 class="sub">Get the full report</h2>
+        <p style="margin-top:14px">We’ll send a written version with what to do about each gap, and offer you a free 45-minute call. No obligation.</p>
+        <form id="lead">
+          <div class="fields">
+            <div class="field"><label for="f-name">First name</label><input id="f-name" name="name" autocomplete="given-name" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">Phone <span>(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-business">Business name <span>(optional)</span></label><input id="f-business" name="business" autocomplete="organization" aria-describedby="f-business-hint"><p class="hint" id="f-business-hint">Leave blank if you’d rather not say yet.</p></div>
+          </div>
+          <button class="btn" id="send" type="submit">Send me the report</button>
+          <p class="note" style="margin-top:18px">Confidential. We never contact anyone but you.</p>
+          <p class="error" id="lead-error" role="alert" hidden></p>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Handover</a>
+    <div>
+      <p>We get businesses ready to sell.</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+        <a href="brokers.html">For brokers</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p>Everything you tell us is confidential. We never contact your staff, customers or suppliers.</p>
+      <p>© 2026 Handover</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/score-ui.js"></script>
+</body>
+</html>

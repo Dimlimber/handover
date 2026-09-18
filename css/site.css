@@ -184,6 +184,7 @@ a:hover { text-decoration-thickness: 2px; }
 .progress__bar { height: 100%; width: 0; background: var(--accent); transition: width 0.3s ease; }
 .q { border: 0; margin: 0; padding: 0; min-width: 0; }
 .q__meta { display: flex; justify-content: space-between; gap: 16px; }
+.q__meta .eyebrow:last-child { white-space: nowrap; }
 .q legend { font: 400 clamp(1.7rem, 3.4vw, 2.4rem)/1.18 var(--serif); letter-spacing: -0.015em; padding: 0; margin-bottom: 32px; text-wrap: balance; }
 .q legend:focus { outline: none; }
 .q__options { display: grid; gap: 10px; }
