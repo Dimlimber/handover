@@ -1,6 +1,8 @@
-import { TESTIMONIALS, SAMPLES } from './testimonials.js';
+import { TESTIMONIALS, SAMPLES, SHOW_SAMPLES_FOR_REVIEW } from './testimonials.js';
 
-const preview = new URLSearchParams(location.search).get('preview') === 'testimonials';
+// Samples are always stamped as samples. Real testimonials, once added, replace them.
+const preview = new URLSearchParams(location.search).get('preview') === 'testimonials'
+  || (SHOW_SAMPLES_FOR_REVIEW && TESTIMONIALS.length === 0);
 const items = preview ? SAMPLES : TESTIMONIALS;
 
 if (items.length) {

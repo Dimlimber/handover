@@ -13,6 +13,11 @@
 export const TESTIMONIALS = [
 ];
 
+// TEMPORARY, for Zach's review: while true and the list above is empty, the two samples below show on
+// the live home page, each stamped "Sample only". Set to false (or add real testimonials) before any
+// outreach goes out.
+export const SHOW_SAMPLES_FOR_REVIEW = true;
+
 // Shown only with ?preview=testimonials in the address, each one marked as a sample.
 export const SAMPLES = [
   {
