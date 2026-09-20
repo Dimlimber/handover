@@ -342,6 +342,16 @@ a:hover { text-decoration-thickness: 2px; }
 .quote__result { color: var(--accent); font-weight: 500; }
 .quote__sample { align-self: flex-start; margin: 0 0 20px; padding: 5px 10px; border: 1px dashed var(--ink-2); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
 
+/* Questions */
+
+.faq { border-top: 1px solid var(--ink); max-width: 760px; }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font: 400 1.35rem/1.3 var(--serif); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; position: absolute; right: 4px; top: 18px; font: 400 1.6rem/1 var(--sans); color: var(--accent); }
+.faq details[open] summary::after { content: '–'; }
+.faq details p { margin: 0 0 24px; color: var(--ink-2); max-width: 64ch; }
+
 /* Footer */
 
 .site-foot { padding: 56px 0 64px; font-size: 17px; color: var(--ink-2); }

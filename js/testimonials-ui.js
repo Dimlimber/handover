@@ -15,7 +15,10 @@ if (items.length) {
 
   document.getElementById('quotes').append(...items.map((t) => {
     const figure = el('figure', 'quote');
-    if (preview) figure.append(el('p', 'quote__sample', 'Sample only. Not a real testimonial.'));
+    if (preview) {
+      figure.setAttribute('data-nosnippet', ''); // keep samples out of search results
+      figure.append(el('p', 'quote__sample', 'Sample only. Not a real testimonial.'));
+    }
     figure.append(el('blockquote', null, t.quote));
     const caption = el('figcaption');
     caption.append(el('strong', null, t.name), el('span', null, [t.role, t.business].filter(Boolean).join(' · ')));
