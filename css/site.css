@@ -330,6 +330,18 @@ a:hover { text-decoration-thickness: 2px; }
 .range__track .strong { background: var(--accent); }
 .range .range__fig { font: 400 1.5rem/1.2 var(--serif); margin: 10px 0 0; }
 
+/* Testimonials */
+
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+.quote { margin: 0; padding: 28px 0 0; border-top: 1px solid var(--ink); display: flex; flex-direction: column; }
+.quote blockquote { margin: 0 0 28px; font: 400 1.45rem/1.4 var(--serif); letter-spacing: -0.01em; }
+.quote blockquote::before { content: '“'; display: block; font-size: 3.2rem; line-height: 0.7; color: var(--accent); margin-bottom: 6px; }
+.quote figcaption { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--rule); display: grid; gap: 3px; font-size: 16px; color: var(--ink-2); }
+.quote figcaption strong { font-weight: 600; font-size: 17px; color: var(--ink); }
+.quote__context { margin-top: 8px; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.quote__result { color: var(--accent); font-weight: 500; }
+.quote__sample { align-self: flex-start; margin: 0 0 20px; padding: 5px 10px; border: 1px dashed var(--ink-2); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+
 /* Footer */
 
 .site-foot { padding: 56px 0 64px; font-size: 17px; color: var(--ink-2); }
@@ -366,6 +378,7 @@ a:hover { text-decoration-thickness: 2px; }
   .site-nav .btn--small { min-height: 44px; padding: 8px 12px; font-size: 15px; }
   [id] { scroll-margin-top: 112px; }
   .reasons, .people, .fields { grid-template-columns: 1fr; }
+  .quotes { grid-template-columns: 1fr; gap: 40px; }
   .tiers { grid-template-columns: 1fr; }
   .tier, .tier + .tier { padding: 24px 0; border-left: 0; }
   .tier + .tier { border-top: 1px solid var(--rule); }
