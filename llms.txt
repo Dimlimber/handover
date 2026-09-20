@@ -9,12 +9,14 @@
 - Contact: contact@handoveradvisors.com
 
 ## Pages
-- [Home](https://handoveradvisors.com/): what Handover does, why businesses fail to sell, prices, questions and answers
+- [Home](https://handoveradvisors.com/): what Handover does, why businesses fail to sell, and prices
+- [Questions](https://handoveradvisors.com/faq): answers to what owners ask: timing, cost, recast financials, confidentiality
 - [What you get](https://handoveradvisors.com/deliver): what the owner provides, what Handover hands back, and the timeline
 - [Readiness score](https://handoveradvisors.com/score): free ten-minute, 14-question assessment of how ready a business is to sell
 - [For brokers](https://handoveradvisors.com/brokers): how brokers refer sellers who are not ready to list
 - [About](https://handoveradvisors.com/about): the two founders and how they work
 - [Privacy](https://handoveradvisors.com/privacy): confidentiality and data handling
+
 
 
 ## Guides
