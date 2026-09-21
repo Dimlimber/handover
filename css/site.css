@@ -160,8 +160,9 @@ a:hover { text-decoration-thickness: 2px; }
 
 .ticks { list-style: none; margin: 0 0 36px; padding: 0; max-width: var(--measure); }
 .ticks li { padding: 13px 0 13px 34px; border-bottom: 1px solid var(--rule); position: relative; }
-.ticks li::before { content: ''; position: absolute; left: 2px; top: 1.35em; width: 16px; height: 1px; background: var(--accent); }
-.ticks--no li::before { background: var(--ink-2); transform: rotate(-45deg); }
+.ticks li::before { content: ''; position: absolute; left: 6px; top: 1.02em; width: 6px; height: 13px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg); }
+.ticks--no li::before, .ticks--no li::after { content: ''; position: absolute; left: 1px; top: 1.42em; width: 17px; height: 2px; border: 0; background: #8a2a1c; transform: rotate(45deg); }
+.ticks--no li::after { transform: rotate(-45deg); }
 
 /* Prose pages */
 
@@ -386,6 +387,7 @@ article .page-head h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.
 .article__cta h2 { margin-top: 0; }
 .article .ticks { padding-left: 0; }
 .article .ticks li { margin: 0; }
+.article .ticks li::before { left: 2px; top: 1.35em; width: 16px; height: 1px; border: 0; background: var(--accent); transform: none; }
 .table-scroll { overflow-x: auto; }
 
 /* Footer */
