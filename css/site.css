@@ -223,6 +223,10 @@ a:hover { text-decoration-thickness: 2px; }
 .gaps h3 { margin-bottom: 6px; }
 .gaps p { color: var(--ink-2); }
 
+.sent { margin: 36px 0 8px; padding: 24px 28px; background: #fffdf8; border: 1px solid var(--rule); border-left: 3px solid var(--accent); }
+.sent p { margin: 0; }
+.sent__title { font: 400 1.35rem/1.3 var(--serif); margin-bottom: 8px !important; }
+.sent--failed { border-left-color: #8a2a1c; }
 .report { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--ink); }
 .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; margin: 32px 0; }
 .field label { display: block; font-size: 17px; font-weight: 500; margin-bottom: 8px; }

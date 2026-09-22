@@ -21,7 +21,7 @@ let at = 0;
 let result = null;
 
 function show(view) {
-  for (const id of ['intro', 'quiz', 'result']) $(id).hidden = id !== view;
+  for (const id of ['intro', 'quiz', 'details', 'result']) $(id).hidden = id !== view;
   window.scrollTo(0, 0);
 }
 
@@ -58,6 +58,8 @@ function renderQuestion() {
   $('back').textContent = at === 0 ? 'Cancel' : 'Back';
   $('q-text').focus();
 }
+
+let leadSent = null; // promise for the background send
 
 function renderResult() {
   const answers = Object.fromEntries(QUESTIONS.map((q) => [q.id, chosen[q.id]]));
@@ -105,6 +107,7 @@ function renderResult() {
     }));
   }
 
+  $('open-report').href = reportLink();
   show('result');
   total.focus();
 }
@@ -120,17 +123,22 @@ $('back').addEventListener('click', () => {
 $('q-form').addEventListener('submit', (e) => {
   e.preventDefault();
   if (!(screens[at].id in chosen)) return;
-  if (at === screens.length - 1) { renderResult(); return; }
+  if (at === screens.length - 1) { show('details'); $('d-title').focus(); return; }
   at += 1;
   renderQuestion();
 });
 
-// Flat, readable fields: this is what lands in our inbox.
+$('d-back').addEventListener('click', () => { show('quiz'); renderQuestion(); });
+
+function reportLink() {
+  return new URL(`report.html#${encodeAnswers(chosen)}`, location.href).href;
+}
+
+// Flat, readable fields: this is what lands in our inbox and in the sheet.
 function payload(form) {
   const data = new FormData(form);
   const profile = (id) => PROFILE_QUESTIONS.find((p) => p.id === id).options[chosen[id]];
   const name = data.get('name').trim();
-  const link = new URL(`report.html#${encodeAnswers(chosen)}`, location.href).href;
   const fields = {
     _subject: `Readiness score ${result.total}: ${name} (${profile('industry')})`,
     Name: name,
@@ -141,47 +149,45 @@ function payload(form) {
     Revenue: profile('revenue'),
     Score: `${result.total} out of 100 (${result.band.label})`,
     'Biggest gaps': result.gaps.map((g) => g.label).join(', ') || 'None',
-    'Full report': link,
+    'Full report': reportLink(),
   };
   for (const a of result.areas) fields[`Area: ${a.label}`] = `${a.percent}%`;
   for (const q of QUESTIONS) fields[q.text] = q.options[chosen[q.id]].label;
   return fields;
 }
 
-$('lead').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.currentTarget;
-  const error = $('lead-error');
-  error.hidden = true;
-
-  if (form.elements.website.value) return; // honeypot
-
-  if (!FORM_ENDPOINT) {
-    error.textContent = 'The form isn’t connected yet. Set FORM_ENDPOINT in js/config.js.';
-    error.hidden = false;
-    return;
-  }
-
-  $('send').disabled = true;
-  try {
-    // A Google Apps Script endpoint only accepts a "simple" request, so the JSON goes as plain text.
-    const google = FORM_ENDPOINT.includes('script.google.com');
-    const res = await fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      headers: google
-        ? { 'Content-Type': 'text/plain;charset=utf-8' }
-        : { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload(form)),
-    });
+function sendLead(fields) {
+  if (!FORM_ENDPOINT) return Promise.reject(new Error('not configured'));
+  // A Google Apps Script endpoint only accepts a "simple" request, so the JSON goes as plain text.
+  const google = FORM_ENDPOINT.includes('script.google.com');
+  return fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: google
+      ? { 'Content-Type': 'text/plain;charset=utf-8' }
+      : { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(fields),
+  }).then(async (res) => {
     if (!res.ok) throw new Error(String(res.status));
     if (google && !(await res.json()).ok) throw new Error('rejected');
-    const thanks = document.createElement('p');
-    thanks.className = 'thanks';
-    thanks.textContent = 'Thank you. Your report will be with you within one working day.';
-    $('report').replaceChildren(thanks);
-  } catch {
-    error.textContent = 'That didn’t send. Please try again, or email contact@handoveradvisors.com.';
-    error.hidden = false;
-    $('send').disabled = false;
-  }
+  });
+}
+
+$('lead').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  if (form.elements.website.value) return; // honeypot
+  if (!form.reportValidity()) return;
+
+  renderResult();
+  const fields = payload(form);
+  const email = fields.Email;
+  $('sent-text').textContent = `We’re sending it to ${email}. Give it a few minutes, and check your spam folder if it doesn’t arrive.`;
+
+  leadSent = sendLead(fields).then(() => {
+    $('sent-text').textContent = `We’ve sent it to ${email}. If it doesn’t arrive within a few minutes, check your spam folder.`;
+  }).catch(() => {
+    $('sent-title').textContent = 'We couldn’t send your report automatically';
+    $('sent-text').textContent = `Open it with the button below, and email contact@handoveradvisors.com if you’d like a copy sent to ${email}.`;
+    $('sent').classList.add('sent--failed');
+  });
 });

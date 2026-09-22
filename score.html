@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=12">
+  <link rel="stylesheet" href="css/site.css?v=13">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
     <section id="intro">
       <p class="eyebrow">Readiness score</p>
       <h1>How ready is your business to sell?</h1>
-      <p class="lede" style="margin-top:28px">Fourteen questions, about ten minutes. You’ll see your score straight away. Nothing you enter is shared with anyone.</p>
+      <p class="lede" style="margin-top:28px">Fourteen questions, about ten minutes. You’ll see your score straight away, and we’ll email you a full written report. Nothing you enter is shared with anyone.</p>
       <div class="actions"><button class="btn" id="start" type="button">Start</button></div>
       <noscript><p class="error">This page needs JavaScript switched on in your browser.</p></noscript>
     </section>
@@ -65,30 +65,44 @@
       </form>
     </section>
 
+    <section id="details" hidden>
+      <p class="eyebrow">Last step</p>
+      <h1 id="d-title" tabindex="-1">Where should we send your report?</h1>
+      <p class="lede" style="margin-top:20px">Your score is ready. Tell us where to email the full written report, with what to do about each gap. It arrives within a few minutes.</p>
+      <form id="lead" style="margin-top:8px">
+        <div class="fields">
+          <div class="field"><label for="f-name">First name</label><input id="f-name" name="name" autocomplete="given-name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone <span>(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-business">Business name <span>(optional)</span></label><input id="f-business" name="business" autocomplete="organization" aria-describedby="f-business-hint"><p class="hint" id="f-business-hint">Leave blank if you’d rather not say yet.</p></div>
+        </div>
+        <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="q__nav">
+          <button class="btn btn--quiet" id="d-back" type="button">Back</button>
+          <button class="btn" id="send" type="submit">Show my score</button>
+        </div>
+        <p class="note" style="margin-top:18px">Confidential. We never contact anyone but you, and we don’t add you to any list.</p>
+        <p class="error" id="lead-error" role="alert" hidden></p>
+      </form>
+    </section>
+
     <section id="result" class="result" hidden>
       <p class="eyebrow">Your readiness score</p>
       <p class="result__score" id="r-total" tabindex="-1"></p>
       <h2 id="r-band"></h2>
       <p class="lede" id="r-summary"></p>
+      <div class="sent" id="sent">
+        <p class="sent__title" id="sent-title">Your full report is on its way</p>
+        <p id="sent-text"></p>
+        <div class="actions" style="margin-top:20px"><a class="btn btn--quiet" id="open-report" href="#">Open the full report now</a></div>
+      </div>
       <ul class="bars" id="r-bars"></ul>
       <h2 class="sub">Where you’d gain the most</h2>
       <ol class="gaps" id="r-gaps" style="margin-top:28px"></ol>
-
       <div class="report" id="report">
-        <h2 class="sub">Get the full report</h2>
-        <p style="margin-top:14px">We’ll send a written version with what to do about each gap, and offer you a free 45-minute call. No obligation.</p>
-        <form id="lead">
-          <div class="fields">
-            <div class="field"><label for="f-name">First name</label><input id="f-name" name="name" autocomplete="given-name" required></div>
-            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="f-phone">Phone <span>(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="f-business">Business name <span>(optional)</span></label><input id="f-business" name="business" autocomplete="organization" aria-describedby="f-business-hint"><p class="hint" id="f-business-hint">Leave blank if you’d rather not say yet.</p></div>
-          </div>
-          <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-          <button class="btn" id="send" type="submit">Send me the report</button>
-          <p class="note" style="margin-top:18px">Confidential. We never contact anyone but you.</p>
-          <p class="error" id="lead-error" role="alert" hidden></p>
-        </form>
+        <h2 class="sub">What happens next</h2>
+        <p style="margin-top:14px">Read the report, then, if you’d like, book a free 45-minute call. We’ll go through it together and give you an indicative range for what the business could be worth today, and with the gaps closed. No obligation.</p>
+        <div class="actions"><a class="btn" href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review">Book your free review</a></div>
       </div>
     </section>
 
