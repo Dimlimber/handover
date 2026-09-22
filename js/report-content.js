@@ -58,8 +58,8 @@ export const CONTENT = {
   },
   p2: {
     title: 'Check that your lease and contracts can transfer',
-    why: 'A lease that can’t be passed on, or a licence that doesn’t transfer, can stop a sale in its final weeks.',
-    fix: 'Read the assignment clause in your lease and your main contracts, and check that licences and permits are current and can pass to a new owner. Speak to your landlord early: a lease with years left to run adds value.',
+    why: 'A lease that can’t be passed on, or a license that doesn’t transfer, can stop a sale in its final weeks.',
+    fix: 'Read the assignment clause in your lease and your main contracts, and check that licenses and permits are current and can pass to a new owner. Speak to your landlord early: a lease with years left to run adds value.',
   },
   s1: {
     title: 'Put evidence behind your price',
