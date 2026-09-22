@@ -26,7 +26,7 @@ export const QUESTIONS = [
   q('f2', 'financials', 'How quickly could you hand over three years of profit-and-loss statements and tax returns?', [
     'This week',
     'Within a month',
-    'It would take some digging',
+    'More than a month',
     'I’m not sure they all exist',
   ]),
   q('f3', 'financials', 'Do personal or family expenses run through the business?', [
@@ -83,7 +83,7 @@ export const QUESTIONS = [
     'Very little',
     'None of it',
   ]),
-  q('p2', 'operations', 'Are your lease, contracts, licenses and permits current, and could they pass to a new owner?', [
+  q('p2', 'operations', 'Are your lease(s), contracts, licenses and permits current, and could they pass to a new owner?', [
     'Yes, I’ve checked',
     'I think so',
     'I’m not sure',

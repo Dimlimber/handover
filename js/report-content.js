@@ -57,7 +57,7 @@ export const CONTENT = {
     fix: 'Start with the ten tasks that only you, or one other person, know how to do. A one-page checklist for each is enough.',
   },
   p2: {
-    title: 'Check that your lease and contracts can transfer',
+    title: 'Check that your lease(s) and contracts can transfer',
     why: 'A lease that can’t be passed on, or a license that doesn’t transfer, can stop a sale in its final weeks.',
     fix: 'Read the assignment clause in your lease and your main contracts, and check that licenses and permits are current and can pass to a new owner. Speak to your landlord early: a lease with years left to run adds value.',
   },

@@ -16,6 +16,11 @@ const screens = [
   })),
 ];
 
+// The docked question sits just below the docked header, whatever its height.
+const setHeadHeight = () => document.documentElement.style.setProperty('--head-h', `${document.querySelector('.site-head').offsetHeight}px`);
+setHeadHeight();
+window.addEventListener('resize', setHeadHeight);
+
 const chosen = {}; // screen id -> option index. Held in memory only.
 let at = 0;
 let result = null;
@@ -33,6 +38,7 @@ function renderQuestion() {
   $('q-bar').style.width = `${pct}%`;
   $('q-bar').parentElement.setAttribute('aria-valuenow', String(pct));
   $('q-text').textContent = s.text;
+  $('q-count2').textContent = `${at + 1} of ${screens.length}`;
 
   const box = $('q-options');
   box.replaceChildren();

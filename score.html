@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=13">
+  <link rel="stylesheet" href="css/site.css?v=14">
 </head>
 <body>
 
@@ -54,8 +54,11 @@
       </div>
       <div class="progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress__bar" id="q-bar"></div></div>
       <form id="q-form" novalidate>
-        <fieldset class="q">
-          <legend id="q-text" tabindex="-1"></legend>
+        <fieldset class="q" aria-labelledby="q-text">
+          <div class="q__stick">
+            <p class="q__count" id="q-count2" aria-hidden="true"></p>
+            <h2 class="q__text" id="q-text" tabindex="-1"></h2>
+          </div>
           <div class="q__options" id="q-options"></div>
         </fieldset>
         <div class="q__nav">
@@ -128,6 +131,6 @@
   </div>
 </footer>
 
-<script type="module" src="js/score-ui.js?v=2"></script>
+<script type="module" src="js/score-ui.js?v=3"></script>
 </body>
 </html>
