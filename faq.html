@@ -85,7 +85,7 @@ html:not(.js) #thread{display:none}
 .wm{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:400 25px/1 var(--serif);letter-spacing:-.01em;min-height:44px;margin-right:auto;white-space:nowrap}
 /* written-thread wordmark (6a): SVG sized from the .wm font size; writes itself once on load */
 .wm-svg{display:block;height:1.36em;width:calc(1.36em * 5.1538);flex:none}
-@media (max-width:359px){.nav .wm{font-size:17px}}
+@media (max-width:359px){.nav .wm{font-size:16px}}
 .nav-links{display:flex;gap:clamp(18px,2.2vw,34px)}
 .nav-links a{font-size:16px;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 .nav-links a[aria-current="page"]::after{transform:scaleX(1)}
@@ -128,7 +128,8 @@ html:not(.js) #thread{display:none}
   background:var(--green);color:#fff;text-decoration:none;font:500 17px/1 var(--sans);letter-spacing:.02em;border-radius:2px;white-space:nowrap;transition:background-color .3s var(--ease)}
 .btn:hover,.btn:active{background:var(--green-d)}
 .btn span{position:relative;display:inline-block;transition:transform .45s var(--ease)}
-@media (max-width:374px){.btn{max-width:100%;white-space:normal;text-align:center;line-height:1.25;padding:10px 20px}}
+@media (max-width:374px){.btn:not(.btn-s){max-width:100%;white-space:normal;text-align:center;line-height:1.25;padding:10px 20px}}
+@media (max-width:359px){.nav .btn-s{padding:0 10px;font-size:14px}}
 .btn span::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .btn:hover span,.btn:focus-visible span{transform:translateX(2px)}
 .btn:hover span::after,.btn:focus-visible span::after{transform:scaleX(1)}
