@@ -64,7 +64,8 @@ a:hover { text-decoration-thickness: 2px; }
   font: 500 1.6rem/1 var(--serif); letter-spacing: -0.02em;
   color: var(--ink); text-decoration: none;
 }
-.wordmark::after { content: '.'; color: var(--accent); }
+/* the written-thread wordmark (SVG) replaced the text wordmark and its period on 2026-09-28 */
+.wordmark .wm-svg { display: block; height: 1.36em; width: calc(1.36em * 5.1538); }
 .site-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 30px; font-size: 17px; }
 .site-nav__cta { display: flex; gap: 10px; }
 .site-nav a:not(.btn) { color: var(--ink); text-decoration: none; padding: 10px 0; }
@@ -426,6 +427,7 @@ article .page-head h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.
   /* Docked header, kept short: wordmark and buttons on one row, links beneath. */
   .site-head .wrap { position: relative; gap: 0; padding-top: 10px; padding-bottom: 4px; }
   .wordmark { display: flex; align-items: center; height: 44px; font-size: 1.45rem; }
+  .wordmark .wm-svg { height: .95em; width: calc(.95em * 5.1538); }
   .site-nav { gap: 0 15px; width: 100%; font-size: 15px; }
   .site-nav a:not(.btn) { padding: 8px 0; }
   .site-nav__cta { position: absolute; top: 10px; right: var(--gutter); gap: 8px; }
@@ -449,6 +451,8 @@ article .page-head h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.
   .rep-item { grid-template-columns: 1fr; }
   .verdict { justify-self: start; }
 }
+
+@media (max-width: 370px) { .site-nav__cta .btn--quiet { display: none; } }
 
 @media print {
   .site-head, .site-foot, .btn, .q__nav, .report, .actions { display: none !important; }
