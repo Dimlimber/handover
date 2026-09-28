@@ -143,6 +143,7 @@ html:not(.js) #thread{display:none}
   background:var(--green);color:#fff;text-decoration:none;font:500 17px/1 var(--sans);letter-spacing:.02em;border-radius:2px;white-space:nowrap;transition:background-color .3s var(--ease)}
 .btn:hover,.btn:active{background:var(--green-d)}
 .btn span{position:relative;display:inline-block;transition:transform .45s var(--ease)}
+@media (max-width:374px){.btn{max-width:100%;white-space:normal;text-align:center;line-height:1.25;padding:10px 20px}}
 .btn span::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .btn:hover span,.btn:focus-visible span{transform:translateX(2px)}
 .btn:hover span::after,.btn:focus-visible span::after{transform:scaleX(1)}
