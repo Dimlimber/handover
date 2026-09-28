@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your readiness score — Handover</title>
-  <meta name="description" content="Fourteen questions, about ten minutes. See how ready your business is to sell and where the gaps are. Free and confidential.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your readiness score — Handover</title>
+<meta name="description" content="Fourteen questions, about ten minutes. See how ready your business is to sell and where the gaps are. Free and confidential.">
   <link rel="canonical" href="https://handoveradvisors.com/score">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Handover">
@@ -13,124 +13,1111 @@
   <meta property="og:url" content="https://handoveradvisors.com/score">
   <meta property="og:image" content="https://handoveradvisors.com/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%231f4d3a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23f6f3ec%27%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=14">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231F4D3A%22%2F%3E%3Cpath%20d%3D%22M8.6%208v16M18.4%208v16%22%20stroke%3D%22%23F6F6F3%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22butt%22%2F%3E%3Cpath%20d%3D%22M8.6%2016.5H24%22%20stroke%3D%22%23F6F6F3%22%20stroke-width%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%2224.6%22%20cy%3D%2216.5%22%20r%3D%222.4%22%20fill%3D%22%23F6F6F3%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<script>(function(d){d.classList.add('js');document.addEventListener('DOMContentLoaded',function(){if(!window.__quizOK){d.classList.remove('js');d.classList.add('js-failed')}})})(document.documentElement);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200..400;1,200..400&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --washi:#F6F6F3; --white:#FFFFFF; --ink:#1A1A18; --ink2:#6B6B66; --hair:rgba(26,26,24,.14);
+  --green:#1F4D3A; --green-d:#173B2C; --green-line:#367D5D; /* line: hue of #2E6B50, lightness 30% → 35%, so 1.5px strokes read green */
+  --serif:"Noto Serif Display","Iowan Old Style","Times New Roman",serif;
+  --sans:"Zen Kaku Gothic New",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:clamp(20px,5.5vw,88px); --gap:clamp(16px,1.9vw,28px); --maxw:1520px;
+  --nav:72px;
+  --ease:cubic-bezier(.2,.7,.1,1); --ease-io:cubic-bezier(.65,0,.35,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --sec:clamp(84px,7.8vw,128px);
+  /* this page */
+  --rule:rgba(26,26,24,.5);
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--washi);color:var(--ink);font:400 19px/1.66 var(--sans);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3,p,ol,ul,fieldset,legend{margin:0}
+ol,ul{padding:0;list-style:none}
+button,input{font:inherit;color:inherit}
+::selection{background:var(--ink);color:var(--washi)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:2px}
+[tabindex="-1"]:focus{outline:none}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:80;padding:12px 16px;background:var(--ink);color:var(--washi);font-size:16px;text-decoration:none;border-radius:2px}
+.skip:focus{top:12px}
+
+/* ---------- type (Concept B) ---------- */
+.d-l,.d-m,.d-s,.q-t{font-family:var(--serif);font-weight:300;letter-spacing:-.018em;text-wrap:balance;font-optical-sizing:auto}
+.d-l{font-size:clamp(36px,4.5vw,74px);line-height:1.07;letter-spacing:-.024em}
+.d-m{font-size:clamp(28px,2.7vw,42px);line-height:1.14}
+.d-s{font-size:clamp(24px,1.9vw,30px);line-height:1.2;font-weight:350;letter-spacing:-.01em}
+.q-t{font-size:clamp(28px,3vw,46px);line-height:1.14}
+p{text-wrap:pretty}
+.lede{font-size:clamp(19px,1.45vw,22px);line-height:1.6;max-width:36em}
+.lab{font:500 12.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.num{font-family:var(--serif);font-weight:300;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+
+/* ---------- grid ---------- */
+.g{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);
+  width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+.g>*{grid-column:var(--c,1/-1);min-width:0}
+.col{--c:3/11;--t:2/12}
+@media (min-width:760px) and (max-width:1099px){.g>*{grid-column:var(--t,var(--c,1/-1))}}
+@media (max-width:759px){
+  :root{--nav:64px}
+  body{font-size:17px;line-height:1.62}
+  .g{grid-template-columns:minmax(0,1fr)}
+  .g>*{grid-column:1/-1}
+}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav);background:var(--washi)}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);opacity:0;transition:opacity .5s var(--ease)}
+.nav.scrolled::after{opacity:1}
+.nav-in{position:relative;height:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);display:flex;align-items:center;gap:clamp(20px,2.6vw,40px)}
+.wm{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:400 25px/1 var(--serif);letter-spacing:-.01em;min-height:44px;margin-right:auto;white-space:nowrap}
+/* thread-H: the crossbar is the thread (1.25px at 25px), running through the right stem to a dot; measured on Noto Serif Display 400, em-based */
+.wm-h{--d:max(4px,.18em);--t:max(1.25px,.05em);position:relative;display:inline-block;margin-right:calc(.1325em + var(--d) / 2)}
+.wm-h::before{content:"";position:absolute;left:.215em;width:.6425em;top:calc(.5138em - var(--t) / 2);height:var(--t);background:currentColor}
+.wm-h::after{content:"";position:absolute;left:calc(.8575em - var(--d) / 2);top:calc(.5138em - var(--d) / 2);width:var(--d);height:var(--d);border-radius:50%;background:currentColor}
+.nav-links{display:flex;gap:clamp(18px,2.2vw,34px)}
+.nav-links a{font-size:16px;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a[aria-current="page"]::after{transform:scaleX(1)}
+.nav-tog{display:none;align-items:center;justify-content:center;gap:10px;min-width:44px;min-height:44px;margin:0;padding:0 4px;border:0;border-radius:2px;background:none;color:var(--ink);font:500 15.5px/1 var(--sans);letter-spacing:.02em;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nav-tog-i{position:relative;display:block;flex:none;width:20px;height:9px}
+.nav-tog-i::before,.nav-tog-i::after{content:"";position:absolute;left:0;right:0;height:1.25px;background:currentColor;transition:transform .4s var(--ease)}
+.nav-tog-i::before{top:0}.nav-tog-i::after{bottom:0}
+.nav.open .nav-tog-i::before{transform:translate3d(0,3.9px,0) rotate(45deg)}
+.nav.open .nav-tog-i::after{transform:translate3d(0,-3.9px,0) rotate(-45deg)}
+@media (max-width:959px){
+  .nav-in{gap:14px}
+  .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:2px var(--gut) 18px;background:var(--washi);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  html.js .nav-tog{display:inline-flex}
+  html.js .nav.open .nav-links{display:flex}
+  .nav-links a{min-height:54px;font-size:19px;border-top:1px solid var(--hair)}
+  .nav-links a:first-child{border-top:0}
+  .nav-links a.ul::before,.nav-links a.ul::after{display:none}
+  .nav-links a[aria-current="page"]{color:var(--green)}
+  /* without JavaScript the menu button cannot open: the four links sit in a plain wrapped row under the wordmark */
+  html:not(.js) body{--nav:0px}
+  html:not(.js) .nav{position:relative;height:auto}
+  html:not(.js) .nav-in{flex-wrap:wrap;height:auto;padding-block:10px 4px;row-gap:0}
+  html:not(.js) .nav-links{display:flex;position:static;order:3;flex-direction:row;flex-wrap:wrap;width:100%;gap:0 20px;padding:0;border:0;background:none}
+  html:not(.js) .nav-links a{min-height:44px;font-size:16px;border:0}
+  html:not(.js) .nav-links a.ul::before,html:not(.js) .nav-links a.ul::after{display:block}
+}
+@media (max-width:959px) and (prefers-reduced-motion:no-preference){html.js .nav.open .nav-links{animation:menuIn .36s var(--ease-out) both}}
+@keyframes menuIn{from{opacity:0;transform:translate3d(0,-6px,0)}to{opacity:1;transform:none}}
+@media (max-width:759px){.wm{font-size:22px;gap:10px}}
+@media (max-width:559px){.nav-tog-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media (max-width:420px){.nav-in{gap:8px}.wm{font-size:20px;gap:8px}.nav .btn-s{padding:0 13px;font-size:15px}}
+
+/* this page: without JavaScript the header sits in the flow, so the quiz needs less room above it */
+@media (max-width:959px){html:not(.js) main{padding-top:clamp(28px,6vh,64px)}}
+
+/* ---------- links + buttons ---------- */
+.ul{position:relative;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.ul::before,.ul::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;transform-origin:left}
+.ul::before{background:var(--hair)}
+.ul::after{background:var(--green);transform:scaleX(0);transition:transform .5s var(--ease)}
+.ul:hover::after,.ul:focus-visible::after{transform:scaleX(1)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;
+  background:var(--green);color:#fff;text-decoration:none;font:500 17px/1 var(--sans);letter-spacing:.02em;border-radius:2px;white-space:nowrap;transition:background-color .3s var(--ease)}
+.btn:hover,.btn:active{background:var(--green-d)}
+.btn span{position:relative;display:inline-block;transition:transform .45s var(--ease)}
+.btn span::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.btn:hover span,.btn:focus-visible span{transform:translateX(2px)}
+.btn:hover span::after,.btn:focus-visible span::after{transform:scaleX(1)}
+.btn-s{min-height:44px;padding:0 18px;font-size:15.5px}
+.micro{font-size:17px;color:var(--ink2);margin-top:16px;text-wrap:balance}
+
+/* this page: the quiz's own buttons (real <button>s), the outline and disabled states, and the Back links */
+.btn{border:0;cursor:pointer}
+.btn-o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn-o:hover,.btn-o:active{background:var(--white)}
+.btn:disabled{background:#E4E4DF;color:#6F6F69;cursor:default}
+.btn:disabled span{transform:none!important}
+.btn:disabled span::after{transform:scaleX(0)!important}
+.back{background:none;border:0;cursor:pointer;font-size:17px}
+.back.ul{padding-inline:8px;margin-inline:-8px}
+.back.ul::before,.back.ul::after{left:8px;right:8px}
+
+/* ---------- page ---------- */
+main{display:block;min-height:100vh;min-height:100svh;padding-top:calc(var(--nav) + clamp(36px,8.5vh,104px))}
+.view{padding-top:clamp(40px,6.4vh,76px);padding-bottom:clamp(80px,12vh,136px)}
+@media (max-width:759px){main{padding-top:calc(var(--nav) + 34px)}.view{padding-top:38px}}
+
+/* ---------- the header: label row + the thread ---------- */
+.qh-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-height:17px}
+.qh-row .lab:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+html.js .qh-lab.swap{animation:fadeIn .5s var(--ease) both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* The thread. It comes in from the left edge of the page, as on the home page, and each answer draws it one tick further. */
+.thr{position:relative;height:20px;margin-top:14px}
+.thr>i{position:absolute;top:50%;display:block}
+.thr-lead{right:100%;width:100vw;height:1.25px;margin-top:-.625px;background:var(--ink);transform-origin:0 50%}
+.thr-track{left:0;right:0;height:1px;margin-top:-.5px;background:var(--hair)}
+.thr-fill{left:0;right:0;height:1.25px;margin-top:-.625px;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.thr-fill.gr{height:1.5px;margin-top:-.75px;background:var(--green-line);opacity:0}
+.thr-tk{left:calc(var(--i) * 100% / 15);width:1px;height:9px;margin:-4.5px 0 0 -.5px;background:var(--ink);opacity:.26}
+.thr-tk.on{opacity:1}
+.thr.done .thr-tk.on{background:var(--green-line)}
+.thr-dot{left:0;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--ink)}
+.thr-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green-line);opacity:0}
+.thr.done .thr-fill.gr,.thr.done .thr-dot::after{opacity:1}
+.thr.sealed .thr-dot{opacity:0}
+html.js .thr-fill,html.js .thr-dot{transition:transform .6s var(--ease),opacity .4s var(--ease)}
+html.js .thr-fill.gr,html.js .thr-dot::after{transition:transform .6s var(--ease),opacity .5s var(--ease) .15s}
+html.js .thr-tk{transition:opacity .45s var(--ease)}
+html.js .thr-tk.on{transition:opacity .45s var(--ease) .3s}
+html.js .thr.still *{transition:none!important}
+/* page-load: the thread draws in from the page edge and the dot rides its head */
+html.js .thr.boot .thr-lead{transform:scaleX(0)}
+html.js .thr.boot .thr-tk{opacity:0;transition:none}
+html.js .thr.boot.go .thr-lead{transform:none;transition:transform 1s var(--ease-io) .2s}
+html.js .thr.boot .thr-dot{opacity:0}
+html.js .thr.boot.go .thr-dot{opacity:1;transition:transform 1s var(--ease-io) .2s,opacity .25s var(--ease) .2s}
+html.js .thr.boot.go .thr-tk{opacity:.26;transition:opacity .6s var(--ease) calc(1.05s + var(--i) * 26ms)}
+
+/* the READY seal: the finished thread runs into it (as in the home page’s last section) */
+.seal{position:absolute;right:0;top:calc(50% - 38px);width:76px;height:76px;border:1.5px solid var(--green);border-radius:14px;
+  display:grid;place-items:center;background:var(--washi)}
+.seal span{font:700 11.5px/1 var(--sans);letter-spacing:.24em;color:var(--green);padding-left:.24em}
+.seal::after{content:"";position:absolute;inset:5px;border:1px solid var(--green);border-radius:9.5px;opacity:.55}
+html.js .seal{opacity:0;transform:scale(1.15)}
+html.js .seal.on{animation:stamp .12s cubic-bezier(.3,0,.2,1) forwards,bleed .6s var(--ease) .12s both}
+@keyframes stamp{from{opacity:.85;transform:scale(1.15)}to{opacity:.85;transform:scale(1)}}
+@keyframes bleed{from{opacity:.85;transform:scale(1)}to{opacity:1;transform:scale(1)}}
+@media (max-width:759px){.seal{width:60px;height:60px;top:calc(50% - 30px);border-radius:11px}.seal::after{inset:4px;border-radius:7.5px}.seal span{font-size:10px}}
+
+/* ---------- blur to sharp (a static blurred twin fades out; only opacity and transform move) ---------- */
+.bt{position:relative}
+.bt-b{position:absolute;left:0;right:0;top:0;filter:blur(7px);opacity:0;pointer-events:none;user-select:none}
+.bt-s{display:block}
+html.js .bt.go .bt-s{animation:btS .24s var(--ease) both}
+html.js .bt.go .bt-b{animation:btB .24s var(--ease) both}
+@keyframes btS{from{opacity:0;transform:translate3d(0,6px,0)}to{opacity:1;transform:none}}
+@keyframes btB{from{opacity:.85;transform:translate3d(0,6px,0)}to{opacity:0;transform:none}}
+.w{display:inline-block;position:relative}
+.w-b{position:absolute;left:0;top:0;filter:blur(7px);opacity:0;pointer-events:none;user-select:none;white-space:nowrap}
+html.js [data-words] .w-s{display:inline-block;opacity:0;transform:translate3d(0,8px,0)}
+html.js [data-words].in .w-s{animation:wS 1s var(--ease) calc(var(--i)*60ms) both}
+html.js [data-words].in .w-b{animation:wB .95s var(--ease) calc(var(--i)*60ms) both}
+html.js [data-words].done .w-s{animation:none;opacity:1;transform:none}
+html.js [data-words].done .w-b{animation:none;opacity:0}
+@keyframes wS{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
+@keyframes wB{0%{opacity:0;transform:translate3d(0,8px,0)}30%{opacity:.8}100%{opacity:0;transform:none}}
+html.js [data-r]{opacity:0;transform:translate3d(0,14px,0);transition:opacity .9s var(--ease) var(--d,0s),transform 1.1s var(--ease) var(--d,0s)}
+html.js [data-r].in{opacity:1;transform:none}
+
+/* ---------- intro ---------- */
+.intro-h{max-width:12em}
+.intro .lede{margin-top:clamp(24px,2.4vw,34px)}
+.acts{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.intro .acts{justify-content:flex-start;margin-top:clamp(36px,3.6vw,52px)}
+html:not(.js) #start{display:none}
+.nojs{display:block;margin-top:36px;padding-top:14px;border-top:1px solid var(--hair);font-size:17px;max-width:30em}
+.js-fail{display:none}
+html.js-failed .js-fail{display:block}
+
+/* ---------- a question ---------- */
+.q{border:0;padding:0;min-width:0}
+.q-t{max-width:19em}
+.opts{margin-top:clamp(30px,3.4vw,48px);border-top:1px solid var(--hair)}
+.opt{position:relative;isolation:isolate;display:flex;align-items:center;gap:20px;min-height:62px;padding:15px 0;border-bottom:1px solid var(--hair);cursor:pointer;line-height:1.4;-webkit-tap-highlight-color:transparent}
+.opt::before{content:"";position:absolute;z-index:-1;inset:-1px -18px -1px;background:var(--white);opacity:0;transition:opacity .3s var(--ease)}
+.opt:has(input:checked)::before{opacity:1}
+@media (hover:hover){.opt:hover::before{opacity:1}.opt:hover input{border-color:var(--ink)}}
+.opt input{appearance:none;-webkit-appearance:none;position:relative;flex:none;display:grid;place-items:center;width:22px;height:22px;margin:0;
+  border:1.25px solid var(--ink2);border-radius:50%;background:transparent;cursor:pointer}
+.opt input::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--green);transform:scale(0);transition:transform .3s var(--ease-out)}
+.opt input:checked{border-color:var(--green)}
+.opt input:checked::before{transform:scale(1)}
+.opt input:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@supports selector(:has(*)){
+  .opt input:focus-visible{outline:none}
+  .opt:has(input:focus-visible)::before{opacity:1;outline:2px solid var(--ink);outline-offset:-2px;border-radius:2px}
+}
+html.js .opts.go .opt{animation:optIn .22s var(--ease) .03s both}
+@keyframes optIn{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
+@media (min-width:760px){
+  .opts.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--rows,5),auto);grid-auto-flow:column;column-gap:clamp(36px,4vw,56px)}
+}
+/* Back and Next stay within reach when a long list runs below the fold */
+.q-acts{position:sticky;bottom:0;z-index:5;margin-top:clamp(28px,3vw,40px);padding:14px 0;padding-bottom:max(14px,env(safe-area-inset-bottom));background:var(--washi)}
+.q-acts::before{content:"";position:absolute;z-index:-1;inset:0 -20px;background:var(--washi)}
+.q-acts::after{content:"";position:absolute;left:-20px;right:-20px;top:0;height:1px;background:var(--hair);opacity:0;transition:opacity .3s var(--ease)}
+.q-acts.stuck::after{opacity:1}
+.q-end{height:1px}
+@media (max-width:759px){.q-acts .btn{min-width:58%}}
+
+/* ---------- details ---------- */
+.d-lede{margin-top:clamp(20px,2vw,28px)}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px var(--gap);margin-top:clamp(36px,3.6vw,52px)}
+.field label{display:block;font-size:17px;font-weight:500;line-height:1.3;margin-bottom:10px}
+.field label span{font-weight:400;color:var(--ink2)}
+.field input{display:block;width:100%;height:58px;padding:0 16px;font-size:19px;background:var(--white);border:1px solid var(--rule);border-radius:2px}
+.field input:hover{border-color:var(--ink2)}
+.field input:focus{outline:2px solid var(--ink);outline-offset:2px;border-color:var(--ink)}
+.hint{font-size:16px;color:var(--ink2);margin-top:8px;line-height:1.45}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.d-acts{margin-top:clamp(36px,3.6vw,48px)}
+.note{margin-top:24px;font-size:17px;line-height:1.5;color:var(--ink2);max-width:44em}
+@media (max-width:759px){.fields{grid-template-columns:minmax(0,1fr);gap:22px}.field input{font-size:17px;height:56px}.d-acts .btn{min-width:58%}.note{font-size:16px}}
+
+/* ---------- result ---------- */
+.r-top{display:grid;grid-template-columns:minmax(0,1fr);row-gap:28px}
+html.js .r-num.go .bt-s,html.js .r-num.go .bt-b{animation-duration:.7s}
+html.js #result.go .r-of,html.js #result.go .r-band,html.js #result.go .sent{animation:rise .9s var(--ease) both}
+html.js #result.go .r-of{animation-delay:.1s}
+html.js #result.go .r-band{animation-delay:.18s}
+html.js #result.go .sent{animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translate3d(0,12px,0)}to{opacity:1;transform:none}}
+.r-score{font:inherit}
+.r-num{display:block;font-family:var(--serif);font-weight:200;font-size:clamp(112px,15vw,216px);line-height:.84;letter-spacing:-.045em;
+  font-variant-numeric:lining-nums tabular-nums;margin-left:-.04em}
+.r-of{display:block;margin-top:clamp(12px,1.2vw,18px);font-size:17px;color:var(--ink2)}
+.r-band{padding-bottom:4px}
+.r-band .lede{margin-top:14px;max-width:26em}
+@media (min-width:900px){.r-top{grid-template-columns:auto minmax(0,1fr);column-gap:clamp(44px,5.4vw,84px);align-items:end}}
+.sent{margin-top:clamp(40px,4.4vw,60px);padding-top:22px;border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px}
+.sent-x{font-size:17px;line-height:1.55;color:var(--ink2);max-width:31em;flex:1 1 24em}
+.sent-t{font:350 clamp(22px,1.7vw,26px)/1.2 var(--serif);color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
+.sent--failed{border-top-color:var(--ink)}
+.bars{margin-top:clamp(64px,6.4vw,96px)}
+.bar{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr) 3.6em;align-items:center;column-gap:clamp(20px,2.4vw,36px);min-height:56px}
+.bar-l{font-size:17px;line-height:1.35}
+.bar-t{position:relative;height:1px;background:var(--hair)}
+.bar-t i{position:absolute;left:0;top:-.25px;height:1.5px;width:100%;background:var(--green-line);transform-origin:0 50%;transform:scaleX(var(--v))}
+.bar-p{text-align:right;font-size:clamp(22px,1.8vw,26px);line-height:1}
+html.js .bars .bar-t i{transform:scaleX(0);transition:transform 1.15s var(--ease-out) calc(var(--k) * 90ms + .1s)}
+html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
+@media (max-width:759px){
+  .bar{grid-template-columns:minmax(0,1fr) auto;row-gap:12px;min-height:0;padding-block:14px}
+  .bar-t{grid-column:1/-1;grid-row:2}
+}
+.r-sub{margin-top:clamp(80px,8vw,120px)}
+.gaps{margin-top:clamp(28px,3vw,44px)}
+.gaps li{display:grid;grid-template-columns:clamp(52px,5vw,76px) minmax(0,1fr);padding:26px 0 30px;border-top:1px solid var(--hair)}
+.gaps li:last-child{border-bottom:1px solid var(--hair)}
+.gn{font:500 12.5px/1 var(--sans);letter-spacing:.14em;color:var(--ink2);padding-top:.7em}
+.gaps h3{margin-bottom:10px}
+.gaps p:last-child{max-width:34em}
+.gaps-none{margin-top:24px}
+.r-next{background:var(--white);padding-block:clamp(72px,8vw,120px) clamp(84px,9vw,132px)}
+.r-next .lede{margin-top:20px;max-width:32em}
+.r-next .acts{justify-content:flex-start;margin-top:clamp(28px,3vw,40px)}
+#result{padding-bottom:0}
+#result>.g{padding-bottom:clamp(88px,9vw,136px)}
+
+/* ---------- footer ---------- */
+.foot{padding:60px 0 52px;border-top:1px solid var(--hair)}
+.foot .g{row-gap:36px;align-items:start}
+.foot .wm{font-size:24px}
+.foot-tag{margin-top:10px;color:var(--ink2);font-size:17px}
+.foot-links{display:grid;grid-template-columns:repeat(2,max-content);gap:0 36px}
+.foot-links a{font-size:16px;min-height:44px;justify-self:start}
+.foot-links a[aria-current="page"]::after{transform:scaleX(1)}
+.foot-mail{font-size:17px;color:var(--green)}
+.foot-fine{font-size:14px;color:var(--ink2);line-height:1.55}
+
+/* ---------- print: the result on paper ---------- */
+@media print{
+  body{background:#fff}
+  .nav,.foot,.skip,.acts,.q-acts,.sent .btn,.seal,.thr-lead{display:none!important}
+  main{padding-top:0;min-height:0}
+  .r-next{background:none;padding-block:24px 0}
+  html.js .bars .bar-t i{transform:scaleX(var(--v))!important}
+  .bt-b,.w-b{display:none!important}
+  .gaps li{break-inside:avoid}
+}
+
+/* ---------- reduced motion: every final state at once ---------- */
+@media (prefers-reduced-motion:reduce){
+  html.js *,html.js *::before,html.js *::after{transition:none!important;animation:none!important}
+  html.js [data-r],html.js [data-words] .w-s,html.js .bt-s,html.js .opt{opacity:1!important;transform:none!important}
+  html.js .w-b,html.js .bt-b{display:none!important}
+  html.js .thr.boot .thr-lead{transform:none}
+  html.js .thr.boot .thr-tk{opacity:.26}
+  html.js .thr-tk.on{opacity:1}
+  html.js .seal{opacity:1;transform:none}
+  html.js .bars .bar-t i{transform:scaleX(var(--v))}
+}
+</style>
 </head>
 <body>
-
-<header class="site-head">
-  <div class="wrap">
-    <a class="wordmark" href="index.html">Handover</a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="index.html#how">How it works</a>
-      <a href="deliver.html">What you get</a>
-      <a href="brokers.html">Brokers</a>
-      <a href="about.html">About</a>
-      <span class="site-nav__cta">
-        <a class="btn btn--quiet btn--small" href="mailto:contact@handoveradvisors.com?subject=Getting%20my%20business%20ready%20to%20sell">Contact</a>
-      </span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="wm" href="index.html" aria-label="Handover, home"><span class="wm-w"><span class="wm-h">H</span>andover</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a class="ul" href="index.html#how">How it works</a>
+      <a class="ul" href="index.html#get">What you get</a>
+      <a class="ul" href="brokers.html">Brokers</a>
+      <a class="ul" href="index.html#about">About</a>
     </nav>
+    <button class="nav-tog" id="navTog" type="button" aria-expanded="false" aria-controls="navLinks"><span class="nav-tog-i" aria-hidden="true"></span><span class="nav-tog-t">Menu</span></button>
+    <a class="btn btn-s btn-o" href="score.html" aria-current="page"><span>Get your score</span></a>
   </div>
 </header>
 
-<main class="score-main">
-  <div class="wrap">
-
-    <section id="intro">
-      <p class="eyebrow">Readiness score</p>
-      <h1>How ready is your business to sell?</h1>
-      <p class="lede" style="margin-top:28px">Fourteen questions, about ten minutes. You’ll see your score straight away, and we’ll email you a full written report. Nothing you enter is shared with anyone.</p>
-      <div class="actions"><button class="btn" id="start" type="button">Start</button></div>
-      <noscript><p class="error">This page needs JavaScript switched on in your browser.</p></noscript>
-    </section>
-
-    <section id="quiz" hidden>
-      <div class="q__meta">
-        <p class="eyebrow" id="q-area"></p>
-        <p class="eyebrow" id="q-count"></p>
+<main id="main" tabindex="-1">
+  <div class="g qh">
+    <div class="col">
+      <div class="qh-row">
+        <p class="lab qh-lab" id="qLab">Readiness score</p>
+        <p class="lab" id="qCount"></p>
       </div>
-      <div class="progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress__bar" id="q-bar"></div></div>
-      <form id="q-form" novalidate>
-        <fieldset class="q" aria-labelledby="q-text">
-          <div class="q__stick">
-            <p class="q__count" id="q-count2" aria-hidden="true"></p>
-            <h2 class="q__text" id="q-text" tabindex="-1"></h2>
-          </div>
-          <div class="q__options" id="q-options"></div>
-        </fieldset>
-        <div class="q__nav">
-          <button class="btn btn--quiet" id="back" type="button">Back</button>
-          <button class="btn" id="next" type="submit" disabled>Next</button>
-        </div>
-      </form>
-    </section>
+      <div class="thr" id="thr" aria-hidden="true">
+        <i class="thr-lead"></i><i class="thr-track"></i>
+        <i class="thr-tk" style="--i:0"></i><i class="thr-tk" style="--i:1"></i><i class="thr-tk" style="--i:2"></i><i class="thr-tk" style="--i:3"></i><i class="thr-tk" style="--i:4"></i><i class="thr-tk" style="--i:5"></i><i class="thr-tk" style="--i:6"></i><i class="thr-tk" style="--i:7"></i><i class="thr-tk" style="--i:8"></i><i class="thr-tk" style="--i:9"></i><i class="thr-tk" style="--i:10"></i><i class="thr-tk" style="--i:11"></i><i class="thr-tk" style="--i:12"></i><i class="thr-tk" style="--i:13"></i><i class="thr-tk" style="--i:14"></i><i class="thr-tk" style="--i:15"></i>
+        <i class="thr-fill"></i><i class="thr-fill gr"></i><i class="thr-dot"></i>
+        <div class="seal" id="seal" hidden><span>READY</span></div>
+      </div>
+    </div>
+  </div>
 
-    <section id="details" hidden>
-      <p class="eyebrow">Last step</p>
-      <h1 id="d-title" tabindex="-1">Where should we send your report?</h1>
-      <p class="lede" style="margin-top:20px">Your score is ready. Tell us where to email the full written report, with what to do about each gap. It arrives within a few minutes.</p>
-      <form id="lead" style="margin-top:8px">
+  <!-- INTRO -->
+  <section class="view intro g" id="intro" aria-labelledby="introH">
+    <div class="col">
+      <h1 class="d-l intro-h" id="introH" tabindex="-1" data-words>How ready is your business to sell?</h1>
+      <p class="lede" data-r style="--d:.45s">Fourteen questions, about ten minutes. You’ll see your score straight away, and we’ll email you a full written report. Nothing you enter is shared with anyone.</p>
+      <div class="acts" data-r style="--d:.6s"><button class="btn" id="start" type="button"><span>Start</span></button></div>
+      <noscript><p class="nojs">This page needs JavaScript switched on in your browser.</p></noscript>
+      <p class="nojs js-fail">This page needs JavaScript switched on in your browser.</p>
+    </div>
+  </section>
+
+  <!-- ONE QUESTION AT A TIME -->
+  <section class="view g" id="quiz" hidden>
+    <form class="col" id="qForm" novalidate>
+      <fieldset class="q" aria-labelledby="qText" aria-describedby="qCount">
+        <h1 class="q-t bt" id="qText" tabindex="-1"></h1>
+        <div class="opts" id="qOpts"></div>
+      </fieldset>
+      <div class="acts q-acts" id="qActs">
+        <button class="back ul" id="back" type="button">Back</button>
+        <button class="btn" id="next" type="submit" disabled><span id="nextL">Next</span></button>
+      </div>
+      <div class="q-end" id="qEnd"></div>
+    </form>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="view g" id="details" hidden>
+    <div class="col">
+      <h1 class="q-t" id="dTitle" tabindex="-1">Where should we send your report?</h1>
+      <p class="lede d-lede">Your score is ready. Tell us where to email the full written report, with what to do about each gap. It arrives within a few minutes.</p>
+      <form id="lead">
         <div class="fields">
-          <div class="field"><label for="f-name">First name</label><input id="f-name" name="name" autocomplete="given-name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f-phone">Phone <span>(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="field"><label for="f-business">Business name <span>(optional)</span></label><input id="f-business" name="business" autocomplete="organization" aria-describedby="f-business-hint"><p class="hint" id="f-business-hint">Leave blank if you’d rather not say yet.</p></div>
+          <div class="field"><label for="fName">First name</label><input id="fName" name="name" autocomplete="given-name" required></div>
+          <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="fPhone">Phone <span>(optional)</span></label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="fBiz">Business name <span>(optional)</span></label><input id="fBiz" name="business" autocomplete="organization" aria-describedby="fBizHint"><p class="hint" id="fBizHint">Leave blank if you’d rather not say yet.</p></div>
         </div>
         <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <div class="q__nav">
-          <button class="btn btn--quiet" id="d-back" type="button">Back</button>
-          <button class="btn" id="send" type="submit">Show my score</button>
+        <div class="acts d-acts">
+          <button class="back ul" id="dBack" type="button">Back</button>
+          <button class="btn" id="send" type="submit"><span>Show my score</span></button>
         </div>
-        <p class="note" style="margin-top:18px">Confidential. We never contact anyone but you, and we don’t add you to any list.</p>
-        <p class="error" id="lead-error" role="alert" hidden></p>
+        <p class="note">Confidential. We never contact anyone but you, and we don’t add you to any list.</p>
       </form>
-    </section>
+    </div>
+  </section>
 
-    <section id="result" class="result" hidden>
-      <p class="eyebrow">Your readiness score</p>
-      <p class="result__score" id="r-total" tabindex="-1"></p>
-      <h2 id="r-band"></h2>
-      <p class="lede" id="r-summary"></p>
-      <div class="sent" id="sent">
-        <p class="sent__title" id="sent-title">Your full report is on its way</p>
-        <p id="sent-text"></p>
-        <div class="actions" style="margin-top:20px"><a class="btn btn--quiet" id="open-report" href="#">Open the full report now</a></div>
+  <!-- RESULT -->
+  <section class="view" id="result" hidden>
+    <div class="g">
+      <div class="col">
+        <div class="r-top">
+          <h1 class="r-score" id="rTotal" tabindex="-1"><span class="sr" id="rSr"></span><span class="r-num bt" id="rNum" aria-hidden="true"></span><span class="r-of" aria-hidden="true">out of 100</span></h1>
+          <div class="r-band">
+            <h2 class="d-m" id="rBand"></h2>
+            <p class="lede" id="rSummary"></p>
+          </div>
+        </div>
+        <div class="sent" id="sent">
+          <div class="sent-x"><p class="sent-t" id="sentTitle" hidden>Your full report is on its way</p><p id="sentText"></p></div>
+          <a class="btn btn-o" id="openReport" href="https://handoveradvisors.com/report.html#"><span>Open the full report now</span></a>
+        </div>
+        <ul class="bars" id="rBars" aria-label="Your score in each area"></ul>
+        <h2 class="d-m r-sub">Where you’d gain the most</h2>
+        <ol class="gaps" id="rGaps"></ol>
+        <p class="lede gaps-none" id="rNone" hidden>No weak areas. That’s rare.</p>
       </div>
-      <ul class="bars" id="r-bars"></ul>
-      <h2 class="sub">Where you’d gain the most</h2>
-      <ol class="gaps" id="r-gaps" style="margin-top:28px"></ol>
-      <div class="report" id="report">
-        <h2 class="sub">What happens next</h2>
-        <p style="margin-top:14px">Read the report, then, if you’d like, book a free 45-minute call. We’ll go through it together and give you an indicative range for what the business could be worth today, and with the gaps closed. No obligation.</p>
-        <div class="actions"><a class="btn" href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review">Book your free review</a></div>
+    </div>
+    <div class="r-next">
+      <div class="g">
+        <div class="col">
+          <h2 class="d-m">What happens next</h2>
+          <p class="lede">Read the report, then, if you’d like, book a free 45-minute call. We’ll go through it together and give you an indicative range for what the business could be worth today, and with the gaps closed. No obligation.</p>
+          <div class="acts"><a class="btn" href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review"><span>Book your free review</span></a></div>
+        </div>
       </div>
-    </section>
-
-  </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <a class="wordmark" href="index.html">Handover</a>
-    <div>
-      <p>We get businesses ready to sell.</p>
-      <nav aria-label="Footer">
-        <a href="guides/">Guides</a>
-        <a href="faq.html">FAQ</a>
-        <a href="deliver.html">What you get</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="brokers.html">For brokers</a>
-        <a href="about.html">About</a>
-      </nav>
-      <p>Everything you tell us is confidential. We never contact your staff, customers or suppliers.</p>
-      <p>© 2026 Handover</p>
+<footer class="foot">
+  <div class="g">
+    <div style="--c:1/5;--t:1/7">
+      <a class="wm" href="index.html"><span class="wm-w"><span class="wm-h">H</span>andover</span></a>
+      <p class="foot-tag">We get businesses ready to sell.</p>
+    </div>
+    <nav class="foot-links" aria-label="More from Handover" style="--c:6/9;--t:7/13">
+      <a class="ul" href="index.html#get">What you get</a>
+      <a class="ul" href="brokers.html">Brokers</a>
+      <a class="ul" href="faq.html">FAQ</a>
+      <a class="ul" href="https://handoveradvisors.com/guides/">Guides</a>
+      <a class="ul" href="index.html#about">About</a>
+      <a class="ul" href="https://handoveradvisors.com/privacy.html">Privacy</a>
+    </nav>
+    <div style="--c:10/13;--t:1/13">
+      <a class="ul foot-mail" href="mailto:contact@handoveradvisors.com">contact@handoveradvisors.com</a>
+      <p class="foot-fine" style="margin-top:14px">We are not brokers, and we are not tax or legal advisers. © 2026 Handover.</p>
     </div>
   </div>
 </footer>
 
-<script type="module" src="js/score-ui.js?v=3"></script>
+<script>
+(function(){
+'use strict';
+
+/* =====================================================================
+   The score, ported from the live site without changes:
+   js/questions.js (AREAS, QUESTIONS, PROFILE_QUESTIONS), js/scoring.js
+   (BANDS, isComplete, score) and js/report.js (encodeAnswers).
+   ===================================================================== */
+const AREAS = [
+  { key: 'financials', label: 'Financial records', weight: 30,
+    advice: 'Buyers and their banks price what they can verify. Three clean years of statements, with personal expenses separated out, is the single biggest lift to price and to whether a sale closes.' },
+  { key: 'owner', label: 'Dependence on you', weight: 25,
+    advice: 'If the business cannot run without you, a buyer is buying a job, and pays less for it. Moving relationships and daily decisions to your team, even partly, changes what it is worth.' },
+  { key: 'customers', label: 'Customers', weight: 15,
+    advice: 'One large customer, or revenue that has to be won again every month, reads as risk. Showing who buys, how often and for how long turns it into a strength.' },
+  { key: 'operations', label: 'Operations and paperwork', weight: 15,
+    advice: 'Written-down processes and leases, contracts and licenses that transfer cleanly are what let a sale survive the buyer’s checks.' },
+  { key: 'story', label: 'Your story and your price', weight: 15,
+    advice: 'A price needs evidence behind it, and a buyer needs a clear reason to want the business and a believable path to growth. Listings that stall are often missing one or both.' },
+];
+
+const q = (id, area, text, labels) => ({
+  id, area, text,
+  options: labels.map((label, i) => ({ label, points: 3 - i })),
+});
+
+const QUESTIONS = [
+  q('f1', 'financials', 'Who prepares your financial statements?', [
+    'An outside accountant, every year',
+    'A bookkeeper, and an accountant does the taxes',
+    'I do them myself',
+    'We mostly just have tax returns',
+  ]),
+  q('f2', 'financials', 'How quickly could you hand over three years of profit-and-loss statements and tax returns?', [
+    'This week',
+    'Within a month',
+    'More than a month',
+    'I’m not sure they all exist',
+  ]),
+  q('f3', 'financials', 'Do personal or family expenses run through the business?', [
+    'No',
+    'A few, and I could list them',
+    'Quite a few',
+    'They would be hard to separate',
+  ]),
+  q('f4', 'financials', 'What has revenue done over the last three years?', [
+    'Grown',
+    'Held steady',
+    'Gone up and down',
+    'Declined',
+  ]),
+  q('o1', 'owner', 'If you were away for a month, what would happen?', [
+    'It would run fine',
+    'It would slow down but manage',
+    'Problems would pile up',
+    'It would stop',
+  ]),
+  q('o2', 'owner', 'Who holds the relationships with your key customers and suppliers?', [
+    'Mostly my team',
+    'My team and I share them',
+    'Mostly me',
+    'All me',
+  ]),
+  q('o3', 'owner', 'Is there someone who could run the business day to day?', [
+    'Yes, and they already do',
+    'Yes, with some training',
+    'Maybe',
+    'No',
+  ]),
+  q('c1', 'customers', 'How much of your revenue comes from your single largest customer?', [
+    'Under 10%',
+    '10% to 20%',
+    '20% to 40%',
+    'Over 40%',
+  ]),
+  q('c2', 'customers', 'How much of your revenue is repeat business or under contract?', [
+    'Most of it',
+    'About half',
+    'Some',
+    'Almost none',
+  ]),
+  q('c3', 'customers', 'What records do you keep on who buys, how much and how often?', [
+    'It’s all in a system',
+    'Spreadsheets',
+    'Invoices only',
+    'It’s in my head',
+  ]),
+  q('p1', 'operations', 'How much of how the business runs is written down?', [
+    'Most of it',
+    'Some of it',
+    'Very little',
+    'None of it',
+  ]),
+  q('p2', 'operations', 'Are your lease(s), contracts, licenses and permits current, and could they pass to a new owner?', [
+    'Yes, I’ve checked',
+    'I think so',
+    'I’m not sure',
+    'There are known problems',
+  ]),
+  q('s1', 'story', 'How did you arrive at the price you expect?', [
+    'A professional valuation or a broker’s opinion',
+    'Prices I’ve seen for businesses like mine',
+    'I don’t have a number yet',
+    'It’s what I need to retire',
+  ]),
+  q('s2', 'story', 'Could you explain in two minutes why a buyer should want your business, and where its growth would come from?', [
+    'Yes, with numbers',
+    'Yes, roughly',
+    'I’d struggle',
+    'I’ve never thought about it',
+  ]),
+];
+
+const PROFILE_QUESTIONS = [
+  { id: 'industry', text: 'What kind of business is it?', options: [
+    'Home and trade services', 'Manufacturing', 'Distribution or wholesale',
+    'Retail', 'Restaurant or food', 'Healthcare or wellness',
+    'Professional services', 'Automotive', 'Construction', 'Something else',
+  ] },
+  { id: 'revenue', text: 'Roughly what is its yearly revenue?', options: [
+    'Under $500,000', '$500,000 to $1 million', '$1 million to $3 million',
+    '$3 million to $10 million', 'Over $10 million',
+  ] },
+];
+
+const BANDS = [
+  { min: 85, key: 'ready', label: 'Ready',
+    summary: 'Your business would stand up well to a buyer’s checks. The work now is presentation and timing.' },
+  { min: 65, key: 'nearly-ready', label: 'Nearly ready',
+    summary: 'The foundations are there. A few specific gaps are likely to cost you on price or slow a sale down.' },
+  { min: 40, key: 'needs-work', label: 'Needs work',
+    summary: 'A buyer would find real problems today. Most of them can be fixed in a few months, before you go to market.' },
+  { min: 0, key: 'not-ready', label: 'Not ready yet',
+    summary: 'Listing now would most likely end without a sale. The good news is that the causes are known and fixable.' },
+];
+
+function isComplete(answers) {
+  return QUESTIONS.every((q) => Number.isInteger(answers[q.id])
+    && answers[q.id] >= 0 && answers[q.id] < q.options.length);
+}
+
+function score(answers) {
+  if (!isComplete(answers)) throw new Error('incomplete');
+
+  const areas = AREAS.map((area) => {
+    const qs = QUESTIONS.filter((q) => q.area === area.key);
+    const got = qs.reduce((s, q) => s + q.options[answers[q.id]].points, 0);
+    const fraction = got / (qs.length * 3);
+    return { ...area, fraction, percent: Math.round(fraction * 100) };
+  });
+
+  const total = Math.round(areas.reduce((s, a) => s + a.fraction * a.weight, 0));
+  const { min, ...band } = BANDS.find((b) => total >= b.min);
+
+  const gaps = areas
+    .filter((a) => a.fraction < 1)
+    .sort((a, b) => a.fraction - b.fraction || b.weight - a.weight)
+    .slice(0, 3)
+    .map(({ key, label, advice }) => ({ key, label, advice }));
+
+  return {
+    total,
+    band,
+    areas: areas.map(({ key, label, percent }) => ({ key, label, percent })),
+    gaps,
+  };
+}
+
+// Answers travel in the report link as "industry-revenue-14 digits". No personal details.
+function encodeAnswers(chosen) {
+  return `${chosen.industry}-${chosen.revenue}-${QUESTIONS.map((q) => chosen[q.id]).join('')}`;
+}
+
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzwzdBy7936HdI_QqQXErTR6wUiRWx6wbeM5HrMwly4KgInqEXYO-TZsZvXnPcFJ1uNwA/exec'; // Live: the Apps Script URL from site/js/config.js
+
+/* =====================================================================
+   The page
+   ===================================================================== */
+var d = document, de = d.documentElement, win = window;
+var $ = function (id) { return d.getElementById(id); };
+var mqRM = win.matchMedia('(prefers-reduced-motion: reduce)');
+var rm = mqRM.matches;
+var areaLabel = Object.fromEntries(AREAS.map((a) => [a.key, a.label]));
+
+// One flat list of screens: profile questions first, then the scored ones.
+const screens = [
+  ...PROFILE_QUESTIONS.map((p) => ({
+    id: p.id, eyebrow: 'About the business', text: p.text, labels: p.options,
+  })),
+  ...QUESTIONS.map((q) => ({
+    id: q.id, eyebrow: areaLabel[q.area], text: q.text, labels: q.options.map((o) => o.label),
+  })),
+];
+var N = screens.length; // 16
+
+const chosen = {}; // screen id -> option index. Held in memory only.
+let at = 0;
+let result = null;
+let leadSent = null; // promise for the background send
+var view = 'intro';
+
+var nav = $('nav'), navScore = nav.querySelector('.btn-s');
+var qLab = $('qLab'), qCount = $('qCount'), thr = $('thr'), seal = $('seal');
+var lead = thr.querySelector('.thr-lead'), fills = thr.querySelectorAll('.thr-fill'), dot = thr.querySelector('.thr-dot');
+var ticks = Array.prototype.slice.call(thr.querySelectorAll('.thr-tk'));
+var introH = $('introH'), qText = $('qText'), qOpts = $('qOpts'), nextBtn = $('next'), nextL = $('nextL');
+var dTitle = $('dTitle'), leadForm = $('lead');
+var rTotal = $('rTotal'), rNum = $('rNum'), rBars = $('rBars');
+
+/* ---------- blur to sharp ---------- */
+function blurPair(host, text) {
+  var b = d.createElement('span'); b.className = 'bt-b'; b.setAttribute('aria-hidden', 'true'); b.textContent = text;
+  var s = d.createElement('span'); s.className = 'bt-s'; s.textContent = text;
+  host.replaceChildren(b, s);
+  host.classList.remove('go');
+  if (!rm) { void host.offsetWidth; host.classList.add('go'); }
+}
+function splitWords(el) {
+  var words = el.textContent.trim().split(/\s+/), frag = d.createDocumentFragment();
+  words.forEach(function (w, i) {
+    if (i) frag.appendChild(d.createTextNode(' '));
+    var o = d.createElement('span'); o.className = 'w'; o.style.setProperty('--i', i);
+    var b = d.createElement('span'); b.className = 'w-b'; b.setAttribute('aria-hidden', 'true'); b.textContent = w;
+    var s = d.createElement('span'); s.className = 'w-s'; s.textContent = w;
+    o.appendChild(b); o.appendChild(s); frag.appendChild(o);
+  });
+  el.textContent = ''; el.appendChild(frag);
+}
+
+/* ---------- the thread ---------- */
+var W = 0, L0 = 0, prog = 0, booting = false;
+function measure() {
+  var r = thr.getBoundingClientRect();
+  W = r.width; L0 = Math.max(0, r.left);
+  lead.style.width = L0 + 'px';
+  // ticks on whole pixels, so every one is equally crisp
+  ticks.forEach(function (t, i) { t.style.left = Math.round(i * W / (N - 1)) + 'px'; });
+  if (!booting) place();
+}
+function place() {
+  var s = 'scaleX(' + prog.toFixed(4) + ')';
+  fills[0].style.transform = s; fills[1].style.transform = s;
+  dot.style.transform = 'translate3d(' + Math.round(prog * W) + 'px,0,0)';
+}
+// p: 0..1 along the column; reached: index of the last tick reached; done: the thread turns green
+function setThread(p, reached, done) {
+  prog = p;
+  ticks.forEach(function (t, i) { t.classList.toggle('on', i <= reached); });
+  thr.classList.toggle('done', !!done);
+  place();
+}
+function boot() {
+  if (rm) return;
+  booting = true;
+  thr.classList.add('still', 'boot');
+  dot.style.transform = 'translate3d(' + (-L0).toFixed(1) + 'px,0,0)';
+  void thr.offsetWidth;
+  thr.classList.remove('still');
+  win.requestAnimationFrame(function () {
+    thr.classList.add('go');
+    dot.style.transform = 'translate3d(0,0,0)';
+  });
+  setTimeout(function () { thr.classList.remove('boot', 'go'); booting = false; place(); }, 1900);
+}
+
+/* ---------- header ---------- */
+function setHead(label, count) {
+  if (qLab.textContent !== label) {
+    qLab.textContent = label;
+    if (!rm) { qLab.classList.remove('swap'); void qLab.offsetWidth; qLab.classList.add('swap'); }
+  }
+  qCount.textContent = count || '';
+}
+
+/* ---------- views ---------- */
+function setView(v) {
+  view = v;
+  ['intro', 'quiz', 'details', 'result'].forEach(function (id) { $(id).hidden = id !== v; });
+  de.setAttribute('data-view', v);
+  var sealed = v === 'result' && result && result.band.key === 'ready';
+  if (!sealed) { seal.hidden = true; seal.classList.remove('on'); thr.classList.remove('sealed'); }
+}
+// a new screen starts at the top at once: no smooth scroll under the blur-to-sharp
+function toTop() {
+  if (win.pageYOffset < 1) return;
+  try { win.scrollTo({ top: 0, left: 0, behavior: 'instant' }); } catch (e) {
+    var sb = de.style.scrollBehavior; de.style.scrollBehavior = 'auto';
+    void getComputedStyle(de).scrollBehavior; // apply it before scrolling
+    win.scrollTo(0, 0);
+    de.style.scrollBehavior = sb;
+  }
+  if (win.pageYOffset > 0) { // an engine that ignored 'instant'
+    de.style.scrollBehavior = 'auto'; void getComputedStyle(de).scrollBehavior; win.scrollTo(0, 0); de.style.scrollBehavior = '';
+  }
+}
+function focusEl(el) { try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); } }
+
+function renderQuestion() {
+  const s = screens[at];
+  setHead(s.eyebrow, `${at + 1} of ${screens.length}`);
+  setThread(at / (N - 1), at, at === N - 1);
+  blurPair(qText, s.text);
+
+  const box = qOpts;
+  box.replaceChildren();
+  s.labels.forEach((text, i) => {
+    const label = d.createElement('label');
+    label.className = 'opt';
+    const input = d.createElement('input');
+    input.type = 'radio';
+    input.name = 'answer';
+    input.value = String(i);
+    input.checked = chosen[s.id] === i;
+    input.addEventListener('change', () => {
+      chosen[s.id] = i;
+      nextBtn.disabled = false;
+    });
+    const span = d.createElement('span');
+    span.textContent = text;
+    label.append(input, span);
+    box.append(label);
+  });
+  box.classList.toggle('cols', s.labels.length > 6);
+  box.style.setProperty('--rows', String(Math.ceil(s.labels.length / 2)));
+  box.classList.remove('go');
+  if (!rm) { void box.offsetWidth; box.classList.add('go'); }
+
+  nextBtn.disabled = !(s.id in chosen);
+  nextL.textContent = at === screens.length - 1 ? 'See my score' : 'Next';
+}
+
+function render(v) {
+  setView(v);
+  if (v === 'intro') {
+    setHead('Readiness score', '');
+    setThread(0, -1, false);
+    toTop(); focusEl(introH);
+  } else if (v === 'quiz') {
+    renderQuestion();
+    toTop(); focusEl(qText); watchEnd();
+  } else if (v === 'details') {
+    setHead('Last step', '');
+    setThread(1, N - 1, true);
+    toTop(); focusEl(dTitle);
+  } else if (v === 'result') {
+    setHead('Your readiness score', '');
+    setThread(1, N - 1, true);
+    showResult();
+    toTop(); focusEl(rTotal);
+  }
+}
+
+/* ---------- history: the browser’s Back button steps back through the questions ---------- */
+var H = false, hIdx = 0, ignorePop = false;
+try { history.replaceState({ hv: 1, idx: 0, v: 'intro', at: 0 }, ''); H = true; } catch (e) { H = false; }
+function go(v) {
+  render(v);
+  if (!H) return;
+  try { hIdx += 1; history.pushState({ hv: 1, idx: hIdx, v: v, at: at }, ''); } catch (e) { H = false; }
+}
+function firstOpen() { for (var i = 0; i < N; i++) if (!(screens[i].id in chosen)) return i; return N; }
+win.addEventListener('popstate', function (e) {
+  var s = e.state;
+  if (ignorePop) { ignorePop = false; if (s && s.hv) hIdx = s.idx; return; }
+  if (!s || !s.hv) return;
+  hIdx = s.idx;
+  var v = s.v, first = firstOpen(), shown = v;
+  if (v === 'quiz') { at = Math.max(0, Math.min(s.at | 0, first, N - 1)); }
+  else if ((v === 'details' || v === 'result') && first < N) { at = first; shown = 'quiz'; }
+  else if (v === 'result' && !result) { shown = 'details'; }
+  render(shown);
+  if (shown !== v || (v === 'quiz' && at !== s.at)) {
+    try { history.replaceState({ hv: 1, idx: hIdx, v: shown, at: at }, ''); } catch (err) {}
+  }
+});
+function stepBack() {
+  if (view === 'quiz') { if (at === 0) render('intro'); else { at -= 1; render('quiz'); } }
+  else if (view === 'details') { at = N - 1; render('quiz'); }
+  else return;
+  if (H && history.state && history.state.hv && history.state.idx > 0) { ignorePop = true; history.back(); }
+}
+
+/* ---------- flow ---------- */
+$('start').addEventListener('click', () => { at = 0; go('quiz'); });
+$('back').addEventListener('click', stepBack);
+$('dBack').addEventListener('click', stepBack);
+
+function goNext() {
+  if (!(screens[at].id in chosen)) return;
+  if (at === screens.length - 1) { go('details'); return; }
+  at += 1;
+  go('quiz');
+}
+$('qForm').addEventListener('submit', (e) => { e.preventDefault(); goNext(); });
+
+// Enter goes on; keys 1–9 (and 0 for a tenth) choose an answer.
+d.addEventListener('keydown', function (e) {
+  if (view !== 'quiz' || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+  var t = e.target, tag = t && t.tagName;
+  if (nav.contains(t) || (tag === 'INPUT' && t.type !== 'radio') || tag === 'TEXTAREA' || tag === 'SELECT') return;
+  if (e.key === 'Enter') {
+    if (tag === 'BUTTON' || tag === 'A') return;
+    e.preventDefault(); goNext(); return;
+  }
+  if (/^[0-9]$/.test(e.key) && !e.shiftKey) {
+    var n = e.key === '0' ? 10 : +e.key, inputs = qOpts.querySelectorAll('input');
+    if (n > inputs.length) return;
+    var inp = inputs[n - 1];
+    e.preventDefault();
+    if (!inp.checked) { inp.checked = true; inp.dispatchEvent(new Event('change', { bubbles: true })); }
+    inp.focus();
+  }
+});
+
+/* ---------- result ---------- */
+function reportLink() {
+  return `https://handoveradvisors.com/report.html#${encodeAnswers(chosen)}`;
+}
+
+function renderResult() {
+  const answers = Object.fromEntries(QUESTIONS.map((q) => [q.id, chosen[q.id]]));
+  result = score(answers);
+
+  $('rSr').textContent = `Your score is ${result.total} out of 100.`;
+  rNum.dataset.v = String(result.total);
+  $('rBand').textContent = result.band.label;
+  $('rSummary').textContent = result.band.summary;
+
+  rBars.classList.remove('in');
+  rBars.replaceChildren(...result.areas.map((a, k) => {
+    const li = d.createElement('li');
+    li.className = 'bar';
+    const name = d.createElement('span');
+    name.className = 'bar-l';
+    name.textContent = a.label;
+    const track = d.createElement('span');
+    track.className = 'bar-t';
+    track.setAttribute('aria-hidden', 'true');
+    const fill = d.createElement('i');
+    fill.style.setProperty('--v', String(a.percent / 100));
+    fill.style.setProperty('--k', String(k));
+    track.append(fill);
+    const pct = d.createElement('span');
+    pct.className = 'bar-p num';
+    pct.textContent = `${a.percent}%`;
+    li.append(name, track, pct);
+    return li;
+  }));
+
+  const gaps = $('rGaps');
+  $('rNone').hidden = result.gaps.length !== 0;
+  gaps.hidden = result.gaps.length === 0;
+  gaps.replaceChildren(...result.gaps.map((g, i) => {
+    const li = d.createElement('li');
+    const n = d.createElement('p');
+    n.className = 'gn';
+    n.setAttribute('aria-hidden', 'true');
+    n.textContent = `0${i + 1}`;
+    const body = d.createElement('div');
+    const h = d.createElement('h3');
+    h.className = 'd-s';
+    h.textContent = g.label;
+    const p = d.createElement('p');
+    p.textContent = g.advice;
+    body.append(h, p);
+    li.append(n, body);
+    return li;
+  }));
+
+  $('openReport').href = reportLink();
+}
+
+var barsIO = ('IntersectionObserver' in win) ? new IntersectionObserver(function (es) {
+  es.forEach(function (e) { if (e.isIntersecting) { rBars.classList.add('in'); barsIO.unobserve(rBars); } });
+}, { rootMargin: '0px 0px -12% 0px' }) : null;
+var sealT = 0;
+function showResult() {
+  blurPair(rNum, rNum.dataset.v || '');
+  var res = $('result'); res.classList.remove('go');
+  if (!rm) { void res.offsetWidth; res.classList.add('go'); }
+  if (rm || !barsIO) rBars.classList.add('in'); else if (!rBars.classList.contains('in')) barsIO.observe(rBars);
+  clearTimeout(sealT);
+  var ready = result && result.band.key === 'ready';
+  seal.hidden = !ready; seal.classList.remove('on'); thr.classList.remove('sealed');
+  if (ready) {
+    var stamp = function () { seal.classList.add('on'); thr.classList.add('sealed'); };
+    if (rm) stamp(); else sealT = setTimeout(stamp, 700);
+  }
+}
+
+/* ---------- sending the lead (live code; with no endpoint nothing is sent) ---------- */
+// Flat, readable fields: this is what lands in our inbox and in the sheet.
+function payload(form) {
+  const data = new FormData(form);
+  const profile = (id) => PROFILE_QUESTIONS.find((p) => p.id === id).options[chosen[id]];
+  const name = data.get('name').trim();
+  const fields = {
+    _subject: `Readiness score ${result.total}: ${name} (${profile('industry')})`,
+    Name: name,
+    Email: data.get('email').trim(),
+    Phone: data.get('phone').trim() || 'Not given',
+    Business: data.get('business').trim() || 'Not given',
+    Industry: profile('industry'),
+    Revenue: profile('revenue'),
+    Score: `${result.total} out of 100 (${result.band.label})`,
+    'Biggest gaps': result.gaps.map((g) => g.label).join(', ') || 'None',
+    'Full report': reportLink(),
+  };
+  for (const a of result.areas) fields[`Area: ${a.label}`] = `${a.percent}%`;
+  for (const q of QUESTIONS) fields[q.text] = q.options[chosen[q.id]].label;
+  return fields;
+}
+
+function sendLead(fields) {
+  if (!FORM_ENDPOINT) return Promise.reject(new Error('not configured'));
+  // A Google Apps Script endpoint only accepts a "simple" request, so the JSON goes as plain text.
+  const google = FORM_ENDPOINT.includes('script.google.com');
+  return fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: google
+      ? { 'Content-Type': 'text/plain;charset=utf-8' }
+      : { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(fields),
+  }).then(async (res) => {
+    if (!res.ok) throw new Error(String(res.status));
+    if (google && !(await res.json()).ok) throw new Error('rejected');
+  });
+}
+
+leadForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  if (form.elements.website.value) return; // honeypot
+  if (!form.reportValidity()) return;
+  if (firstOpen() < N) { at = firstOpen(); go('quiz'); return; }
+
+  renderResult();
+  const fields = payload(form);
+  const email = fields.Email;
+  const title = $('sentTitle'), text = $('sentText');
+  $('sent').classList.remove('sent--failed');
+
+  if (!FORM_ENDPOINT) {
+    // Prototype: nothing is sent, and there is no failure state to show.
+    title.hidden = true;
+    text.textContent = `This is a prototype, so nothing was sent. On the live site, your full report is emailed to ${email}.`;
+  } else {
+    title.hidden = false;
+    title.textContent = 'Your full report is on its way';
+    text.textContent = `We’re sending it to ${email}. Give it a few minutes, and check your spam folder if it doesn’t arrive.`;
+    leadSent = sendLead(fields).then(() => {
+      text.textContent = `We’ve sent it to ${email}. If it doesn’t arrive within a few minutes, check your spam folder.`;
+    }).catch(() => {
+      title.textContent = 'We couldn’t send your report automatically';
+      text.textContent = `Open it with the button below, and email contact@handoveradvisors.com if you’d like a copy sent to ${email}.`;
+      $('sent').classList.add('sent--failed');
+    });
+  }
+  go('result');
+});
+
+/* ---------- nav: the same menu code as every page (its own scope: this page's $ looks up ids) ---------- */
+(function(){
+var d=document,win=window;
+function $(s,c){return (c||d).querySelector(s)}
+var mqWide=win.matchMedia('(min-width: 960px)');
+function onMQ(mq,fn){if(mq.addEventListener)mq.addEventListener('change',fn);else if(mq.addListener)mq.addListener(fn)}
+
+/* ---------- nav: below 960px the four links sit behind a quiet menu button ---------- */
+var nav=$('#nav'),tog=$('#navTog'),links=$('#navLinks');
+function setMenu(open,focusFirst){
+  nav.classList.toggle('open',open);tog.setAttribute('aria-expanded',open?'true':'false');
+  if(open&&focusFirst){var a=links.querySelector('a');if(a)a.focus({preventScroll:true})}
+}
+tog.addEventListener('click',function(){var open=!nav.classList.contains('open');setMenu(open,open)});
+d.addEventListener('keydown',function(e){if((e.key==='Escape'||e.key==='Esc')&&nav.classList.contains('open')){setMenu(false);tog.focus()}});
+links.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a'))setMenu(false)});
+d.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))setMenu(false)});
+nav.addEventListener('focusout',function(e){if(nav.classList.contains('open')&&e.relatedTarget&&!nav.contains(e.relatedTarget))setMenu(false)});
+onMQ(mqWide,function(){if(mqWide.matches)setMenu(false)});
+})();
+
+/* ---------- nav: this page's own button, and the hairline on scroll ---------- */
+// “Get your score” is this page: mid-quiz it must not reload and lose the answers
+navScore.addEventListener('click', function (e) {
+  if (view !== 'quiz' && view !== 'details') return;
+  e.preventDefault(); toTop();
+  focusEl(view === 'quiz' ? qText : dTitle);
+});
+// the skip link moves focus without adding a history entry
+d.querySelector('.skip').addEventListener('click', function (e) { e.preventDefault(); focusEl($('main')); });
+
+var raf = 0;
+function onScroll() { raf = 0; nav.classList.toggle('scrolled', win.pageYOffset > 8); }
+win.addEventListener('scroll', function () { if (!raf) raf = win.requestAnimationFrame(onScroll); }, { passive: true });
+onScroll();
+
+// the Back/Next bar shows a hairline only while it floats over a long list
+var qActs = $('qActs'), qEnd = $('qEnd');
+var endIO = ('IntersectionObserver' in win) ? new IntersectionObserver(function (es) {
+  es.forEach(function (e) { qActs.classList.toggle('stuck', !e.isIntersecting && view === 'quiz' && e.boundingClientRect.top > 0); });
+}) : null;
+if (endIO) endIO.observe(qEnd);
+// each new screen gets a fresh reading: the observer only reports changes, and to it “hidden” and
+// “below the fold” look the same, so the first long list would otherwise open without its hairline
+function watchEnd() { if (endIO) { endIO.unobserve(qEnd); endIO.observe(qEnd); } }
+
+/* ---------- boot ---------- */
+splitWords(introH);
+measure();
+var rT = 0;
+function relayout() {
+  if (booting) { measure(); return; } // never cut the page-load drawing short
+  thr.classList.add('still'); measure(); void thr.offsetWidth; thr.classList.remove('still');
+}
+win.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(relayout, 90); }, { passive: true });
+if ('ResizeObserver' in win) new ResizeObserver(function () { clearTimeout(rT); rT = setTimeout(relayout, 60); }).observe(thr);
+if (d.fonts && d.fonts.ready) d.fonts.ready.then(relayout);
+function onRM() { rm = mqRM.matches; }
+if (mqRM.addEventListener) mqRM.addEventListener('change', onRM);
+
+setHead('Readiness score', '');
+setThread(0, -1, false);
+if (rm) {
+  introH.classList.add('in', 'done');
+  d.querySelectorAll('[data-r]').forEach(function (el) { el.classList.add('in'); });
+} else {
+  boot();
+  setTimeout(function () { introH.classList.add('in'); }, 380);
+  setTimeout(function () { introH.classList.add('done'); }, 2600);
+  win.requestAnimationFrame(function () { d.querySelectorAll('[data-r]').forEach(function (el) { el.classList.add('in'); }); });
+}
+win.__quizOK = true;
+})();
+</script>
 </body>
 </html>

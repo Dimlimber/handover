@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>For business brokers — Handover</title>
-  <meta name="description" content="Send us the sellers you can’t list yet. Handover prepares owners and their businesses for market, for a fixed fee paid by the owner, and sends them back to you.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For business brokers — Handover</title>
+<meta name="description" content="Send us the sellers you can’t list yet. Handover prepares owners and their businesses for market, for a fixed fee paid by the owner, and sends them back to you.">
   <link rel="canonical" href="https://handoveradvisors.com/brokers">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Handover">
@@ -13,104 +13,630 @@
   <meta property="og:url" content="https://handoveradvisors.com/brokers">
   <meta property="og:image" content="https://handoveradvisors.com/og.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231F4D3A%22%2F%3E%3Cpath%20d%3D%22M8.6%208v16M18.4%208v16%22%20stroke%3D%22%23F6F6F3%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22butt%22%2F%3E%3Cpath%20d%3D%22M8.6%2016.5H24%22%20stroke%3D%22%23F6F6F3%22%20stroke-width%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%2224.6%22%20cy%3D%2216.5%22%20r%3D%222.4%22%20fill%3D%22%23F6F6F3%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://handoveradvisors.com/#org", "name": "Handover", "alternateName": "Handover Advisors", "url": "https://handoveradvisors.com/", "email": "contact@handoveradvisors.com", "image": "https://handoveradvisors.com/og.png", "description": "Handover prepares owner-run businesses for sale: recast financials, customer analysis, the business’s story for buyers, an organized document room and an indicative value range, for a fixed fee. Not a broker.", "areaServed": {"@type": "Country", "name": "United States"}, "priceRange": "$5,000–$15,000", "knowsAbout": ["preparing a business for sale", "exit readiness", "seller’s discretionary earnings", "recast financial statements", "confidential information memorandum", "business succession"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Sale-Ready Package", "itemListElement": [{"@type": "Offer", "name": "Sale-Ready Package, business worth under $1M", "price": "5000", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Sale-Ready Package, business worth $1M to $3M", "price": "10000", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Sale-Ready Package, business worth $3M to $10M", "price": "15000", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Readiness Score (online, ten minutes)", "price": "0", "priceCurrency": "USD", "url": "https://handoveradvisors.com/score"}]}}</script>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%231f4d3a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23f6f3ec%27%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=14">
+<script>/* JS mode, undone only if the page script fails. Checked once parsing ends: a font stylesheet slower than the old 4s timer can no longer strip it */document.documentElement.classList.add('js');document.addEventListener('DOMContentLoaded',function(){if(!window.__threadOK)document.documentElement.classList.remove('js')});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200..400;1,200..400&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --washi:#F6F6F3; --white:#FFFFFF; --ink:#1A1A18; --ink2:#6B6B66; --hair:rgba(26,26,24,.14);
+  --green:#1F4D3A; --green-d:#173B2C; --green-line:#367D5D; /* line: hue of #2E6B50, lightness 30% → 35%, so 1.5px strokes read green */
+  --serif:"Noto Serif Display","Iowan Old Style","Times New Roman",serif;
+  --sans:"Zen Kaku Gothic New",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:clamp(20px,5.5vw,88px); --gap:clamp(16px,1.9vw,28px); --maxw:1520px;
+  --nav:72px;
+  --ease:cubic-bezier(.2,.7,.1,1); --ease-io:cubic-bezier(.65,0,.35,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --sec:clamp(84px,7.8vw,128px);
+  /* this page */
+  --seal:clamp(62px,6.4vw,92px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;position:relative;background:var(--washi);color:var(--ink);font:400 19px/1.66 var(--sans);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;font-feature-settings:"palt" 0}
+a{color:inherit}
+h1,h2,h3,p,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+em{font-style:italic}
+::selection{background:var(--ink);color:var(--washi)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-80px;z-index:80;padding:12px 16px;background:var(--ink);color:var(--washi);font-size:16px;text-decoration:none;border-radius:2px}
+.skip:focus{top:12px}
+
+/* ---------- type ---------- */
+.d-xl,.d-l,.d-s{font-family:var(--serif);font-weight:300;letter-spacing:-.018em;text-wrap:balance;font-optical-sizing:auto}
+.d-xl{font-size:clamp(46px,7.1vw,116px);line-height:1.02;letter-spacing:-.03em;font-weight:250}
+.d-l{font-size:clamp(36px,4.5vw,74px);line-height:1.07;letter-spacing:-.024em}
+.d-s{font-size:clamp(24px,1.9vw,30px);line-height:1.2;font-weight:350;letter-spacing:-.01em}
+.d-xl em,.d-l em{font-weight:250}
+p{text-wrap:pretty}
+.lede{font-size:clamp(19px,1.45vw,22px);line-height:1.6;max-width:36em}
+.lab{font:500 12.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.vlab{font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);writing-mode:vertical-rl;text-orientation:sideways;white-space:nowrap}
+.nw{white-space:nowrap}
+.src{font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.num{font-family:var(--serif);font-weight:300;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+
+/* ---------- grid: 12 columns; below 1000px one column with the thread in the left margin ---------- */
+.g{position:relative;z-index:2;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);
+  width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+.g>*{grid-column:var(--c,1/-1);min-width:0}
+section{scroll-margin-top:var(--nav)}
+.sec{padding-block:var(--sec)}
+.sec-lab{grid-column:1/2!important;grid-row:1/span 3;justify-self:start;align-self:start;margin-top:.5em}
+@media (max-width:999px){
+  :root{--padL:clamp(50px,8vw,72px);--padR:clamp(22px,5vw,48px);--seal:66px}
+  .g{grid-template-columns:minmax(0,1fr);padding-inline:var(--padL) var(--padR)}
+  .g>*{grid-column:1/-1}
+  .vlab{writing-mode:horizontal-tb;font-size:11.5px}
+  .sec-lab{grid-row:auto;margin:0 0 22px}
+}
+@media (max-width:759px){
+  :root{--nav:64px;--sec:80px}
+  body{font-size:17px;line-height:1.62}
+}
+
+/* ---------- thread ---------- */
+#thread{position:absolute;left:0;top:0;width:100%;z-index:1;pointer-events:none;overflow:visible}
+#thread path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.t-ink{stroke:var(--ink);stroke-width:1.25}
+.t-green{stroke:var(--green-line);stroke-width:1.5}
+.needle{fill:var(--ink)}
+.needle.green{fill:var(--green-line)}
+html:not(.js) #thread{display:none}
+.ring{display:block;width:9px;height:9px;border:1.25px solid var(--ink);border-radius:50%;background:var(--washi)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav);background:var(--washi)}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);opacity:0;transition:opacity .5s var(--ease)}
+.nav.scrolled::after{opacity:1}
+.nav-in{position:relative;height:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);display:flex;align-items:center;gap:clamp(20px,2.6vw,40px)}
+.wm{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:400 25px/1 var(--serif);letter-spacing:-.01em;min-height:44px;margin-right:auto;white-space:nowrap}
+/* thread-H: the crossbar is the thread (1.25px at 25px), running through the right stem to a dot; measured on Noto Serif Display 400, em-based */
+.wm-h{--d:max(4px,.18em);--t:max(1.25px,.05em);position:relative;display:inline-block;margin-right:calc(.1325em + var(--d) / 2)}
+.wm-h::before{content:"";position:absolute;left:.215em;width:.6425em;top:calc(.5138em - var(--t) / 2);height:var(--t);background:currentColor}
+.wm-h::after{content:"";position:absolute;left:calc(.8575em - var(--d) / 2);top:calc(.5138em - var(--d) / 2);width:var(--d);height:var(--d);border-radius:50%;background:currentColor}
+.nav-links{display:flex;gap:clamp(18px,2.2vw,34px)}
+.nav-links a{font-size:16px;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a[aria-current="page"]::after{transform:scaleX(1)}
+.nav-tog{display:none;align-items:center;justify-content:center;gap:10px;min-width:44px;min-height:44px;margin:0;padding:0 4px;border:0;border-radius:2px;background:none;color:var(--ink);font:500 15.5px/1 var(--sans);letter-spacing:.02em;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nav-tog-i{position:relative;display:block;flex:none;width:20px;height:9px}
+.nav-tog-i::before,.nav-tog-i::after{content:"";position:absolute;left:0;right:0;height:1.25px;background:currentColor;transition:transform .4s var(--ease)}
+.nav-tog-i::before{top:0}.nav-tog-i::after{bottom:0}
+.nav.open .nav-tog-i::before{transform:translate3d(0,3.9px,0) rotate(45deg)}
+.nav.open .nav-tog-i::after{transform:translate3d(0,-3.9px,0) rotate(-45deg)}
+@media (max-width:959px){
+  .nav-in{gap:14px}
+  .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:2px var(--gut) 18px;background:var(--washi);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  html.js .nav-tog{display:inline-flex}
+  html.js .nav.open .nav-links{display:flex}
+  .nav-links a{min-height:54px;font-size:19px;border-top:1px solid var(--hair)}
+  .nav-links a:first-child{border-top:0}
+  .nav-links a.ul::before,.nav-links a.ul::after{display:none}
+  .nav-links a[aria-current="page"]{color:var(--green)}
+  /* without JavaScript the menu button cannot open: the four links sit in a plain wrapped row under the wordmark */
+  html:not(.js) body{--nav:0px}
+  html:not(.js) .nav{position:relative;height:auto}
+  html:not(.js) .nav-in{flex-wrap:wrap;height:auto;padding-block:10px 4px;row-gap:0}
+  html:not(.js) .nav-links{display:flex;position:static;order:3;flex-direction:row;flex-wrap:wrap;width:100%;gap:0 20px;padding:0;border:0;background:none}
+  html:not(.js) .nav-links a{min-height:44px;font-size:16px;border:0}
+  html:not(.js) .nav-links a.ul::before,html:not(.js) .nav-links a.ul::after{display:block}
+}
+@media (max-width:959px) and (prefers-reduced-motion:no-preference){html.js .nav.open .nav-links{animation:menuIn .36s var(--ease-out) both}}
+@keyframes menuIn{from{opacity:0;transform:translate3d(0,-6px,0)}to{opacity:1;transform:none}}
+@media (max-width:759px){.wm{font-size:22px;gap:10px}}
+@media (max-width:559px){.nav-tog-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media (max-width:420px){.nav-in{gap:8px}.wm{font-size:20px;gap:8px}.nav .btn-s{padding:0 13px;font-size:15px}}
+
+/* ---------- links + buttons ---------- */
+.ul{position:relative;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.ul::before,.ul::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;transform-origin:left}
+.ul::before{background:var(--hair)}
+.ul::after{background:var(--green);transform:scaleX(0);transition:transform .5s var(--ease)}
+.ul:hover::after,.ul:focus-visible::after{transform:scaleX(1)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;
+  background:var(--green);color:#fff;text-decoration:none;font:500 17px/1 var(--sans);letter-spacing:.02em;border-radius:2px;white-space:nowrap;transition:background-color .3s var(--ease)}
+.btn:hover,.btn:active{background:var(--green-d)}
+.btn span{position:relative;display:inline-block;transition:transform .45s var(--ease)}
+.btn span::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.btn:hover span,.btn:focus-visible span{transform:translateX(2px)}
+.btn:hover span::after,.btn:focus-visible span::after{transform:scaleX(1)}
+.btn-s{min-height:44px;padding:0 18px;font-size:15.5px}
+.micro{font-size:17px;color:var(--ink2);margin-top:16px;text-wrap:balance}
+
+/* ---------- reveal ---------- */
+html.js [data-r]{opacity:0;transform:translate3d(0,16px,0);transition:opacity .9s var(--ease) var(--d,0s),transform 1.1s var(--ease) var(--d,0s)}
+html.js [data-r].in{opacity:1;transform:none}
+.w{display:inline-block;position:relative}
+.w-b{position:absolute;left:0;top:0;filter:blur(7px);opacity:0;pointer-events:none;white-space:nowrap}
+html.js [data-words] .w-s{display:inline-block;opacity:0;transform:translate3d(0,8px,0)}
+html.js [data-words].in .w-s{animation:wS 1s var(--ease) calc(var(--i)*60ms + var(--wd,0ms)) both}
+html.js [data-words].in .w-b{animation:wB .95s var(--ease) calc(var(--i)*60ms + var(--wd,0ms)) both}
+@keyframes wS{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
+@keyframes wB{0%{opacity:0;transform:translate3d(0,8px,0)}30%{opacity:.8}100%{opacity:0;transform:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--nav) + 40px) 0 72px}
+.hero-lab{position:absolute;left:calc(var(--gut) * .5 + max(0px,(100vw - var(--maxw))/2) - 6px);top:calc(var(--nav) + 44px)}
+.hero-h{max-width:13.5em}
+/* where the thread starts: a small ring, and the word “You” above the line */
+.you{margin-top:clamp(40px,6vh,64px);height:30px}
+.you .ring{grid-column:1/2;grid-row:1;justify-self:end;align-self:end}
+.you-lab{grid-column:2/7;grid-row:1;align-self:start;line-height:1}
+.hero-meta{margin-top:clamp(26px,3.6vh,40px);align-items:start;row-gap:44px}
+.cta-row{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 30px}
+.proof-n{font-size:clamp(56px,5.6vw,90px);line-height:.92;font-weight:200;letter-spacing:-.035em;white-space:nowrap}
+.proof-l{margin-top:18px;font-size:clamp(19px,1.45vw,22px);line-height:1.5;max-width:17em}
+.proof-l .l2{display:block}
+.proof .src{margin-top:14px;max-width:24em;text-wrap:balance}
+html.js .hero-lab,html.js .you>*,html.js .hero-meta>*{opacity:0;transform:translate3d(0,10px,0);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+html.js .hero-lab,html.js .you>*{transform:none}
+html.js.loaded .hero-lab,html.js.loaded .you>*{opacity:1}
+html.js.loaded .you-lab{transition-delay:.35s}
+html.js.loaded .hero-meta>*{opacity:1;transform:none}
+html.js.loaded .hero-meta>*:nth-child(1){transition-delay:1.05s}
+html.js.loaded .hero-meta>*:nth-child(2){transition-delay:1.4s}
+html:not(.js) .you::after{content:"";grid-column:2/7;grid-row:1;align-self:end;height:1px;margin-bottom:4px;background:var(--ink);margin-left:calc(var(--gap) * -1 - 1px)}
+@media (max-width:999px){
+  .hero{justify-content:flex-start;min-height:0;padding-top:calc(var(--nav) + 36px)}
+  .hero-lab{position:static;margin:0 var(--padR) 26px var(--padL)}
+  .you{height:auto;margin-top:36px;align-items:center}
+  .you .ring{position:absolute;grid-column:auto;grid-row:auto;left:calc(var(--padL) * .4 - 4.5px);top:50%;margin-top:-4.5px}
+  .you-lab{grid-column:1/-1}
+  html:not(.js) .you{display:none}
+  .proof{margin-top:12px}
+  html:not(.js) .proof-l{text-wrap:balance}
+}
+
+/* ---------- sections ---------- */
+.sec-h{max-width:9em;align-self:start}
+/* wide: the heading holds its place while its list passes on the other side of the thread */
+@media (min-width:1000px){.sec-h{position:sticky;top:calc(var(--nav) + clamp(40px,7vh,80px))}}
+.list{border-top:1px solid var(--hair);margin-top:.4em}
+.list li{padding:19px 0 20px;border-bottom:1px solid var(--hair);font:350 clamp(21px,1.62vw,25px)/1.3 var(--serif);letter-spacing:-.008em;text-wrap:pretty}
+.s-dont{background:var(--white)}
+.after{margin-top:40px;max-width:24em}
+.steps{margin-top:.4em}
+.step{padding-top:22px;border-top:1px solid var(--hair)}
+.step+.step{margin-top:52px}
+.step-n{font:500 12.5px/1 var(--sans);letter-spacing:.14em;color:var(--ink2)}
+.step h3{margin:16px 0 10px}
+.step p{max-width:30em}
+.s-ref{padding-bottom:calc(var(--sec) * .55)}
+/* the four weeks, as five stations on the thread */
+.run{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:min(100%,440px);margin-top:46px}
+@media (max-width:999px){.run{width:auto}}
+.run li{position:relative;padding-top:20px;font:500 12px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;transition:color .6s var(--ease)}
+.run .tk{position:absolute;left:0;top:-8px;width:1.25px;height:16px;background:var(--ink);opacity:.3;transition:opacity .6s var(--ease)}
+.run li.on{color:var(--ink)}
+.run li.on .tk{opacity:1}
+.run li.gr .tk{width:1.5px}
+.run li.gr.on .tk{background:var(--green-line)}
+.run li.gr.on{color:var(--green)}
+html:not(.js) .run{border-top:1px solid var(--ink)}
+html:not(.js) .run .tk{opacity:1;top:-9px}
+@media (max-width:759px){.run li{font-size:11px;letter-spacing:.06em}}
+@media (max-width:999px){.list,.steps{margin-top:0}.sec-h{max-width:12em}.sec-h+*{margin-top:40px}}
+
+/* ---------- back to you ---------- */
+.fin{padding:calc(var(--sec) * .4) 0 var(--sec)}
+.pass{height:128px;align-items:center}
+.pass .seal{grid-column:1/2;grid-row:1;justify-self:end}
+.pass-you{grid-column:2/7;grid-row:1;align-self:start;margin-top:38px;line-height:1;transition:color .8s var(--ease) .2s}
+.pass.home .pass-you{color:var(--ink)}
+.seal{position:relative;width:var(--seal);height:var(--seal);border:1.75px solid var(--green);border-radius:calc(var(--seal) * .174);display:grid;place-items:center;background:var(--washi)}
+.seal span{font:700 max(10.5px,calc(var(--seal) * .136))/1 var(--sans);letter-spacing:.24em;color:var(--green);padding-left:.24em}
+.seal::after{content:"";position:absolute;inset:calc(var(--seal) * .065);border:1px solid var(--green);border-radius:calc(var(--seal) * .12);opacity:.55}
+html.js .seal{opacity:0;transform:scale(1.15)}
+html.js .seal.on{animation:stamp .12s cubic-bezier(.3,0,.2,1) forwards,bleed .6s var(--ease) .12s both}
+@keyframes stamp{from{opacity:.85;transform:scale(1.15)}to{opacity:.85;transform:scale(1)}}
+@keyframes bleed{from{opacity:.85;transform:scale(1)}to{opacity:1;transform:scale(1)}}
+html:not(.js) .pass::after{content:"";grid-column:2/13;grid-row:1;height:1px;background:var(--green-line);margin-left:calc(var(--gap) * -1 - 1px)}
+.fin-mail{margin-top:clamp(44px,4.6vw,72px);font:300 clamp(30px,4.5vw,74px)/1.1 var(--serif);letter-spacing:-.024em}
+.fin-mail a{color:var(--green);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:rgba(31,77,58,.32);transition:text-decoration-color .4s var(--ease)}
+.fin-mail a:hover,.fin-mail a:focus-visible{text-decoration-color:var(--green)}
+.fin-note{margin-top:20px}
+.fin-small{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 30px;font-size:17px;color:var(--ink2)}
+.fin-small a{color:var(--ink)}
+@media (max-width:999px){
+  .pass .seal{justify-self:start}
+  .pass-you{position:absolute;grid-column:auto;grid-row:auto;left:calc(var(--padL) + var(--seal) + 14px);top:38px;margin:0}
+  html:not(.js) .pass::after{display:none}
+}
+@media (max-width:759px){.fin-mail{font-size:clamp(25px,7.4vw,36px)}}
+
+/* ---------- footer ---------- */
+.foot{padding:60px 0 52px;border-top:1px solid var(--hair)}
+.foot .g{row-gap:36px;align-items:start}
+.foot .wm{font-size:24px}
+.foot-tag{margin-top:10px;color:var(--ink2);font-size:17px}
+.foot-links{display:grid;grid-template-columns:repeat(2,max-content);gap:0 36px}
+.foot-links a{font-size:16px;min-height:44px;justify-self:start}
+.foot-links a[aria-current="page"]::after{transform:scaleX(1)}
+.foot-mail{font-size:17px;color:var(--green)}
+.foot-fine{font-size:14px;color:var(--ink2);line-height:1.55}
+
+/* ---------- cursor ---------- */
+.cur{position:fixed;left:0;top:0;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--ink);z-index:60;pointer-events:none;opacity:0;transition:opacity .3s var(--ease)}
+.cur.on{opacity:.9}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html.js [data-r],html.js .hero-lab,html.js .you>*,html.js .hero-meta>*,html.js .seal{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+  html.js [data-words] .w-s{opacity:1!important;transform:none!important;animation:none!important}
+  .nav-links,.run li,.run .tk,.pass-you,.btn,.btn span,.ul::after{transition:none!important}
+  .w-b,.cur{display:none!important}
+}
+.src a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--hair);transition:text-decoration-color .3s var(--ease)}
+.src a:hover,.src a:focus-visible{text-decoration-color:var(--green)}
+</style>
 </head>
 <body>
-
-<header class="site-head">
-  <div class="wrap">
-    <a class="wordmark" href="index.html">Handover</a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="index.html#how">How it works</a>
-      <a href="deliver.html">What you get</a>
-      <a href="brokers.html" aria-current="page">Brokers</a>
-      <a href="about.html">About</a>
-      <span class="site-nav__cta">
-        <a class="btn btn--quiet btn--small" href="mailto:contact@handoveradvisors.com?subject=Getting%20my%20business%20ready%20to%20sell">Contact</a>
-        <a class="btn btn--small" href="score.html">Get your score</a>
-      </span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="wm" href="index.html" aria-label="Handover, home"><span class="wm-w"><span class="wm-h">H</span>andover</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a class="ul" href="index.html#how">How it works</a>
+      <a class="ul" href="index.html#get">What you get</a>
+      <a class="ul" href="brokers.html" aria-current="page">Brokers</a>
+      <a class="ul" href="index.html#about">About</a>
     </nav>
+    <button class="nav-tog" id="navTog" type="button" aria-expanded="false" aria-controls="navLinks"><span class="nav-tog-i" aria-hidden="true"></span><span class="nav-tog-t">Menu</span></button>
+    <a class="btn btn-s" href="score.html"><span>Get your score</span></a>
   </div>
 </header>
 
-<main>
-  <section class="page-head">
-    <div class="wrap">
-      <p class="eyebrow">For business brokers</p>
-      <h1>Send us the sellers you can’t list <em>yet.</em></h1>
-      <p class="lede">You meet owners every week whose business isn’t ready for market: books that won’t survive diligence, an owner who is the business, a price with nothing behind it. We get them ready and send them back to you.</p>
+<svg id="thread" aria-hidden="true" focusable="false"></svg>
+<div class="cur" aria-hidden="true"></div>
+
+<main id="main">
+  <!-- HERO: the thread starts at you -->
+  <section class="hero" id="top">
+    <p class="vlab hero-lab">For business brokers</p>
+    <div class="g">
+      <h1 class="d-xl hero-h" id="heroH" data-words style="--c:2/13">Send us the sellers you can’t list <em>yet</em>.</h1>
+    </div>
+    <div class="g you" id="you" aria-hidden="true">
+      <span class="ring" id="ring"></span>
+      <p class="lab you-lab">You</p>
+    </div>
+    <div class="g hero-meta">
+      <div class="hero-lede" style="--c:2/7">
+        <p class="lede">You meet owners every week whose business isn’t ready for market: books that won’t survive diligence, an owner who is the business, a price with nothing behind it. We get them ready and send them back to you.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:contact@handoveradvisors.com?subject=Introducing%20a%20seller"><span>Introduce a seller</span></a>
+          <a class="ul" href="index.html#get">See what the owner gets</a>
+        </div>
+      </div>
+      <aside class="proof" id="proof" style="--c:8/13">
+        <p class="proof-n num" data-proof="num">Half</p>
+        <p class="proof-l" data-proof="line">of sell-side engagements end without a sale, brokers report.</p>
+        <p class="src" data-proof="src"><a href="https://www.ibba.org/wp-content/uploads/2023/02/ibba-q4-2022-market-pulse-execsum.pdf">Source: IBBA and M&amp;A Source, Market Pulse, Q4 2022 (survey of 493 brokers and M&amp;A advisers).</a></p>
+      </aside>
     </div>
   </section>
-  <section class="section">
-    <div class="wrap">
-      <p class="section__label"><b>01</b>What we do</p>
-      <div class="section__body prose">
-        <h2>The preparation you don’t have time for</h2>
-        <ul class="ticks">
-          <li>Three years of financials recast, with every add-back documented</li>
-          <li>Customer concentration and revenue-quality analysis</li>
-          <li>A draft information memo you can make your own</li>
-          <li>An organized data room, ready for a buyer’s checks</li>
-          <li>A realistic conversation about price, before you have to have it</li>
+
+  <!-- 01 WHAT WE DO -->
+  <section class="sec s-do" id="what" aria-labelledby="doH">
+    <div class="g">
+      <p class="vlab sec-lab">01 · What we do</p>
+      <h2 class="d-l sec-h" id="doH" data-r style="--c:2/7">The preparation you don’t have time for</h2>
+      <ul class="list" style="--c:8/13">
+        <li data-r>Three years of financials recast, with every <span class="nw">add-back</span> documented</li>
+        <li data-r style="--d:.07s">Customer concentration and <span class="nw">revenue-quality</span> analysis</li>
+        <li data-r style="--d:.14s">A draft information memo you can make your own</li>
+        <li data-r style="--d:.21s">An organized data room, ready for a buyer’s checks</li>
+        <li data-r style="--d:.28s">A realistic conversation about price, before you have to have it</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 02 WHAT WE DON'T DO -->
+  <section class="sec s-dont" id="not" aria-labelledby="dontH">
+    <div class="g">
+      <p class="vlab sec-lab">02 · What we don’t do</p>
+      <h2 class="d-l sec-h" id="dontH" data-r style="--c:2/7">We are <em>not</em> brokers</h2>
+      <div style="--c:8/13">
+        <ul class="list">
+          <li data-r>We don’t list businesses</li>
+          <li data-r style="--d:.07s">We don’t find or talk to buyers</li>
+          <li data-r style="--d:.14s">We don’t negotiate</li>
+          <li data-r style="--d:.21s">We don’t take success fees or any share of your commission</li>
         </ul>
+        <p class="lede after" data-r>The owner pays us a fixed fee for the preparation. When the work is done, the client comes back to you.</p>
       </div>
     </div>
   </section>
-  <section class="section section--tint">
-    <div class="wrap">
-      <p class="section__label"><b>02</b>What we don’t do</p>
-      <div class="section__body prose">
-        <h2>We are not brokers</h2>
-        <ul class="ticks ticks--no">
-          <li>We don’t list businesses</li>
-          <li>We don’t find or talk to buyers</li>
-          <li>We don’t negotiate</li>
-          <li>We don’t take success fees or any share of your commission</li>
-        </ul>
-        <p>The owner pays us a fixed fee for the preparation. When the work is done, the client comes back to you.</p>
-      </div>
+
+  <!-- 03 HOW REFERRALS WORK -->
+  <section class="sec s-ref" id="referrals" aria-labelledby="refH">
+    <div class="g">
+      <p class="vlab sec-lab">03 · How referrals work</p>
+      <h2 class="d-l sec-h" id="refH" data-r style="--c:2/7">One email to start</h2>
+      <ol class="steps" style="--c:8/13">
+        <li class="step" data-r>
+          <p class="step-n">01</p>
+          <h3 class="d-s">Introduce us</h3>
+          <p>Send a short email to us and the owner. That’s all we need.</p>
+        </li>
+        <li class="step" data-r>
+          <p class="step-n">02</p>
+          <h3 class="d-s">We assess</h3>
+          <p>The owner takes the free readiness score and has a free <span class="nw">45-minute</span> review with us. If they aren’t a fit, we tell you both.</p>
+        </li>
+        <li class="step" data-r>
+          <p class="step-n">03</p>
+          <h3 class="d-s">We prepare, you stay informed</h3>
+          <p>Preparation is a <span class="nw">four-week</span> program. We keep you posted throughout, and hand back a business you can take to market.</p>
+          <ol class="run" id="run" aria-label="The four-week program">
+            <li><i class="tk" aria-hidden="true"></i>Day one</li>
+            <li><i class="tk" aria-hidden="true"></i>Week 1</li>
+            <li><i class="tk" aria-hidden="true"></i><span class="sr">Week </span>2</li>
+            <li><i class="tk" aria-hidden="true"></i><span class="sr">Week </span>3</li>
+            <li class="gr"><i class="tk" aria-hidden="true"></i><span class="sr">Week </span>4</li>
+          </ol>
+        </li>
+      </ol>
     </div>
   </section>
-  <section class="section" style="border-bottom:0">
-    <div class="wrap">
-      <p class="section__label"><b>03</b>How referrals work</p>
-      <div class="section__body prose">
-        <h2>One email to start</h2>
-        <ol class="steps">
-          <li><div><h3>Introduce us</h3><p>Send a short email to us and the owner. That’s all we need.</p></div></li>
-          <li><div><h3>We assess</h3><p>The owner takes the free readiness score and has a free 45-minute review with us. If they aren’t a fit, we tell you both.</p></div></li>
-          <li><div><h3>We prepare, you stay informed</h3><p>Preparation is a four-week program. We keep you posted throughout, and hand back a business you can take to market.</p></div></li>
-        </ol>
-        <div class="actions"><a class="btn" href="mailto:contact@handoveradvisors.com?subject=A%20seller%20who%20isn%E2%80%99t%20ready%20yet">contact@handoveradvisors.com</a></div>
-        <p class="note" style="margin-top:20px">Tell us about the seller, without naming them if you prefer.</p>
-      </div>
+
+  <!-- BACK TO YOU -->
+  <section class="fin" id="introduce" aria-labelledby="finH">
+    <div class="g pass" id="pass" role="img" aria-label="The client comes back to you, ready.">
+      <div class="seal" id="seal" aria-hidden="true"><span>READY</span></div>
+      <p class="lab pass-you" aria-hidden="true">You</p>
+    </div>
+    <div class="g">
+      <h2 class="sr" id="finH">Introduce a seller</h2>
+      <p class="fin-mail" data-r style="--c:2/13"><a href="mailto:contact@handoveradvisors.com?subject=Introducing%20a%20seller">contact@<wbr>handoveradvisors.com</a></p>
+      <p class="lede fin-note" data-r style="--c:2/9;--d:.1s">Tell us about the seller, without naming them if you prefer.</p>
+      <p class="fin-small" data-r style="--c:2/12;--d:.18s"><span>The owner pays a fixed fee, from $5,000.</span><a class="ul" href="index.html#get">What the owner gets</a></p>
     </div>
   </section>
 </main>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <a class="wordmark" href="index.html">Handover</a>
-    <div>
-      <p>We get businesses ready to sell.</p>
-      <nav aria-label="Footer">
-        <a href="guides/">Guides</a>
-        <a href="faq.html">FAQ</a>
-        <a href="deliver.html">What you get</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="brokers.html">For brokers</a>
-        <a href="about.html">About</a>
-      </nav>
-      <p>Everything you tell us is confidential. We never contact your staff, customers or suppliers.</p>
-      <p>© 2026 Handover</p>
+<footer class="foot">
+  <div class="g">
+    <div style="--c:1/5;--t:1/7">
+      <a class="wm" href="index.html"><span class="wm-w"><span class="wm-h">H</span>andover</span></a>
+      <p class="foot-tag">We get businesses ready to sell.</p>
+    </div>
+    <nav class="foot-links" aria-label="More from Handover" style="--c:6/9;--t:7/13">
+      <a class="ul" href="index.html#get">What you get</a>
+      <a class="ul" href="brokers.html" aria-current="page">Brokers</a>
+      <a class="ul" href="faq.html">FAQ</a>
+      <a class="ul" href="https://handoveradvisors.com/guides/">Guides</a>
+      <a class="ul" href="index.html#about">About</a>
+      <a class="ul" href="https://handoveradvisors.com/privacy.html">Privacy</a>
+    </nav>
+    <div style="--c:10/13;--t:1/13">
+      <a class="ul foot-mail" href="mailto:contact@handoveradvisors.com">contact@handoveradvisors.com</a>
+      <p class="foot-fine" style="margin-top:14px">We are not brokers, and we are not tax or legal advisers. © 2026 Handover.</p>
     </div>
   </div>
 </footer>
+<script>
+(function(){
+'use strict';
+var d=document,de=d.documentElement,win=window,body=d.body;
+function $(s,c){return (c||d).querySelector(s)}
+function $$(s,c){return Array.prototype.slice.call((c||d).querySelectorAll(s))}
+var NS='http://www.w3.org/2000/svg';
+var mqRM=win.matchMedia('(prefers-reduced-motion: reduce)');
+var rm=mqRM.matches;
+var HEAD=.68,ALPHA=.5;
+function c01(v){return v<0?0:v>1?1:v}
+function eio(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
 
+/* ---------- words: soft blur-to-sharp via a static blurred twin (only opacity/transform animate) ---------- */
+function splitWords(el){
+  var toks=[];
+  (function walk(node,em){
+    Array.prototype.forEach.call(node.childNodes,function(n){
+      if(n.nodeType===3){n.nodeValue.split(/(\s+)/).forEach(function(s){if(!s)return;if(/^\s+$/.test(s))toks.push({sp:1});else toks.push({t:s,em:em})})}
+      else if(n.nodeType===1){walk(n,em||n.tagName==='EM')}
+    });
+  })(el,false);
+  var words=[],cur=null;
+  toks.forEach(function(k){if(k.sp){cur=null;words.push(null)}else{if(!cur){cur=[];words.push(cur)}cur.push(k)}});
+  var frag=d.createDocumentFragment(),i=0;
+  function fill(host,parts){parts.forEach(function(p){if(p.em){var e=d.createElement('em');e.textContent=p.t;host.appendChild(e)}else host.appendChild(d.createTextNode(p.t))})}
+  words.forEach(function(w){
+    if(!w){frag.appendChild(d.createTextNode(' '));return}
+    var o=d.createElement('span');o.className='w';o.style.setProperty('--i',i++);
+    var b=d.createElement('span');b.className='w-b';b.setAttribute('aria-hidden','true');fill(b,w);
+    var s=d.createElement('span');s.className='w-s';fill(s,w);
+    o.appendChild(b);o.appendChild(s);frag.appendChild(o);
+  });
+  el.textContent='';el.appendChild(frag);
+}
+$$('[data-words]').forEach(splitWords);
+
+/* the proof’s caption: a second sentence gets a line of its own (the markup stays plain text, as dropped in) */
+$$('[data-proof="line"]').forEach(function(p){
+  var t=p.textContent.replace(/\s+/g,' ').trim(),m=t.match(/^(\S+(?: \S+){2,}?[.!?]) ([A-Z“‘].*)$/);
+  if(!m)return;
+  var s=d.createElement('span');s.className='l2';s.textContent=m[2];
+  p.textContent=m[1]+' ';p.appendChild(s);
+});
+
+/* ---------- geometry (layout boxes via offsetParent, so reveal transforms never skew the route) ---------- */
+function R(el){var l=0,t=0,e=el;while(e){l+=e.offsetLeft;t+=e.offsetTop;e=e.offsetParent}var w=el.offsetWidth,h=el.offsetHeight;return {l:l,r:l+w,t:t,b:t+h,w:w,h:h}}
+function Route(){this.p=[]}
+Route.prototype={
+  M:function(x,y){this.p.push([x,y]);return this},
+  last:function(){return this.p[this.p.length-1]},
+  L:function(x,y){var a=this.last(),n=Math.max(1,Math.ceil(Math.hypot(x-a[0],y-a[1])/24));for(var i=1;i<=n;i++){var t=i/n;this.p.push([a[0]+(x-a[0])*t,a[1]+(y-a[1])*t])}return this},
+  C:function(x1,y1,x2,y2,x,y){var a=this.last(),est=Math.hypot(x1-a[0],y1-a[1])+Math.hypot(x2-x1,y2-y1)+Math.hypot(x-x2,y-y2),n=Math.max(6,Math.ceil(est/5));
+    for(var i=1;i<=n;i++){var t=i/n,m=1-t;this.p.push([m*m*m*a[0]+3*m*m*t*x1+3*m*t*t*x2+t*t*t*x,m*m*m*a[1]+3*m*m*t*y1+3*m*t*t*y2+t*t*t*y])}return this},
+  /* going down, curve into a horizontal run heading s (1 right, -1 left) at height y */
+  turnH:function(s,y,r){var a=this.last();if(y-r>a[1])this.L(a[0],y-r);var k=.5523*r;return this.C(a[0],y-r+k,a[0]+s*(r-k),y,a[0]+s*r,y)},
+  /* running horizontally, curve down at x */
+  turnD:function(x,r){var a=this.last(),s=x>a[0]?1:-1,k=.5523*r;this.L(x-s*r,a[1]);return this.C(x-s*r+s*k,a[1],x,a[1]+r-k,x,a[1]+r)}
+};
+
+/* ---------- svg ---------- */
+var svg=$('#thread');
+function mk(tag,cls){var e=d.createElementNS(NS,tag);if(cls)e.setAttribute('class',cls);svg.appendChild(e);return e}
+var P={A0:{el:mk('path','t-ink')},A1:{el:mk('path','t-ink')},B:{el:mk('path','t-green')}};
+var needle=mk('circle','needle');needle.setAttribute('r','3.4');needle.setAttribute('cx','0');needle.setAttribute('cy','0');
+var nav=$('#nav'),ring=$('#ring'),seal=$('#seal'),runLis=$$('#run li'),tks=$$('#run .tk');
+var VW=0,VH=0,wide=false,zones=[],T=[],Hs=0,introDone=rm,layoutOK=false,sealed=false,maxScroll=0,endS=0,endK=1;
+
+function setPath(o,pts){
+  var s='M'+pts[0][0].toFixed(1)+' '+pts[0][1].toFixed(1),ls=new Float64Array(pts.length),L=0;
+  for(var i=1;i<pts.length;i++){s+='L'+pts[i][0].toFixed(1)+' '+pts[i][1].toFixed(1);L+=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);ls[i]=L}
+  o.pts=pts;o.ls=ls;o.L=L;o.cur=-1;o.el.setAttribute('d',s);o.el.style.strokeDasharray=(L+1).toFixed(1)+' '+(L+2).toFixed(1);o.el.style.strokeDashoffset=(rm?0:L+1).toFixed(1);
+}
+/* scroll -> length: vertical runs draw with the page (the head sits at HEAD of the screen), horizontal runs draw at ALPHA px of scroll per px */
+function zAt(y){var lead=0,alpha=ALPHA;for(var i=0;i<zones.length;i++){var z=zones[i],f=0,Rr=z.rr||.5*VH;
+  if(y>=z.a&&y<=z.b)f=1;else if(y<z.a&&y>z.a-Rr)f=eio(1-(z.a-y)/Rr);else if(y>z.b&&y<z.b+Rr)f=eio(1-(y-z.b)/Rr);
+  if(f>0){lead=Math.max(lead,z.lead*f);if(y>=z.a-60&&y<=z.b+60)alpha=z.alpha}}return {lead:lead,alpha:alpha}}
+function computeS(o,s0){var n=o.pts.length,ss=new Float64Array(n);for(var i=0;i<n;i++){var y=o.pts[i][1],z=zAt(y),b=y-z.lead;ss[i]=i?Math.max(b,ss[i-1]+z.alpha*(o.ls[i]-o.ls[i-1]),ss[i-1]+1e-3):Math.max(b,s0)}o.ss=ss;return ss[n-1]}
+function bs(arr,v){var lo=0,hi=arr.length-1;while(hi-lo>1){var m=(lo+hi)>>1;if(arr[m]<=v)lo=m;else hi=m}return lo}
+function drawnFor(o,H){var ss=o.ss,n=ss.length;if(!n||H<=ss[0])return 0;if(H>=ss[n-1])return o.L;var i=bs(ss,H);return o.ls[i]+(H-ss[i])/(ss[i+1]-ss[i])*(o.ls[i+1]-o.ls[i])}
+function pointAt(o,len){var ls=o.ls,n=ls.length;if(len<=0)return o.pts[0];if(len>=o.L)return o.pts[n-1];var i=bs(ls,len),t=(len-ls[i])/((ls[i+1]-ls[i])||1),a=o.pts[i],b=o.pts[i+1];return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]}
+function lenNear(o,x,y){var best=1e12,bi=0;for(var i=0;i<o.pts.length;i++){var dx=o.pts[i][0]-x,dy=o.pts[i][1]-y,q=dx*dx+dy*dy;if(q<best){best=q;bi=i}}return o.ls[bi]}
+
+/* ---------- layout: measure the page, then draw the loop around it ---------- */
+function layout(){
+  VW=de.clientWidth;VH=win.innerHeight;wide=VW>=1000;
+  var rr=R(ring),sr=R(seal),k0=R(tks[0]);
+  var hy=Math.round(rr.t+rr.h/2),runY=Math.round(k0.t+k0.h/2),passY=Math.round(sr.t+sr.h/2),endX=Math.round(sr.r);
+  var tx=tks.map(function(t){var q=R(t);return Math.round(q.l+q.w/2)}),t4=tx[tx.length-1];
+  var g=$('.hero-meta'),gs=getComputedStyle(g),gr=g.getBoundingClientRect(),pl=parseFloat(gs.paddingLeft),pr=parseFloat(gs.paddingRight);
+  var cl=gr.left+pl,cr=gr.right-pr,a0=new Route(),a1=new Route(),b=new Route(),r,y1;
+  if(wide){
+    /* out along the hero line, down the centre of column 7, right through the four weeks, down just past week 4, back left to you */
+    var gap=parseFloat(gs.columnGap)||0,cw=(cr-cl-11*gap)/12,sx=Math.round(cl+6*(cw+gap)+cw/2),x0=Math.round(rr.r);
+    r=34;y1=Math.round(Math.max(hy+r+24,HEAD*VH));
+    a0.M(x0,hy).turnD(sx,r).L(sx,y1);
+    a1.M(sx,y1).turnH(1,runY,r).L(t4,runY);
+    b.M(t4,runY).turnD(t4+22+r,r).turnH(-1,passY,r).L(endX,passY);
+  } else {
+    /* down the left margin, right through the four weeks, down past the end of the run, back left to you */
+    var X=Math.round(rr.l+rr.w/2),xE=Math.round(cr-4),y0=Math.round(rr.b);y1=Math.round(Math.max(y0+56,HEAD*VH));
+    r=18;
+    a0.M(X,y0).L(X,y1);
+    a1.M(X,y1).turnH(1,runY,r).L(t4,runY);
+    b.M(t4,runY).turnD(Math.min(xE,t4+18+r),r).turnH(-1,passY,r).L(endX,passY);
+  }
+  /* horizontal runs move at 2.5x the scroll; the four weeks start low on the screen and the way back starts a little early, so the seal stamps mid-screen */
+  zones=[{a:runY,b:runY,lead:.2*VH,rr:.9*VH,alpha:.4},{a:passY,b:passY,lead:.14*VH,rr:.6*VH,alpha:.4}];
+  var H=body.offsetHeight;svg.setAttribute('height',H);svg.style.height=H+'px';
+  setPath(P.A0,a0.p);setPath(P.A1,a1.p);setPath(P.B,b.p);
+  if(introDone&&!rm)setDraw(P.A0,P.A0.L);
+  var e1=computeS(P.A1,P.A1.pts[0][1]);
+  computeS(P.B,e1);
+  T=tks.map(function(t,i){return {li:runLis[i],len:lenNear(P.A1,tx[i],runY)}});
+  maxScroll=Math.max(0,de.scrollHeight-VH);
+  /* never leave the loop open: if the page ends before the thread would get home, the last stretch of scroll finishes it */
+  endS=P.B.ss[P.B.ss.length-1];endK=Math.max(1,Math.min(.45*VH,maxScroll));
+  layoutOK=true;
+  if(rm){needle.style.display='none';T.forEach(function(t){t.li.classList.add('on')});stamp()}
+  Hs=win.pageYOffset+HEAD*VH;
+  update();
+}
+function stamp(){if(sealed)return;sealed=true;seal.classList.add('on');$('#pass').classList.add('home')}
+
+/* ---------- per-frame update ---------- */
+var raf=0;
+function kick(){if(!raf)raf=win.requestAnimationFrame(frame)}
+function setDraw(o,len){if(Math.abs(len-o.cur)<.2)return;o.cur=len;o.el.style.strokeDashoffset=(o.L+1-len).toFixed(2)}
+function update(){
+  if(!layoutOK)return false;
+  var sy=win.pageYOffset,H=sy+HEAD*VH,more=false,over=endS-(maxScroll+HEAD*VH);
+  nav.classList.toggle('scrolled',sy>8);
+  if(rm)return false;
+  if(over>0)H+=over*eio(c01((sy-(maxScroll-endK))/endK));
+  var dH=H-Hs;if(Math.abs(dH)<.4)Hs=H;else{Hs+=dH*.16;more=true}
+  setDraw(P.A1,drawnFor(P.A1,Hs));setDraw(P.B,drawnFor(P.B,Hs));
+  /* one dot, always at the head of whatever is being drawn */
+  var np=null,green=false,hide=false;
+  if(!introDone){if(P.A0.cur>1)np=pointAt(P.A0,P.A0.cur);else hide=true}
+  else if(P.B.cur>=P.B.L-.5)hide=true;
+  else if(P.B.cur>0){np=pointAt(P.B,P.B.cur);green=true}
+  else if(P.A1.cur>0)np=pointAt(P.A1,P.A1.cur);
+  else np=P.A0.pts[P.A0.pts.length-1];
+  if(hide||!np)needle.style.opacity='0';
+  else{needle.style.opacity='1';needle.style.transform='translate('+np[0].toFixed(1)+'px,'+np[1].toFixed(1)+'px)';needle.classList.toggle('green',green)}
+  for(var i=0;i<T.length;i++)T[i].li.classList.toggle('on',P.A1.cur>=T[i].len-2);
+  if(P.B.cur>=P.B.L-1||sy>=maxScroll-2)stamp();
+  return more;
+}
+
+/* ---------- intro: the line leaves the ring (~1.2s) ---------- */
+var T0=0;
+function intro(now){
+  if(!T0)T0=now;var t=now-T0;
+  setDraw(P.A0,eio(c01((t-250)/950))*P.A0.L);
+  if(t>1250){introDone=true;setDraw(P.A0,P.A0.L);return false}
+  return true;
+}
+
+/* ---------- cursor ---------- */
+var cur=$('.cur'),cx=0,cy=0,tx=0,ty=0,curOn=false,fine=win.matchMedia('(hover: hover) and (pointer: fine)').matches&&!rm;
+if(fine){
+  win.addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;if(!curOn){curOn=true;cx=tx;cy=ty;cur.classList.add('on')}kick()},{passive:true});
+  d.addEventListener('pointerleave',function(){curOn=false;cur.classList.remove('on')});
+}
+function cursorStep(){if(!fine||!curOn)return false;cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0)';return Math.abs(tx-cx)>.3||Math.abs(ty-cy)>.3}
+
+function frame(now){
+  raf=0;var more=false;
+  if(!introDone)more=intro(now)||more;
+  more=update()||more;
+  more=cursorStep()||more;
+  if(more)kick();
+}
+
+/* ---------- reveals ---------- */
+if('IntersectionObserver' in win&&!rm){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);e.target.classList.add('in')})},{rootMargin:'0px 0px -10% 0px'});
+  $$('[data-r]').forEach(function(el){io.observe(el)});
+} else {
+  $$('[data-r]').forEach(function(el){el.classList.add('in')});
+}
+
+var mqWide=win.matchMedia('(min-width: 960px)');
+function onMQ(mq,fn){if(mq.addEventListener)mq.addEventListener('change',fn);else if(mq.addListener)mq.addListener(fn)}
+
+/* ---------- nav: below 960px the four links sit behind a quiet menu button ---------- */
+var nav=$('#nav'),tog=$('#navTog'),links=$('#navLinks');
+function setMenu(open,focusFirst){
+  nav.classList.toggle('open',open);tog.setAttribute('aria-expanded',open?'true':'false');
+  if(open&&focusFirst){var a=links.querySelector('a');if(a)a.focus({preventScroll:true})}
+}
+tog.addEventListener('click',function(){var open=!nav.classList.contains('open');setMenu(open,open)});
+d.addEventListener('keydown',function(e){if((e.key==='Escape'||e.key==='Esc')&&nav.classList.contains('open')){setMenu(false);tog.focus()}});
+links.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a'))setMenu(false)});
+d.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))setMenu(false)});
+nav.addEventListener('focusout',function(e){if(nav.classList.contains('open')&&e.relatedTarget&&!nav.contains(e.relatedTarget))setMenu(false)});
+onMQ(mqWide,function(){if(mqWide.matches)setMenu(false)});
+
+/* ---------- boot ---------- */
+var rT=0,lastW=0;
+function relayout(){layout();kick()}
+win.addEventListener('scroll',kick,{passive:true});
+win.addEventListener('resize',function(){clearTimeout(rT);rT=setTimeout(function(){if(de.clientWidth!==lastW||VW>=1000){lastW=de.clientWidth;relayout()}else{VH=win.innerHeight;kick()}},140)},{passive:true});
+function onRM(){rm=mqRM.matches;if(!rm){needle.style.display=''}else introDone=true;relayout()}
+onMQ(mqRM,onRM);
+lastW=de.clientWidth;
+layout();
+if(d.fonts&&d.fonts.ready)d.fonts.ready.then(relayout);
+win.addEventListener('load',relayout);
+if('ResizeObserver' in win){var lastH=0;new ResizeObserver(function(){var h=body.offsetHeight;if(Math.abs(h-lastH)>2){lastH=h;clearTimeout(rT);rT=setTimeout(relayout,120)}}).observe(body)}
+de.classList.add('loaded');
+if(rm){$('#heroH').classList.add('in')}
+else{setTimeout(function(){$('#heroH').classList.add('in')},380);kick()}
+win.__threadOK=true;
+})();
+</script>
 </body>
 </html>
