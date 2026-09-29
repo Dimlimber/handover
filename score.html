@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/analytics.js?v=1"></script>
 <title>Your readiness score — Handover</title>
 <meta name="description" content="Fourteen questions, about ten minutes. See how ready your business is to sell and where the gaps are. Free and confidential.">
   <link rel="canonical" href="https://handoveradvisors.com/score">
@@ -290,6 +291,11 @@ html.js #result.go .sent{animation-delay:.32s}
 .sent-t{font:350 clamp(22px,1.7vw,26px)/1.2 var(--serif);color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
 .sent--failed{border-top-color:var(--ink)}
 .sent-acts{display:flex;flex-wrap:wrap;gap:12px}
+.talk{margin-top:28px;padding:22px 0 0;border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 32px}
+.talk-x{font-size:17px;line-height:1.55;color:var(--ink2);max-width:31em;flex:1 1 24em}
+.talk-x b{font-weight:500;color:var(--ink)}
+.talk-acts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
+.talk-acts .ul{font-size:17px;color:var(--green)}
 .bars{margin-top:clamp(64px,6.4vw,96px)}
 .bar{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr) 3.6em;align-items:center;column-gap:clamp(20px,2.4vw,36px);min-height:56px}
 .bar-l{font-size:17px;line-height:1.35}
@@ -326,6 +332,9 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
 .foot-links a[aria-current="page"]::after{transform:scaleX(1)}
 .foot-mail{font-size:17px;color:var(--green)}
 .foot-fine{font-size:14px;color:var(--ink2);line-height:1.55}
+.foot-reach{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;font-size:17px}
+.foot-reach a{color:var(--green)}
+.foot-reach span{color:var(--ink2)}
 
 /* ---------- print: the result on paper ---------- */
 @media print{
@@ -387,7 +396,7 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
   <section class="view intro g" id="intro" aria-labelledby="introH">
     <div class="col">
       <h1 class="d-l intro-h" id="introH" tabindex="-1" data-words>How ready is your business to sell?</h1>
-      <p class="lede" data-r style="--d:.45s">Fourteen questions, about ten minutes. You’ll see your score straight away, and we’ll email you a full written report. Nothing you enter is shared with anyone.</p>
+      <p class="lede" data-r style="--d:.45s"><span id="introPre">Two quick questions about the business, then fourteen</span> on how ready it is to sell. About ten minutes. You’ll see your score straight away, and we’ll email you a full written report. Nothing you enter is shared with anyone.</p>
       <div class="acts" data-r style="--d:.6s"><button class="btn" id="start" type="button"><span>Start</span></button></div>
       <noscript><p class="nojs">This page needs JavaScript switched on in your browser.</p></noscript>
       <p class="nojs js-fail">This page needs JavaScript switched on in your browser.</p>
@@ -449,6 +458,13 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
             <button class="btn btn-o" id="dlPdf" type="button" hidden><span>Download PDF</span></button>
           </div>
         </div>
+        <div class="talk">
+          <p class="talk-x"><b>Talk it through with us.</b> A free call about your score, with no obligation.</p>
+          <div class="talk-acts">
+            <a class="btn" href="https://calendar.app.google/3pjZiweB8AiHyqTJA" target="_blank" rel="noopener"><span>Book a free call</span></a>
+            <a class="ul" href="tel:+13103594958">or call (310) 359-4958</a>
+          </div>
+        </div>
         <ul class="bars" id="rBars" aria-label="Your score in each area"></ul>
         <h2 class="d-m r-sub">Where you’d gain the most</h2>
         <ol class="gaps" id="rGaps"></ol>
@@ -460,7 +476,8 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
         <div class="col">
           <h2 class="d-m">What happens next</h2>
           <p class="lede">Read the report, then, if you’d like, book a free 45-minute call. We’ll go through it together and give you an indicative range for what the business could be worth today, and with the gaps closed. No obligation.</p>
-          <div class="acts"><a class="btn" href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review"><span>Book your free review</span></a></div>
+          <div class="acts"><a class="btn" href="https://calendar.app.google/3pjZiweB8AiHyqTJA" target="_blank" rel="noopener"><span>Book your free review</span></a></div>
+          <p class="note">Or call <a class="ul" href="tel:+13103594958">(310) 359-4958</a>, or write to <a class="ul" href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review">contact@handoveradvisors.com</a>. We reply within one working day.</p>
         </div>
       </div>
     </div>
@@ -483,7 +500,8 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
     </nav>
     <div style="--c:10/13;--t:1/13">
       <a class="ul foot-mail" href="mailto:contact@handoveradvisors.com">contact@handoveradvisors.com</a>
-      <p class="foot-fine" style="margin-top:14px">We are not brokers, and we are not tax or legal advisers. © 2026 Handover.</p>
+      <p class="foot-reach"><a class="ul" href="tel:+13103594958">(310) 359-4958</a><span aria-hidden="true">·</span><a class="ul" href="https://calendar.app.google/3pjZiweB8AiHyqTJA" target="_blank" rel="noopener">Book a call</a></p>
+      <p class="foot-fine" style="margin-top:14px">We reply within one working day. Handover is run by Z2Z Consulting LLC, Highland Mills, New York. We are not brokers, and we are not tax or legal advisers. © 2026 Handover.</p>
     </div>
   </div>
 </footer>
@@ -673,18 +691,31 @@ var mqRM = win.matchMedia('(prefers-reduced-motion: reduce)');
 var rm = mqRM.matches;
 var areaLabel = Object.fromEntries(AREAS.map((a) => [a.key, a.label]));
 
-// One flat list of screens: profile questions first, then the scored ones.
+// A landing page can say which industry the visitor is in (score.html?industry=home), so the
+// quiz doesn't ask again.
+const INDUSTRY_KEYS = { home: 0, trades: 0, manufacturing: 1, distribution: 2, wholesale: 2, healthcare: 5 };
+const chosen = {}; // screen id -> option index. Held in memory only.
+try {
+  const key = new URLSearchParams(win.location.search).get('industry');
+  if (key && Object.prototype.hasOwnProperty.call(INDUSTRY_KEYS, key)) chosen.industry = INDUSTRY_KEYS[key];
+} catch (e) {}
+
+// One flat list of screens: the profile questions not yet answered, then the scored ones.
+// Only the fourteen scored questions are numbered ("3 of 14"), as the intro says.
 const screens = [
-  ...PROFILE_QUESTIONS.map((p) => ({
+  ...PROFILE_QUESTIONS.filter((p) => !(p.id in chosen)).map((p) => ({
     id: p.id, eyebrow: 'About the business', text: p.text, labels: p.options,
   })),
-  ...QUESTIONS.map((q) => ({
-    id: q.id, eyebrow: areaLabel[q.area], text: q.text, labels: q.options.map((o) => o.label),
+  ...QUESTIONS.map((q, i) => ({
+    id: q.id, eyebrow: areaLabel[q.area], text: q.text, labels: q.options.map((o) => o.label), n: i + 1,
   })),
 ];
-var N = screens.length; // 16
+var N = screens.length; // 16, or 15 when the industry came with the link
+if ('industry' in chosen) $('introPre').textContent = 'One quick question about the business, then fourteen';
 
-const chosen = {}; // screen id -> option index. Held in memory only.
+function track(name, params) { try { if (win.hvTrack) win.hvTrack(name, params); } catch (e) {} }
+var tracked = {};
+function trackOnce(name, params) { if (!tracked[name]) { tracked[name] = true; track(name, params); } }
 let at = 0;
 let result = null;
 let leadSent = null; // promise for the background send
@@ -694,6 +725,8 @@ var nav = $('nav'), navScore = nav.querySelector('.btn-s');
 var qLab = $('qLab'), qCount = $('qCount'), thr = $('thr'), seal = $('seal');
 var lead = thr.querySelector('.thr-lead'), fills = thr.querySelectorAll('.thr-fill'), dot = thr.querySelector('.thr-dot');
 var ticks = Array.prototype.slice.call(thr.querySelectorAll('.thr-tk'));
+ticks.slice(N).forEach(function (t) { t.remove(); }); // one tick per screen
+ticks = ticks.slice(0, N);
 var introH = $('introH'), qText = $('qText'), qOpts = $('qOpts'), nextBtn = $('next'), nextL = $('nextL');
 var dTitle = $('dTitle'), leadForm = $('lead');
 var rTotal = $('rTotal'), rNum = $('rNum'), rBars = $('rBars');
@@ -788,7 +821,7 @@ function focusEl(el) { try { el.focus({ preventScroll: true }); } catch (e) { el
 
 function renderQuestion() {
   const s = screens[at];
-  setHead(s.eyebrow, `${at + 1} of ${screens.length}`);
+  setHead(s.eyebrow, s.n ? `${s.n} of ${QUESTIONS.length}` : '');
   setThread(at / (N - 1), at, at === N - 1);
   blurPair(qText, s.text);
 
@@ -817,7 +850,7 @@ function renderQuestion() {
   if (!rm) { void box.offsetWidth; box.classList.add('go'); }
 
   nextBtn.disabled = !(s.id in chosen);
-  nextL.textContent = at === screens.length - 1 ? 'See my score' : 'Next';
+  nextL.textContent = at === screens.length - 1 ? 'Continue' : 'Next';
 }
 
 function render(v) {
@@ -873,13 +906,13 @@ function stepBack() {
 }
 
 /* ---------- flow ---------- */
-$('start').addEventListener('click', () => { at = 0; go('quiz'); });
+$('start').addEventListener('click', () => { trackOnce('quiz_start'); at = 0; go('quiz'); });
 $('back').addEventListener('click', stepBack);
 $('dBack').addEventListener('click', stepBack);
 
 function goNext() {
   if (!(screens[at].id in chosen)) return;
-  if (at === screens.length - 1) { go('details'); return; }
+  if (at === screens.length - 1) { trackOnce('quiz_complete'); go('details'); return; }
   at += 1;
   go('quiz');
 }
@@ -998,6 +1031,8 @@ function payload(form) {
     'Biggest gaps': result.gaps.map((g) => g.label).join(', ') || 'None',
     'Full report': reportLink(),
   };
+  // where the owner came from: ad, email ref code or website (js/analytics.js)
+  if (win.hvSource) { try { Object.assign(fields, win.hvSource()); } catch (e) {} }
   for (const a of result.areas) fields[`Area: ${a.label}`] = `${a.percent}%`;
   for (const q of QUESTIONS) fields[q.text] = q.options[chosen[q.id]].label;
   return fields;
@@ -1051,6 +1086,7 @@ leadForm.addEventListener('submit', (e) => {
 
   renderResult();
   const fields = payload(form);
+  trackOnce('generate_lead', { method: 'readiness_score' }); // no answers or details go to Google
   pdfDoc = null; $('dlPdf').hidden = true;
   const pdfReady = makePdf(form).then((pdf) => { pdfDoc = pdf; $('dlPdf').hidden = false; return pdf; }, () => null);
   const email = fields.Email;

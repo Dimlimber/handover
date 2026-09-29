@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/analytics.js?v=1"></script>
 <meta name="robots" content="noindex">
 <title>Your sale-readiness report — Handover</title>
 <meta name="description" content="Your written sale-readiness report from Handover.">
@@ -186,6 +187,8 @@ html.js [data-words].in .w-b{animation:wB .95s var(--ease) calc(var(--i)*60ms + 
 .pdf-btn{min-width:min(15em,100%)}
 .pdf-note{margin-top:12px;font-size:16px;line-height:1.5;max-width:34em}
 .pdf-note[hidden]{display:none}
+.rep-alt{font-size:17px;line-height:1.55;color:var(--ink2)}
+.rep-alt a{color:var(--green)}
 
 /* where to start */
 .acts{margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--hair)}
@@ -262,6 +265,9 @@ html:not(.js) .js-fail{display:block}
 .foot-links a[aria-current="page"]::after{transform:scaleX(1)}
 .foot-mail{font-size:17px;color:var(--green)}
 .foot-fine{font-size:14px;color:var(--ink2);line-height:1.55}
+.foot-reach{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;font-size:17px}
+.foot-reach a{color:var(--green)}
+.foot-reach span{color:var(--ink2)}
 
 /* ---------- reduced motion: every final state at once ---------- */
 @media (prefers-reduced-motion:reduce){
@@ -410,10 +416,11 @@ html:not(.js) .js-fail{display:block}
           <p>The next step is a free 45-minute call with one of us. We’ll go through this report with you, answer your questions, and give you an indicative range for what the business could be worth today and what it could be worth with these gaps closed. There is no obligation, and everything stays between us.</p>
           <p>Our Sale-Ready Package does the work. We recast your financials, analyze your customers, prepare the buyer materials and organize your documents. If we find changes worth making before you list, we can help you make them. It is a fixed fee, from $5,000, $10,000 or $15,000 depending on the size of the business. We take no percentage of your sale.</p>
           <div class="acts-row">
-            <a class="btn" id="rep-book" href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review"><span>Book your free review</span></a>
+            <a class="btn" id="rep-book" href="https://calendar.app.google/3pjZiweB8AiHyqTJA" target="_blank" rel="noopener"><span>Book your free review</span></a>
             <button class="btn btn-o pdf-btn" type="button" id="rep-pdf-2"><span>Download PDF</span></button>
           </div>
           <p class="pdf-note" id="rep-pdf-note-2" role="status" hidden></p>
+          <p class="rep-alt">Or call <a href="tel:+13103594958">(310) 359-4958</a>, or write to <a href="mailto:contact@handoveradvisors.com?subject=My%20readiness%20review">contact@handoveradvisors.com</a>. We reply within one working day.</p>
           <p class="disclaimer">This report is based only on the answers you gave, which we have not checked. Any value range we discuss is indicative and is not a formal valuation. Handover is not a business broker, appraiser, or tax or legal adviser. Everything you share with us is confidential: we never contact your staff, customers or suppliers.</p>
         </div>
       </div>
@@ -437,7 +444,8 @@ html:not(.js) .js-fail{display:block}
     </nav>
     <div style="--c:10/13;--t:1/13">
       <a class="ul foot-mail" href="mailto:contact@handoveradvisors.com">contact@handoveradvisors.com</a>
-      <p class="foot-fine" style="margin-top:14px">We are not brokers, and we are not tax or legal advisers. © 2026 Handover.</p>
+      <p class="foot-reach"><a class="ul" href="tel:+13103594958">(310) 359-4958</a><span aria-hidden="true">·</span><a class="ul" href="https://calendar.app.google/3pjZiweB8AiHyqTJA" target="_blank" rel="noopener">Book a call</a></p>
+      <p class="foot-fine" style="margin-top:14px">We reply within one working day. Handover is run by Z2Z Consulting LLC, Highland Mills, New York. We are not brokers, and we are not tax or legal advisers. © 2026 Handover.</p>
     </div>
   </div>
 </footer>
