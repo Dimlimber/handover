@@ -17,10 +17,10 @@
   'use strict';
 
   var GA4_ID = 'G-1NMEF7RRF6'; // Google Analytics 4: account Handover, property handoveradvisors.com, stream 'Handover website'
-  var ADS_ID = '';        // Google Ads tag ID, like 'AW-123456789'
+  var ADS_ID = 'AW-18482558694'; // Google Ads account 857-171-7273 (same Google tag as GA4)
   var ADS_LABELS = {      // Google Ads conversion labels, from Goals > Conversions > (action) > Tag setup
-    generate_lead: '',    // a completed readiness score: name and email given
-    contact_click: '',    // a click to email, call or book a call
+    generate_lead: '1SXjCKqbyoodEObtle1E', // 'Readiness score completed' (primary)
+    contact_click: '4o5HCK2byoodEObtle1E', // 'Contact click (call, email or book)'
   };
 
   var CONSENT_REGIONS = ['AT', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB',
