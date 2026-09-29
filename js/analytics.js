@@ -16,7 +16,7 @@
 (function (w, d) {
   'use strict';
 
-  var GA4_ID = '';        // Google Analytics 4 measurement ID, like 'G-ABC123DEF4'
+  var GA4_ID = 'G-1NMEF7RRF6'; // Google Analytics 4: account Handover, property handoveradvisors.com, stream 'Handover website'
   var ADS_ID = '';        // Google Ads tag ID, like 'AW-123456789'
   var ADS_LABELS = {      // Google Ads conversion labels, from Goals > Conversions > (action) > Tag setup
     generate_lead: '',    // a completed readiness score: name and email given
