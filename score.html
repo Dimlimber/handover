@@ -289,6 +289,7 @@ html.js #result.go .sent{animation-delay:.32s}
 .sent-x{font-size:17px;line-height:1.55;color:var(--ink2);max-width:31em;flex:1 1 24em}
 .sent-t{font:350 clamp(22px,1.7vw,26px)/1.2 var(--serif);color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
 .sent--failed{border-top-color:var(--ink)}
+.sent-acts{display:flex;flex-wrap:wrap;gap:12px}
 .bars{margin-top:clamp(64px,6.4vw,96px)}
 .bar{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr) 3.6em;align-items:center;column-gap:clamp(20px,2.4vw,36px);min-height:56px}
 .bar-l{font-size:17px;line-height:1.35}
@@ -443,7 +444,10 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
         </div>
         <div class="sent" id="sent">
           <div class="sent-x"><p class="sent-t" id="sentTitle" hidden>Your full report is on its way</p><p id="sentText"></p></div>
-          <a class="btn btn-o" id="openReport" href="https://handoveradvisors.com/report.html#"><span>Open the full report now</span></a>
+          <div class="sent-acts">
+            <a class="btn btn-o" id="openReport" href="https://handoveradvisors.com/report.html#" target="_blank" rel="noopener"><span>Open the full report now</span></a>
+            <button class="btn btn-o" id="dlPdf" type="button" hidden><span>Download PDF</span></button>
+          </div>
         </div>
         <ul class="bars" id="rBars" aria-label="Your score in each area"></ul>
         <h2 class="d-m r-sub">Where you’d gain the most</h2>
@@ -826,6 +830,7 @@ function render(v) {
     renderQuestion();
     toTop(); focusEl(qText); watchEnd();
   } else if (v === 'details') {
+    preloadPdf();
     setHead('Last step', '');
     setThread(1, N - 1, true);
     toTop(); focusEl(dTitle);
@@ -998,6 +1003,29 @@ function payload(form) {
   return fields;
 }
 
+/* ---------- the PDF brochure: made in the browser, attached to the report email, downloadable here ---------- */
+let pdfMod = null, pdfDoc = null;
+function pdfModule() {
+  if (!pdfMod) pdfMod = import('./js/report-pdf.js?v=1').catch((err) => { pdfMod = null; throw err; });
+  return pdfMod;
+}
+function preloadPdf() { pdfModule().then((m) => m.preloadReportPdf()).catch(() => {}); }
+function makePdf(form) {
+  const data = new FormData(form);
+  const opts = { code: encodeAnswers(chosen), name: String(data.get('name') || ''), business: String(data.get('business') || '') };
+  const made = pdfModule().then((m) => m.reportPdf(opts));
+  const late = new Promise((resolve, reject) => setTimeout(() => reject(new Error('timeout')), 12000));
+  return Promise.race([made, late]);
+}
+function savePdf() {
+  if (!pdfDoc) return;
+  const url = URL.createObjectURL(pdfDoc.blob);
+  const a = document.createElement('a'); a.href = url; a.download = pdfDoc.filename;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+}
+$('dlPdf').addEventListener('click', savePdf);
+
 function sendLead(fields) {
   if (!FORM_ENDPOINT) return Promise.reject(new Error('not configured'));
   // A Google Apps Script endpoint only accepts a "simple" request, so the JSON goes as plain text.
@@ -1023,6 +1051,8 @@ leadForm.addEventListener('submit', (e) => {
 
   renderResult();
   const fields = payload(form);
+  pdfDoc = null; $('dlPdf').hidden = true;
+  const pdfReady = makePdf(form).then((pdf) => { pdfDoc = pdf; $('dlPdf').hidden = false; return pdf; }, () => null);
   const email = fields.Email;
   const title = $('sentTitle'), text = $('sentText');
   $('sent').classList.remove('sent--failed');
@@ -1035,7 +1065,11 @@ leadForm.addEventListener('submit', (e) => {
     title.hidden = false;
     title.textContent = 'Your full report is on its way';
     text.textContent = `We’re sending it to ${email}. Give it a few minutes, and check your spam folder if it doesn’t arrive.`;
-    leadSent = sendLead(fields).then(() => {
+    // the lead goes out with the PDF when it's ready (or without it, if it can't be made in time)
+    leadSent = pdfReady.then((pdf) => {
+      if (pdf) { fields._pdf = pdf.base64; fields._pdfName = pdf.filename; }
+      return sendLead(fields);
+    }).then(() => {
       text.textContent = `We’ve sent it to ${email}. If it doesn’t arrive within a few minutes, check your spam folder.`;
     }).catch(() => {
       title.textContent = 'We couldn’t send your report automatically';
