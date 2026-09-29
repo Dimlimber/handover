@@ -21,6 +21,8 @@
   var ADS_LABELS = {      // Google Ads conversion labels, from Goals > Conversions > (action) > Tag setup
     generate_lead: '1SXjCKqbyoodEObtle1E', // 'Readiness score completed' (primary)
     contact_click: '4o5HCK2byoodEObtle1E', // 'Contact click (call, email or book)'
+    quiz_start: 'ciJjCLWt1IodEObtle1E',    // 'Score started' (secondary: observation only)
+    quiz_complete: 'wSGyCLit1IodEObtle1E', // 'Score questions finished' (secondary: observation only)
   };
 
   var CONSENT_REGIONS = ['AT', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB',
