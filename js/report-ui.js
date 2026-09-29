@@ -20,7 +20,7 @@ if (!decoded) {
   const onScroll = () => nav.classList.toggle('scrolled', win.pageYOffset > 8);
   win.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 } else {
-  const report = buildReport(decoded.answers);
+  const report = buildReport(decoded.answers, decoded.industry);
 
   $('rep-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   $('rep-profile').textContent = `${decoded.industry} · yearly revenue ${decoded.revenue.toLowerCase()}`;

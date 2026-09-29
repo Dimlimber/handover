@@ -1,6 +1,6 @@
-import { AREAS, QUESTIONS, PROFILE_QUESTIONS } from './questions.js';
+import { QUESTIONS, PROFILE_QUESTIONS, questionsFor, areasFor } from './questions.js';
 import { score } from './scoring.js';
-import { CONTENT } from './report-content.js';
+import { contentFor } from './report-content.js';
 
 const VERDICTS = ['Serious gap', 'Gap', 'Minor gap', 'Strong']; // indexed by points
 const [INDUSTRY, REVENUE] = PROFILE_QUESTIONS;
@@ -20,14 +20,18 @@ export function decodeAnswers(code) {
   return { industry, revenue, answers };
 }
 
-export function buildReport(answers) {
+// industry (optional) picks the wording that business saw; the score itself is the same for all.
+export function buildReport(answers, industry) {
   const result = score(answers);
+  const QS = questionsFor(industry), AREAS = areasFor(industry);
+  result.gaps = result.gaps.map((g) => ({ ...g, advice: AREAS.find((a) => a.key === g.key).advice }));
   const percent = Object.fromEntries(result.areas.map((a) => [a.key, a.percent]));
 
-  const items = QUESTIONS.map((q) => {
+  const items = QS.map((q) => {
     const { points, label } = q.options[answers[q.id]];
     const area = AREAS.find((a) => a.key === q.area);
-    const inArea = QUESTIONS.filter((x) => x.area === q.area).length;
+    const inArea = QS.filter((x) => x.area === q.area).length;
+    const words = contentFor(q.id, industry);
     return {
       id: q.id,
       areaKey: q.area,
@@ -36,9 +40,9 @@ export function buildReport(answers) {
       answer: label,
       points,
       verdict: VERDICTS[points],
-      title: CONTENT[q.id].title,
-      why: CONTENT[q.id].why,
-      fix: points < 3 ? CONTENT[q.id].fix : null,
+      title: words.title,
+      why: words.why,
+      fix: points < 3 ? words.fix : null,
       // Points this answer costs on the 100-point score.
       cost: ((3 - points) / 3) * (area.weight / inArea),
     };

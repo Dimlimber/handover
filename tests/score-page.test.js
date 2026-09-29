@@ -4,7 +4,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { AREAS, QUESTIONS, PROFILE_QUESTIONS } from '../js/questions.js';
+import { AREAS, QUESTIONS, PROFILE_QUESTIONS, INDUSTRY_LENS, VARIANTS, AREA_ADVICE, questionsFor, areasFor } from '../js/questions.js';
 import { score } from '../js/scoring.js';
 import { encodeAnswers } from '../js/report.js';
 
@@ -19,7 +19,7 @@ function inlineQuiz() {
     if (html[i] === '}' && --depth === 0) { end = i + 1; break; }
   }
   const block = html.slice(start, end);
-  return new Function(`${block}\nreturn { AREAS, QUESTIONS, PROFILE_QUESTIONS, score, encodeAnswers };`)();
+  return new Function(`${block}\nreturn { AREAS, QUESTIONS, PROFILE_QUESTIONS, INDUSTRY_LENS, VARIANTS, AREA_ADVICE, questionsFor, areasFor, score, encodeAnswers };`)();
 }
 
 const page = inlineQuiz();
@@ -28,6 +28,16 @@ test('score.html has the same areas, questions and profile questions as js/quest
   assert.deepEqual(page.AREAS, AREAS);
   assert.deepEqual(page.QUESTIONS, QUESTIONS);
   assert.deepEqual(page.PROFILE_QUESTIONS, PROFILE_QUESTIONS);
+});
+
+test('score.html has the same industry versions as js/questions.js', () => {
+  assert.deepEqual(page.INDUSTRY_LENS, INDUSTRY_LENS);
+  assert.deepEqual(page.VARIANTS, VARIANTS);
+  assert.deepEqual(page.AREA_ADVICE, AREA_ADVICE);
+  for (const industry of PROFILE_QUESTIONS[0].options) {
+    assert.deepEqual(page.questionsFor(industry), questionsFor(industry), industry);
+    assert.deepEqual(page.areasFor(industry), areasFor(industry), industry);
+  }
 });
 
 test('score.html scores and encodes exactly like js/scoring.js and js/report.js', () => {

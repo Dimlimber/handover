@@ -111,7 +111,7 @@ function fmtDate(d) { return d.toLocaleDateString('en-US', { year: 'numeric', mo
 export function reportDocDefinition({ code, name, business, date = new Date() }) {
   const decoded = decodeAnswers(String(code || '').replace(/^#/, ''));
   if (!decoded) throw new Error('incomplete answers code');
-  const r = buildReport(decoded.answers);
+  const r = buildReport(decoded.answers, decoded.industry);
   const who = [printable(name), printable(business)].filter(Boolean).join(', ');
   const day = fmtDate(date);
   const ready = r.band.key === 'ready';
