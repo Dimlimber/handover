@@ -66,7 +66,7 @@ export const CONTENT = {
   s1: {
     title: 'Put evidence behind your price',
     why: 'An asking price with nothing behind it either scares buyers away or leaves money on the table.',
-    fix: 'Base your number on what the business earns once the books are recast, and on what similar businesses have actually sold for. We give you an indicative range in the free review. A broker or a certified appraiser can give a formal opinion.',
+    fix: 'Base your number on what the business earns once the books are recast, and on what similar businesses have actually sold for. Our Sale-Ready Package ends with an indicative range. A broker or a certified appraiser can give a formal opinion.',
   },
   s2: {
     title: 'Write your one-page story',

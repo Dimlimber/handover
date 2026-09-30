@@ -228,7 +228,7 @@ export function reportDocDefinition({ code, name, business, date = new Date() })
   // ----- what happens next -----
   const next = [
     h2('What happens next'),
-    body('The next step is a free 45-minute call with one of us. We’ll go through this report with you, answer your questions, and give you an indicative range for what the business could be worth today and what it could be worth with these gaps closed. There is no obligation, and everything stays between us.', { margin: [0, 12, 0, 18] }),
+    body('The next step is a free 45-minute call with one of us. We’ll go through this report with you, answer your questions and talk about which gaps to close first. There is no obligation, and everything stays between us.', { margin: [0, 12, 0, 18] }),
     { table: { widths: ['*'], body: [[{ stack: [
       { text: 'Book your free review', font: 'Serif', bold: true, fontSize: 16, color: C.green },
       { text: ['Reply to the email this report came with, or write to ', { text: 'contact@handoveradvisors.com', link: 'mailto:contact@handoveradvisors.com?subject=My%20readiness%20review', color: C.green, decoration: 'underline', decorationColor: C.line }, '.'], font: 'Sans', fontSize: 10.5, lineHeight: LH.text, color: C.ink, margin: [0, 5, 0, 0] },
