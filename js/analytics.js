@@ -2,6 +2,8 @@
    Loaded at the top of the <head> on every page.
 
    - Google Analytics 4 and Google Ads share one gtag.js. An empty ID switches that tag off.
+   - The ChatGPT Ads pixel (OpenAI's oaiq) measures the same completed score as a lead_created
+     event, so ChatGPT Ads can count and optimise for leads. An empty pixel ID switches it off.
    - There is no consent banner. Visitors in the EEA, the UK and Switzerland get Google's
      consent mode with everything denied (cookieless pings only); everyone else is measured
      with cookies. Ad personalization (remarketing) is off everywhere.
@@ -24,6 +26,8 @@
     quiz_start: 'ciJjCLWt1IodEObtle1E',    // 'Score started' (secondary: observation only)
     quiz_complete: 'wSGyCLit1IodEObtle1E', // 'Score questions finished' (secondary: observation only)
   };
+
+  var OAI_PIXEL_ID = 'Ga5dyu48xH9rGzo3rEVz79'; // ChatGPT Ads: Ads Manager > Tools > Conversions > data source 'Handover website'
 
   var CONSENT_REGIONS = ['AT', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB',
     'GR', 'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO',
@@ -49,10 +53,36 @@
     if (ADS_ID) gtag('config', ADS_ID, { page_location: here, allow_ad_personalization_signals: false });
   }
 
+  /* ChatGPT Ads pixel: the same consent rule as Google's. Google decides the region itself; here the
+     browser's time zone and language stand in for it, so a visitor in Europe gets no cookies. */
+  function inConsentRegion() {
+    try {
+      var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+      if (tz.indexOf('Europe/') === 0) return true;
+      var m = /[-_]([A-Z]{2})$/.exec((navigator.language || '').toUpperCase());
+      return !!m && CONSENT_REGIONS.indexOf(m[1]) >= 0;
+    } catch (e) { return false; }
+  }
+  if (OAI_PIXEL_ID && !w.oaiq) {
+    var oaiq = function () { oaiq.q.push(arguments); };
+    oaiq.q = [];
+    w.oaiq = oaiq;
+    var o = d.createElement('script');
+    o.async = true;
+    o.src = 'https://bzrcdn.openai.com/sdk/oaiq.min.js';
+    (d.head || d.documentElement).appendChild(o);
+    if (inConsentRegion()) oaiq('consent', false);
+    oaiq('init', { pixelId: OAI_PIXEL_ID });
+  }
+
   w.hvTrack = function (name, params) {
     gtag('event', name, params || {});
     var label = ADS_ID && ADS_LABELS[name];
     if (label) gtag('event', 'conversion', { send_to: ADS_ID + '/' + label });
+    if (name === 'generate_lead' && OAI_PIXEL_ID && w.oaiq) {
+      w.oaiq('measure', 'lead_created', { type: 'customer_action' },
+        { event_id: 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8) });
+    }
   };
 
   /* ---------- where the visitor came from ---------- */
