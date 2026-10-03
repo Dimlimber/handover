@@ -835,11 +835,17 @@ var areaLabel = Object.fromEntries(AREAS.map((a) => [a.key, a.label]));
 
 // A landing page can say which industry the visitor is in (score.html?industry=home), so the
 // quiz doesn't ask again.
-const INDUSTRY_KEYS = { home: 0, trades: 0, manufacturing: 1, distribution: 2, wholesale: 2, healthcare: 5 };
+const INDUSTRY_KEYS = { home: 0, trades: 0, manufacturing: 1, distribution: 2, wholesale: 2, retail: 3, food: 4,
+  healthcare: 5, professional: 6, auto: 7, construction: 8, other: 9 };
+// A landing page that asks the industry itself (lp/get-ready-b.html) adds start=1: that tap was the
+// first answer, so the page opens on the next question instead of the intro.
+let autoStart = false;
 const chosen = {}; // screen id -> option index. Held in memory only.
 try {
-  const key = new URLSearchParams(win.location.search).get('industry');
+  const params = new URLSearchParams(win.location.search);
+  const key = params.get('industry');
   if (key && Object.prototype.hasOwnProperty.call(INDUSTRY_KEYS, key)) chosen.industry = INDUSTRY_KEYS[key];
+  autoStart = 'industry' in chosen && params.get('start') === '1';
 } catch (e) {}
 
 // One flat list of screens: the profile questions not yet answered, then the scored ones.
@@ -1046,7 +1052,7 @@ win.addEventListener('popstate', function (e) {
   }
 });
 function stepBack() {
-  if (view === 'quiz') { if (at === 0) render('intro'); else { at -= 1; render('quiz'); } }
+  if (view === 'quiz') { if (at === 0) { if (autoStart) { history.back(); return; } render('intro'); } else { at -= 1; render('quiz'); } }
   else if (view === 'details') { at = N - 1; render('quiz'); }
   else return;
   if (H && history.state && history.state.hv && history.state.idx > 0) { ignorePop = true; history.back(); }
@@ -1333,6 +1339,10 @@ if (rm) {
   setTimeout(function () { introH.classList.add('in'); }, 380);
   setTimeout(function () { introH.classList.add('done'); }, 2600);
   win.requestAnimationFrame(function () { d.querySelectorAll('[data-r]').forEach(function (el) { el.classList.add('in'); }); });
+}
+if (autoStart) {
+  trackOnce('quiz_start'); at = 0; render('quiz');
+  try { history.replaceState({ hv: 1, idx: 0, v: 'quiz', at: 0 }, ''); } catch (e) {}
 }
 win.__quizOK = true;
 })();
