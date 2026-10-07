@@ -106,7 +106,7 @@ p{text-wrap:pretty}
 .demobar .seg button:not([aria-pressed="true"]):hover{background:rgba(255,255,255,.1);color:#fff}
 .db-url{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.08);font:500 14px/1 var(--sans);color:rgba(255,255,255,.9);white-space:nowrap}
 .db-url .ic{width:14px;height:14px}
-.db-btn{min-height:36px;padding:0 14px;border-radius:99px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font:500 14.5px/1 var(--sans);display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.db-btn{min-height:40px;padding:0 14px;border-radius:99px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font:500 14.5px/1 var(--sans);display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .db-btn:hover{background:rgba(255,255,255,.1)}
 .db-more{margin-left:auto}
 @media (min-width:1180px){
@@ -181,7 +181,7 @@ html[data-brand="handover"] .logo-b,html[data-brand="broker"] .logo-h{display:no
 /* ---------- sheets (contents, demo settings) ---------- */
 .sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center;background:rgba(10,10,10,.42);opacity:0;transition:opacity .25s}
 .sheet.show{opacity:1}
-.sheet-in{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:var(--paper);border-radius:18px 18px 0 0;padding:20px 20px calc(24px + env(safe-area-inset-bottom));transform:translateY(24px);transition:transform .35s var(--ease-out)}
+.sheet-in{width:100%;max-width:560px;max-height:92vh;max-height:92dvh;overflow:auto;background:var(--paper);border-radius:18px 18px 0 0;padding:20px 20px calc(24px + env(safe-area-inset-bottom));transform:translateY(24px);transition:transform .35s var(--ease-out)}
 .sheet.show .sheet-in{transform:none}
 @media (min-width:700px){.sheet{align-items:center}.sheet-in{border-radius:16px;padding:28px}}
 .sheet-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
@@ -435,7 +435,7 @@ html[data-brand="broker"] .mini b{font-family:var(--sans)}
 .qa-q{font:var(--head-w2) 22px/1.3 var(--head);letter-spacing:-.01em}
 .qa-a{font-size:17px;line-height:1.6}
 .qa-i .doc-chip{align-self:flex-start;margin-top:auto}
-.tbl-toggle{margin-top:18px}
+.tbl-toggle{margin-top:14px;min-height:44px;display:inline-flex;align-items:center}
 .tbl-wrap{margin-top:14px;overflow-x:auto}
 .t{width:100%;border-collapse:collapse;font-size:16.5px;font-variant-numeric:tabular-nums}
 .t th,.t td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
@@ -455,7 +455,7 @@ html[data-brand="broker"] .mini b{font-family:var(--sans)}
 /* ---------- story (memo) ---------- */
 .memo-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:28px}
 .memo-tools .small{display:inline-flex;align-items:center;gap:8px}
-.memo-wrap{display:grid;gap:24px;margin-top:28px}
+.memo-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:28px}
 @media (min-width:1100px){.memo-wrap{grid-template-columns:240px minmax(0,1fr);gap:40px}.memo-toc{position:sticky;top:calc(var(--db) + 28px);align-self:start}}
 .memo-toc details{border:1px solid var(--line);border-radius:12px;background:var(--panel)}
 .memo-toc summary{list-style:none;display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 18px;font-weight:700;cursor:pointer}
@@ -591,7 +591,7 @@ html[data-brand="broker"] .dr-count b{font-weight:700}
 .viewer-foot .who-note .ic{color:var(--accent)}
 .viewer-foot .btns{display:flex;flex-wrap:wrap;gap:10px}
 .viewer-foot .btn{min-height:48px;font-size:16px;padding:0 18px}
-.paper{position:relative;max-width:720px;margin:0 auto;padding:clamp(22px,5vw,56px) clamp(18px,5vw,60px);background:#fff;color:#1d1d1b;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 40px -24px rgba(0,0,0,.28);font-size:16px;line-height:1.6;overflow:hidden}
+.paper{position:relative;max-width:720px;margin:0 auto;padding:clamp(22px,5vw,56px) clamp(18px,5vw,60px);background:#fff;color:#1d1d1b;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 40px -24px rgba(0,0,0,.28);font-size:16px;line-height:1.6;overflow-x:auto}
 .paper.wm-buyer::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='200'%3E%3Ctext x='20' y='120' transform='rotate(-24 170 100)' font-family='sans-serif' font-size='17' fill='%23000' fill-opacity='.07'%3EPrepared for Demo Buyer %C2%B7 Confidential%3C/text%3E%3C/svg%3E")}
 .paper-head{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:22px;border-bottom:1px solid #ddd;font:500 11.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#777}
 .paper-title{font:600 22px/1.3 var(--serif);letter-spacing:-.01em;margin-bottom:18px;color:#111}
@@ -601,7 +601,7 @@ html[data-brand="broker"] .paper-title{font-family:var(--sans);font-weight:700}
 .paper .t th,.paper .t td{padding:9px 10px;white-space:normal}
 .paper .t td,.paper .t th{text-align:left}
 .paper .t td:last-child,.paper .t th:last-child{white-space:nowrap;text-align:right}
-.paper.sheet .t td,.paper.sheet .t th{text-align:right}.paper.sheet .t td:first-child,.paper.sheet .t th:first-child,.paper.sheet .t td:nth-child(2):not(:last-child),.paper.sheet .t th:nth-child(2):not(:last-child){text-align:left}
+.paper.xl .t td,.paper.xl .t th{text-align:right}.paper.xl .t td:first-child,.paper.xl .t th:first-child,.paper.xl .t td:nth-child(2):not(:last-child),.paper.xl .t th:nth-child(2):not(:last-child){text-align:left}
 .paper .kv{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);border-top:1px solid #ddd;margin:6px 0 20px}
 .paper .kv div{display:contents}
 .paper .kv dt,.paper .kv dd{padding:10px 8px 10px 0;border-bottom:1px solid #eee;font-size:15px}
@@ -612,15 +612,16 @@ html[data-brand="broker"] .paper-title{font-family:var(--sans);font-weight:700}
 .paper .lines i{display:block;height:9px;border-radius:2px;background:#ECECEA}
 .paper .sign{margin-top:28px;padding-top:12px;border-top:1px solid #ddd;width:min(280px,80%);font-size:14px;color:#555}
 .paper-foot{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:12px;border-top:1px solid #eee;font-size:12px;color:#999;letter-spacing:.04em}
-.paper.sheet{font-family:var(--sans)}
-.paper.sheet .t td,.paper.sheet .t th{border:1px solid #e3e3e0;padding:8px 10px}
-.paper.sheet .t thead th{background:#F3F3F0;color:#444;letter-spacing:0;text-transform:none;font-size:14px;font-weight:700}
+.paper.xl{font-family:var(--sans)}
+.paper.xl .t td,.paper.xl .t th{border:1px solid #e3e3e0;padding:8px 10px}
+.paper.xl .t thead th{background:#F3F3F0;color:#444;letter-spacing:0;text-transform:none;font-size:14px;font-weight:700}
 .paper-locked{max-width:620px;margin:6vh auto;text-align:center;padding:32px 24px}
 .paper-locked .big-ic{display:grid;place-items:center;width:72px;height:72px;margin:0 auto 18px;border-radius:50%;background:var(--panel);border:1px solid var(--line2);color:var(--accent)}
 .paper-locked .big-ic .ic{width:32px;height:32px}
 .paper-locked h3{font:var(--head-w2) 26px/1.2 var(--head);color:var(--ink)}
 .paper-locked p{margin-top:12px;font-size:18px;color:var(--ink2)}
-.used{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.used{display:flex;flex-wrap:wrap;gap:0 16px;align-items:center}
+.used .link{min-height:44px;display:inline-flex;align-items:center}
 
 /* ---------- fix-it ---------- */
 .score{display:grid;gap:20px}
@@ -654,7 +655,7 @@ html[data-brand="broker"] .score-n b{font-weight:700}
 .fx-t{font-size:19px;font-weight:700;line-height:1.35;cursor:pointer;padding-top:12px;display:block}
 .fx-why{font-size:17px;line-height:1.55;color:var(--ink2);margin-top:4px}
 .fx-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:12px}
-.fx-meta .tag{background:var(--panel)}
+.fx-meta .tag{background:var(--panel);white-space:normal}
 .fx .tag.s-done{border-color:var(--accent);color:var(--accent)}
 .fx .tag.s-doing{border-color:var(--warn);color:var(--warn)}
 .fx-meta .link{font-size:16px;min-height:44px;display:inline-flex;align-items:center}
@@ -715,7 +716,7 @@ html[data-brand="broker"] .eq-t b{font-weight:700}
 .moves{display:grid;gap:10px;margin-top:16px}
 .moves li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:16px 18px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-size:17.5px;line-height:1.5}
 .moves li .ic{color:var(--accent);margin-top:3px;width:22px;height:22px}
-.moves .link{font-size:16px;margin-top:4px;display:inline-block}
+.moves .link{font-size:16px;min-height:44px;display:inline-flex;align-items:center}
 .caveat{display:grid;gap:10px;padding:22px 24px;border-radius:12px;border:1.5px solid var(--ink);font-size:17px;line-height:1.55}
 .caveat b{font-size:18px}
 
@@ -1203,13 +1204,12 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     docQuery: '',
     viewKey: null,
     pathKey: null,
-    pushedDoc: false,
     opener: null
   };
   if (state.role !== 'owner' && state.role !== 'buyer') { state.role = null; state.unlocked = false; }
   D.fixit.items.forEach(function (i) { state.fix[i.id] = i.status === 'done'; });
 
-  var FILES = {}, ALL_FILES = [];
+  var FILES = Object.create(null), ALL_FILES = [];
   D.documents.folders.forEach(function (f) { f.files.forEach(function (x) { x.folder = f; FILES[x.id] = x; ALL_FILES.push(x); }); });
 
   var SECTIONS = [
@@ -1416,11 +1416,11 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     ].map(function (s) { return '<div class="tile"><p class="tile-v" data-count="' + s.v + '" data-fmt="' + s.f + '">' + (s.f === 'pct1' ? '2.9%' : fmtVal(s.v, s.f)) + '</p><p class="tile-l">' + esc(s.l) + '</p></div>'; }).join('');
     var members = colChart(C.members.map(function (m, i) { return { v: m.value, l: m.label, t: nf(m.value), hl: i === C.members.length - 1 }; }), 'Plan members: ' + C.members.map(function (m) { return m.label + ' ' + nf(m.value); }).join(', '), 4420 / 0.86);
     var conc = C.concentration, cc = ['var(--accent)', 'var(--mark)', 'var(--mark-sub)'];
-    var stack = '<div class="stack" role="img" aria-label="Largest account 2.9%, next nine 8.9%, everyone else 88.2%">' + conc.map(function (c, i) { return '<span style="width:' + c.share + '%;background:' + cc[i] + ';min-width:6px" data-tip="' + esc(c.label + ': ' + c.share + '% of revenue') + '" tabindex="0"></span>'; }).join('') + '</div>' +
+    var stack = '<div class="stack" role="img" aria-label="Largest account 2.9%, next nine 8.9%, everyone else 88.2%">' + conc.map(function (c, i) { return '<span style="width:' + c.share + '%;background:' + cc[i] + ';min-width:6px" data-tip="' + esc(c.label + ': ' + c.share + '% of revenue') + '"></span>'; }).join('') + '</div>' +
       '<div class="stack-key">' + conc.map(function (c, i) { return '<div><i style="background:' + cc[i] + '"></i><span><b>' + c.share + '%</b> ' + esc(c.label.toLowerCase()) + '</span></div>'; }).join('') + '</div>';
     var top = '<table class="t"><thead><tr><th>Account</th><th>Since</th><th>Share of revenue</th></tr></thead><tbody>' + C.top10.map(function (a) { return '<tr><td><b>' + a.code + '</b> · ' + esc(a.type) + '</td><td>' + a.since + '</td><td>' + a.share.toFixed(1) + '%</td></tr>'; }).join('') + '<tr class="strong"><td>The ten largest together</td><td></td><td>11.8%</td></tr></tbody></table>';
     var maxM = Math.max.apply(null, C.monthly2025);
-    var seasonCols = C.monthly2025.map(function (v, i) { return '<div class="col" data-tip="' + esc(C.months[i] + ' 2025: ' + money(v)) + '" tabindex="0"><span class="col-bar' + ((i === 0 || i === 6) ? ' hl' : '') + '" style="--h:' + (v / maxM * 92).toFixed(1) + '%;--i:' + i + '"></span></div>'; }).join('');
+    var seasonCols = C.monthly2025.map(function (v, i) { return '<div class="col" data-tip="' + esc(C.months[i] + ' 2025: ' + money(v)) + '"><span class="col-bar' + ((i === 0 || i === 6) ? ' hl' : '') + '" style="--h:' + (v / maxM * 92).toFixed(1) + '%;--i:' + i + '"></span></div>'; }).join('');
     var season = '<div class="season"><div class="brackets" aria-hidden="true"><span style="grid-column:1/3">Heating</span><span style="grid-column:6/9">Cooling</span><span style="grid-column:12/13">Heat</span></div>' +
       '<div class="cols" style="grid-template-columns:repeat(12,minmax(0,1fr))" role="img" aria-label="Revenue by month in 2025, highest in July at $1.18M and January at $905K">' + seasonCols + '</div>' +
       '<div class="months" aria-hidden="true">' + C.months.map(function (m) { return '<span>' + m.charAt(0) + '<span class="sr">' + m.slice(1) + '</span></span>'; }).join('') + '</div></div>';
@@ -1711,7 +1711,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     } else if (f.kind === 'org') inner = orgChart();
     else if (f.sample) { inner = blocks(f.sample.blocks); sheet = sheet || !!f.sample.sheet; }
     else inner = '<p>' + esc(f.name) + '.</p><div class="lines" aria-hidden="true"><i style="width:94%"></i><i style="width:88%"></i><i style="width:97%"></i><i style="width:71%"></i></div><div class="lines" aria-hidden="true"><i style="width:91%"></i><i style="width:96%"></i><i style="width:83%"></i><i style="width:90%"></i><i style="width:58%"></i></div>';
-    return '<article class="paper' + (sheet ? ' sheet' : '') + (state.role === 'buyer' ? ' wm-buyer' : '') + '"><div class="paper-head"><span>Project Laurel</span><span>Confidential</span></div><h3 class="paper-title">' + esc(f.name) + '</h3>' + inner +
+    return '<article class="paper' + (sheet ? ' xl' : '') + (state.role === 'buyer' ? ' wm-buyer' : '') + '"><div class="paper-head"><span>Project Laurel</span><span>Confidential</span></div><h3 class="paper-title">' + esc(f.name) + '</h3>' + inner +
       '<div class="paper-foot"><span>Sample page for this demo</span><span>' + (f.pages ? 'Page 1 of ' + f.pages : 'Sheet 1') + '</span></div></article>';
   }
   function usedIn(id) {
@@ -1757,14 +1757,14 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
   function requestCloseViewer() {
     var r = parse();
     if (!r.doc) { closeViewer(); return; }
-    if (state.pushedDoc) { state.pushedDoc = false; history.back(); }
+    if (history.state && history.state.doc) history.back();
     else { history.replaceState(null, '', hrefFor(r.route, r.sub, null)); route(); }
   }
 
   /* ---------- router ---------- */
   function parse() {
     var h = location.hash.replace(/^#\/?/, ''), doc = null, q = h.indexOf('?');
-    if (q >= 0) { var m = /(?:^|&)doc=([^&]+)/.exec(h.slice(q + 1)); if (m) doc = decodeURIComponent(m[1]); h = h.slice(0, q); }
+    if (q >= 0) { var m = /(?:^|&)doc=([^&]+)/.exec(h.slice(q + 1)); if (m) { try { doc = decodeURIComponent(m[1]); } catch (e) { doc = null; } } h = h.slice(0, q); }
     var parts = h.split('/').filter(Boolean);
     return { route: parts[0] || 'start', sub: parts[1] || null, doc: doc };
   }
@@ -1783,7 +1783,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
       state.viewKey = key; state.pathKey = path;
       renderView(r, moved);
     }
-    if (r.doc) openViewer(r.doc); else { state.pushedDoc = false; closeViewer(); }
+    if (r.doc) openViewer(r.doc); else closeViewer();
     chrome(r);
   }
   function renderView(r, moved) {
@@ -1800,7 +1800,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
       var h1 = $('h1', view); if (h1 && state.navigated) h1.focus({ preventScroll: true });
     }
   }
-  window.addEventListener('hashchange', function () { state.navigated = true; route(); });
+  window.addEventListener('hashchange', function () { state.navigated = true; closeSheet(); route(); });
 
   /* ---------- chrome (rail, bars, sheets) ---------- */
   function tocHTML(current) {
@@ -1957,8 +1957,8 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     if (t.hasAttribute('data-doc')) {
       e.preventDefault();
       var r = parse();
-      state.pushedDoc = true;
-      location.hash = hrefFor(r.route, r.sub, t.getAttribute('data-doc'));
+      history.pushState({ doc: 1 }, '', hrefFor(r.route, r.sub, t.getAttribute('data-doc')));
+      state.navigated = true; route();
       return;
     }
     if (t.hasAttribute('data-locked')) { toast('This file opens after an offer is accepted. Ask your broker if you need it sooner.'); return; }
@@ -1987,9 +1987,9 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     }
     if (t.hasAttribute('data-scroll')) {
       var target = document.getElementById(t.getAttribute('data-scroll'));
-      if (target) target.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
       $$('.memo-toc button').forEach(function (b) { b.classList.toggle('on', b === t); });
       if (window.innerWidth < 1100) { var d = t.closest('details'); if (d) d.open = false; }
+      if (target) target.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
       return;
     }
     if (t.hasAttribute('data-set-role')) {
