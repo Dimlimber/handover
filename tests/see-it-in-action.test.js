@@ -109,3 +109,14 @@ test('every page menu links to the demo', () => {
     assert.match(nav[0], /href="\/?see-it-in-action"[^>]*>See it in action</, f);
   }
 });
+
+test('the room reports what visitors do, and none of it counts as a conversion', () => {
+  const sent = [...new Set([...html.matchAll(/track\('([a-z_]+)'/g)].map(m => m[1]))].sort();
+  assert.deepEqual(sent, ['demo_file_open', 'demo_open', 'demo_section', 'demo_switch']);
+  const analytics = read('../js/analytics.js');
+  const labels = analytics.match(/var ADS_LABELS = \{([\s\S]*?)\};/)[1];
+  const conversions = [...labels.matchAll(/^\s*([a-z_]+):/gm)].map(m => m[1]);
+  assert.ok(conversions.includes('generate_lead'), 'read the conversion list');
+  for (const name of sent) assert.ok(!conversions.includes(name), `${name} would count as a Google Ads conversion`);
+  assert.match(html, /<script src="\/js\/analytics\.js\?v=\d+"><\/script>/, 'the page loads the site analytics');
+});
