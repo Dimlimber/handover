@@ -5740,6 +5740,21 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
   function brandName() { return state.brand === 'broker' ? 'Your Brokerage' : 'Handover'; }
   function domain() { return (state.brand === 'broker' ? 'yourbrokerage.com' : 'handoveradvisors.com') + '/' + D.meta.slug; }
 
+  /* ---------- measurement: what visitors do inside the room ----------
+     The room moves in the #part of the address, which analytics.js leaves out of every page view,
+     so each step is sent as an event through window.hvTrack. page_title carries the sample, section,
+     view and brand in words, so GA4 can break them down without any custom-dimension setup.
+     None of these names is a Google Ads conversion or a ChatGPT lead. */
+  function viewName() { return state.role === 'buyer' ? 'buyer' : 'seller'; }
+  function viewTitle() { return (state.role === 'buyer' ? 'Buyer' : 'Seller') + ' · ' + (state.brand === 'broker' ? 'Broker' : 'Handover'); }
+  function demoTitle(bits) { return ['Demo', D.meta.big].concat(bits).join(' · '); }
+  function track(name, extra) {
+    if (typeof window.hvTrack !== 'function' || !D) return;
+    var p = { demo_sample: state.sample, demo_view: viewName(), demo_brand: state.brand };
+    for (var k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) p[k] = extra[k];
+    try { window.hvTrack(name, p); } catch (e) {}
+  }
+
   /* ---------- formatting ---------- */
   function nf(n) { return Number(n).toLocaleString('en-US'); }
   function usd(k) { return '$' + nf(Math.round(Math.abs(k) * 1000)); }
@@ -5822,6 +5837,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     var s = S(r.route);
     document.title = (r.route === 'start' ? D.meta.codename : s.title + ' · ' + D.meta.codename) + ' · ' + brandName();
     if (moved) {
+      track('demo_section', { demo_section: r.route + (r.sub ? '/' + r.sub : ''), page_title: demoTitle([s.title + (r.sub ? ' ' + r.sub : ''), viewTitle()]) });
       window.scrollTo(0, 0);
       var h1 = $('h1', view); if (h1 && state.navigated) h1.focus({ preventScroll: true });
     }
@@ -6290,6 +6306,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     var canDl = !locked && f.status !== 'missing';
     $('#viewer-foot').innerHTML = '<div>' + who + usedIn(id) + '</div><div class="btns">' + (canDl ? '<button class="btn btn-ghost" type="button" data-act="nodownload">Download</button>' : '') + '<button class="btn" type="button" data-act="close-viewer">Close</button></div>';
     if (v.hidden) {
+      track('demo_file_open', { demo_file: id, demo_file_status: f.status, page_title: demoTitle(['File: ' + f.name, viewTitle()]) });
       state.opener = document.activeElement;
       v.hidden = false;
       document.body.classList.add('modal-open');
@@ -6363,6 +6380,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     closeSheet();
     if (role === state.role) return;
     state.role = role; store.set('demo.role', role);
+    track('demo_switch', { demo_switch: 'view', demo_to: viewName(), page_title: demoTitle(['Switched to the ' + viewName() + ' view']) });
     toast(role === 'buyer' ? 'Buyer view: the fix-it list and the value range are gone.' : 'Seller view: all six sections, with the parts buyers don’t see marked.');
     route();
   }
@@ -6371,6 +6389,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     closeSheet();
     if (brand === state.brand) return;
     state.brand = brand; store.set('demo.brand', brand); applyBrand();
+    track('demo_switch', { demo_switch: 'brand', demo_to: brand, page_title: demoTitle(['Switched to ' + (brand === 'broker' ? 'broker' : 'Handover') + ' branding']) });
     toast(brand === 'broker' ? 'Broker branding, at ' + domain() + '.' : 'Handover branding, at ' + domain() + '.');
     route();
   }
@@ -6380,6 +6399,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     useSample(id); store.set('demo.sample', id); state.viewKey = null;
     if (!state.unlocked) { history.replaceState(null, '', hrefFor('start')); syncControls(); return; }
     closeSheet();
+    track('demo_switch', { demo_switch: 'sample', demo_to: id, page_title: demoTitle(['Switched sample']) });
     if (!visible().some(function (s) { return s.id === section; })) section = 'start';
     history.pushState(null, '', hrefFor(section));
     state.navigated = true; route();
@@ -6420,7 +6440,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     }
     return null;
   }
-  function unlock(m) {
+  function unlock(m, how) {
     var r = parse();
     if (m.sample !== state.sample) { useSample(m.sample); r = { route: 'start', sub: null, doc: null }; }
     state.role = m.role; state.unlocked = true; state.viewKey = null; state.navigated = false;
@@ -6430,23 +6450,24 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     var g = $('#gate');
     var finish = function () { g.hidden = true; g.classList.remove('opening'); };
     document.body.classList.remove('locked');
+    track('demo_open', { method: how || 'code', page_title: demoTitle(['Opened', viewTitle()]) });
     route();
     if (RM) finish(); else { g.classList.add('opening'); setTimeout(finish, 1050); }
   }
   $('#gate-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var m = matchCode($('#code').value);
-    if (m) unlock(m); else { $('#gate-err').hidden = false; $('#code').focus(); }
+    if (m) unlock(m, 'code'); else { $('#gate-err').hidden = false; $('#code').focus(); }
   });
   $$('.choice').forEach(function (b) {
     b.addEventListener('click', function () {
       var code = D.meta.codes[b.getAttribute('data-role-pick')], input = $('#code'), k = 0;
       $$('.choice').forEach(function (x) { x.disabled = true; });
-      if (RM) { input.value = code; unlock(matchCode(code)); return; }
+      if (RM) { input.value = code; unlock(matchCode(code), 'button'); return; }
       input.value = '';
       var t = setInterval(function () {
         k++; input.value = code.slice(0, k);
-        if (k >= code.length) { clearInterval(t); setTimeout(function () { unlock(matchCode(code)); }, 220); }
+        if (k >= code.length) { clearInterval(t); setTimeout(function () { unlock(matchCode(code), 'button'); }, 220); }
       }, 38);
     });
   });
