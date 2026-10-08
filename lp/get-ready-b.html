@@ -148,6 +148,13 @@ body{--sec:clamp(52px,6.4vw,108px)}
 /* what the score tells you */
 .tells{margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 56px}
 @media (max-width:900px){.tells{grid-template-columns:1fr;gap:26px;margin-top:34px}}
+.stages{margin-top:44px;border-bottom:1px solid var(--hair)}
+.stages li{display:grid;grid-template-columns:52px minmax(0,1.15fr) minmax(0,.75fr) minmax(0,1.7fr);gap:0 28px;align-items:baseline;padding:18px 0;border-top:1px solid var(--hair)}
+.stages .n{font:300 16px/1 var(--serif);letter-spacing:.04em;color:var(--green)}
+.stages h3{font:400 clamp(20px,1.7vw,24px)/1.25 var(--serif);letter-spacing:-.01em}
+.stages .t{font-size:16px;color:var(--green);font-variant-numeric:lining-nums tabular-nums}
+.stages .d{font-size:16.5px;line-height:1.55;color:var(--ink2)}
+@media (max-width:760px){.stages{margin-top:34px}.stages li{grid-template-columns:36px minmax(0,1fr);gap:2px 12px;padding:16px 0}.stages .t,.stages .d{grid-column:2}}
 /* who we are, compact */
 .ppl{margin-top:40px}
 .ppl figure{grid-template-columns:96px minmax(0,1fr);gap:22px}
@@ -204,6 +211,24 @@ body{--sec:clamp(52px,6.4vw,108px)}
         <div class="item"><span class="n">02</span><h3>Where a buyer would push back</h3><p>Your result in the five areas that buyers and their banks check, from your financial records to how much the business depends on you.</p></div>
         <div class="item"><span class="n">03</span><h3>Where to start</h3><p>A full written report by email within a few minutes, with what to do about each gap.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w">
+      <h2 class="h">How selling a small business works.</h2>
+      <p class="intro">From deciding to sell to money in the bank, a small business sale usually takes nine months to two years. Here is where the time goes.</p>
+      <ol class="stages">
+        <li><span class="n">01</span><h3>Preparation</h3><p class="t">3 to 12 months</p><p class="d">Records organized, financials recast, problems fixed.</p></li>
+        <li><span class="n">02</span><h3>Choosing a broker and listing</h3><p class="t">1 to 2 months</p><p class="d">Valuation, listing agreement, marketing materials.</p></li>
+        <li><span class="n">03</span><h3>Finding a buyer</h3><p class="t">3 to 6 months</p><p class="d">Enquiries, confidentiality agreements, meetings, offers.</p></li>
+        <li><span class="n">04</span><h3>Due diligence</h3><p class="t">1 to 3 months</p><p class="d">The buyer and their accountant check everything.</p></li>
+        <li><span class="n">05</span><h3>Financing and legal</h3><p class="t">1 to 3 months, overlapping</p><p class="d">Loan approval, purchase agreement, landlord consent.</p></li>
+        <li><span class="n">06</span><h3>Closing</h3><p class="t">A day</p><p class="d">Signatures and funds.</p></li>
+        <li><span class="n">07</span><h3>Handover</h3><p class="t">1 to 12 months</p><p class="d">You stay on to train the new owner, as agreed in the deal.</p></li>
+      </ol>
+      <p class="intro">You cannot do much about how long it takes for the right buyer to appear. You can do a great deal about everything after they do. A prepared seller can get through due diligence in four to six weeks. An unprepared one can take four months, and risks losing the buyer.</p>
+      <p class="more"><a class="lk" href="/guides/how-long-does-it-take-to-sell-a-small-business.html">How long it takes, stage by stage</a> · <a class="lk" href="/guides/how-to-prepare-a-business-for-sale.html">How to prepare a business for sale</a></p>
     </div>
   </section>
 
