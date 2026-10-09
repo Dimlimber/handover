@@ -37,3 +37,18 @@ test('the form asks for a first name and an email, folds phone and business name
   assert.ok(result.includes('<button class="btn" id="send" type="submit"><span>Email me the report</span></button>'));
   assert.ok(result.includes('Confidential. We never contact anyone but you, and we don’t add you to any list.'));
 });
+
+test('the script shows the score straight after the last question and never routes through a details view', () => {
+  assert.match(score, /renderResult\(\);\s*trackOnce\('quiz_complete', \{ band: result\.band\.key \}\);\s*go\('result'\);/);
+  assert.ok(!score.includes("'details'"), 'no details view in the script');
+  assert.ok(!score.includes('dTitle') && !score.includes('dBack'));
+  assert.ok(score.includes("['intro', 'quiz', 'result'].forEach"));
+});
+
+test('the lead event still fires on the form, and the advice renders only once the report is unlocked', () => {
+  assert.ok(score.includes("trackOnce('generate_lead', { method: 'readiness_score' })"));
+  assert.ok(score.includes('let unlocked = false;'));
+  assert.match(score, /function renderGaps\(\) \{[\s\S]*?if \(unlocked\) \{[\s\S]*?\.advice;[\s\S]*?\n\}/);
+  assert.match(score, /function unlock\(\) \{[\s\S]*?unlocked = true;[\s\S]*?renderGaps\(\);[\s\S]*?offer\.hidden = true;[\s\S]*?\n\}/);
+  assert.ok(!score.includes("go('result');\n});"), 'the submit handler no longer navigates: it unlocks in place');
+});
