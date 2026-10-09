@@ -262,16 +262,12 @@ html.js .opts.go .opt{animation:optIn .22s var(--ease) .03s both}
 .offer-x{margin-top:14px;max-width:30em}
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px var(--gap);margin-top:clamp(28px,3vw,40px)}
 .field label{display:block;font-size:17px;font-weight:500;line-height:1.3;margin-bottom:10px}
-.field label span{font-weight:400;color:var(--ink2)}
+.field label span{font-weight:400;font-size:15px;color:var(--ink2)}
 .field input{display:block;width:100%;height:58px;padding:0 16px;font-size:19px;background:var(--white);border:1px solid var(--rule);border-radius:2px}
 .field input:hover{border-color:var(--ink2)}
 .field input:focus{outline:2px solid var(--ink);outline-offset:2px;border-color:var(--ink)}
 .hint{font-size:16px;color:var(--ink2);margin-top:8px;line-height:1.45}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.more{margin-top:22px}
-.more summary{display:inline-block;cursor:pointer;list-style:none;padding:4px 0;font-size:17px;color:var(--green);text-decoration:underline;text-underline-offset:3px}
-.more summary::-webkit-details-marker{display:none}
-.more .fields{margin-top:18px}
 .d-acts{margin-top:clamp(30px,3vw,40px)}
 .note{margin-top:24px;font-size:17px;line-height:1.5;color:var(--ink2);max-width:44em}
 @media (max-width:759px){.fields{grid-template-columns:minmax(0,1fr);gap:22px}.field input{font-size:17px;height:56px}.d-acts .btn{min-width:58%}.note{font-size:16px}}
@@ -446,14 +442,9 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
             <div class="fields">
               <div class="field"><label for="fName">First name</label><input id="fName" name="name" autocomplete="given-name" required></div>
               <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="fPhone">Phone <span>(optional)</span></label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+              <div class="field"><label for="fBiz">Business name <span>(optional)</span></label><input id="fBiz" name="business" autocomplete="organization" aria-describedby="fBizHint"><p class="hint" id="fBizHint">Leave blank if you’d rather not say yet.</p></div>
             </div>
-            <details class="more" id="more">
-              <summary>Add a phone number or business name (optional)</summary>
-              <div class="fields">
-                <div class="field"><label for="fPhone">Phone <span>(optional)</span></label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
-                <div class="field"><label for="fBiz">Business name <span>(optional)</span></label><input id="fBiz" name="business" autocomplete="organization" aria-describedby="fBizHint"><p class="hint" id="fBizHint">Leave blank if you’d rather not say yet.</p></div>
-              </div>
-            </details>
             <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
             <div class="acts d-acts">
               <button class="btn" id="send" type="submit"><span>Email me the report</span></button>

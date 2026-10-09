@@ -24,12 +24,14 @@ test('the report offer sits on the score screen: bars, gaps, offer, then the on-
   assert.match(result, /<div class="sent" id="sent" tabindex="-1" hidden>/);
 });
 
-test('the form asks for a first name and an email, folds phone and business name away, and names the exchange', () => {
+test('the form asks for a first name and an email, shows phone and business name as optional fields, and names the exchange', () => {
   assert.match(result, /<input id="fName" name="name"[^>]*\brequired>/);
   assert.match(result, /<input id="fEmail" name="email" type="email"[^>]*\brequired>/);
-  const more = result.slice(result.indexOf('<details class="more" id="more">'), result.indexOf('</details>'));
-  assert.ok(more.includes('<summary>Add a phone number or business name (optional)</summary>'));
-  assert.ok(more.includes('id="fPhone"') && more.includes('id="fBiz"'));
+  const grid = result.slice(result.indexOf('<div class="fields">'), result.indexOf('<div class="hp"'));
+  for (const id of ['fName', 'fEmail', 'fPhone', 'fBiz']) assert.ok(grid.includes('id="' + id + '"'), id + ' in the one grid');
+  assert.ok(!result.includes('<details'), 'no folded row');
+  assert.ok(result.includes('<label for="fPhone">Phone <span>(optional)</span></label>'));
+  assert.ok(result.includes('<label for="fBiz">Business name <span>(optional)</span></label>'));
   assert.ok(!/<input id="fPhone"[^>]*\brequired/.test(result) && !/<input id="fBiz"[^>]*\brequired/.test(result));
   assert.ok(result.includes('name="website"'), 'honeypot kept');
   assert.ok(result.includes('<h2 class="d-m" id="offerH" tabindex="-1">Get the full written report</h2>'));
