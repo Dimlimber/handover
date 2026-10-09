@@ -257,9 +257,10 @@ html.js .opts.go .opt{animation:optIn .22s var(--ease) .03s both}
 .q-end{height:1px}
 @media (max-width:759px){.q-acts .btn{min-width:58%}}
 
-/* ---------- details ---------- */
-.d-lede{margin-top:clamp(20px,2vw,28px)}
-.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px var(--gap);margin-top:clamp(36px,3.6vw,52px)}
+/* ---------- the report offer (the form that unlocks the written report) ---------- */
+.offer{margin-top:clamp(40px,4.4vw,60px);padding-top:26px;border-top:1px solid var(--hair)}
+.offer-x{margin-top:14px;max-width:30em}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px var(--gap);margin-top:clamp(28px,3vw,40px)}
 .field label{display:block;font-size:17px;font-weight:500;line-height:1.3;margin-bottom:10px}
 .field label span{font-weight:400;color:var(--ink2)}
 .field input{display:block;width:100%;height:58px;padding:0 16px;font-size:19px;background:var(--white);border:1px solid var(--rule);border-radius:2px}
@@ -267,7 +268,11 @@ html.js .opts.go .opt{animation:optIn .22s var(--ease) .03s both}
 .field input:focus{outline:2px solid var(--ink);outline-offset:2px;border-color:var(--ink)}
 .hint{font-size:16px;color:var(--ink2);margin-top:8px;line-height:1.45}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.d-acts{margin-top:clamp(36px,3.6vw,48px)}
+.more{margin-top:22px}
+.more summary{display:inline-block;cursor:pointer;list-style:none;padding:4px 0;font-size:17px;color:var(--green);text-decoration:underline;text-underline-offset:3px}
+.more summary::-webkit-details-marker{display:none}
+.more .fields{margin-top:18px}
+.d-acts{margin-top:clamp(30px,3vw,40px)}
 .note{margin-top:24px;font-size:17px;line-height:1.5;color:var(--ink2);max-width:44em}
 @media (max-width:759px){.fields{grid-template-columns:minmax(0,1fr);gap:22px}.field input{font-size:17px;height:56px}.d-acts .btn{min-width:58%}.note{font-size:16px}}
 
@@ -419,28 +424,6 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
     </form>
   </section>
 
-  <!-- DETAILS -->
-  <section class="view g" id="details" hidden>
-    <div class="col">
-      <h1 class="q-t" id="dTitle" tabindex="-1">Where should we send your report?</h1>
-      <p class="lede d-lede">Your score is ready. Tell us where to email the full written report, with what to do about each gap. It arrives within a few minutes.</p>
-      <form id="lead">
-        <div class="fields">
-          <div class="field"><label for="fName">First name</label><input id="fName" name="name" autocomplete="given-name" required></div>
-          <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="fPhone">Phone <span>(optional)</span></label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="field"><label for="fBiz">Business name <span>(optional)</span></label><input id="fBiz" name="business" autocomplete="organization" aria-describedby="fBizHint"><p class="hint" id="fBizHint">Leave blank if you’d rather not say yet.</p></div>
-        </div>
-        <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <div class="acts d-acts">
-          <button class="back ul" id="dBack" type="button">Back</button>
-          <button class="btn" id="send" type="submit"><span>Show my score</span></button>
-        </div>
-        <p class="note">Confidential. We never contact anyone but you, and we don’t add you to any list.</p>
-      </form>
-    </div>
-  </section>
-
   <!-- RESULT -->
   <section class="view" id="result" hidden>
     <div class="g">
@@ -452,7 +435,33 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
             <p class="lede" id="rSummary"></p>
           </div>
         </div>
-        <div class="sent" id="sent">
+        <ul class="bars" id="rBars" aria-label="Your score in each area"></ul>
+        <h2 class="d-m r-sub">Where you’d gain the most</h2>
+        <ol class="gaps" id="rGaps"></ol>
+        <p class="lede gaps-none" id="rNone" hidden>No weak areas. That’s rare.</p>
+        <div class="offer" id="offer">
+          <h2 class="d-m" id="offerH" tabindex="-1">Get the full written report</h2>
+          <p class="lede offer-x">What to do about each gap, by email within a few minutes, with a PDF you can keep.</p>
+          <form id="lead">
+            <div class="fields">
+              <div class="field"><label for="fName">First name</label><input id="fName" name="name" autocomplete="given-name" required></div>
+              <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <details class="more" id="more">
+              <summary>Add a phone number or business name (optional)</summary>
+              <div class="fields">
+                <div class="field"><label for="fPhone">Phone <span>(optional)</span></label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+                <div class="field"><label for="fBiz">Business name <span>(optional)</span></label><input id="fBiz" name="business" autocomplete="organization" aria-describedby="fBizHint"><p class="hint" id="fBizHint">Leave blank if you’d rather not say yet.</p></div>
+              </div>
+            </details>
+            <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="acts d-acts">
+              <button class="btn" id="send" type="submit"><span>Email me the report</span></button>
+            </div>
+            <p class="note">Confidential. We never contact anyone but you, and we don’t add you to any list.</p>
+          </form>
+        </div>
+        <div class="sent" id="sent" tabindex="-1" hidden>
           <div class="sent-x"><p class="sent-t" id="sentTitle" hidden>Your full report is on its way</p><p id="sentText"></p></div>
           <div class="sent-acts">
             <a class="btn btn-o" id="openReport" href="https://handoveradvisors.com/report.html#" target="_blank" rel="noopener"><span>Open the full report now</span></a>
@@ -466,10 +475,6 @@ html.js .bars.in .bar-t i{transform:scaleX(var(--v))}
             <a class="ul" href="tel:+16463600296">or call (646) 360-0296</a>
           </div>
         </div>
-        <ul class="bars" id="rBars" aria-label="Your score in each area"></ul>
-        <h2 class="d-m r-sub">Where you’d gain the most</h2>
-        <ol class="gaps" id="rGaps"></ol>
-        <p class="lede gaps-none" id="rNone" hidden>No weak areas. That’s rare.</p>
       </div>
     </div>
     <div class="r-next">
