@@ -52,3 +52,9 @@ test('the lead event still fires on the form, and the advice renders only once t
   assert.match(score, /function unlock\(\) \{[\s\S]*?unlocked = true;[\s\S]*?renderGaps\(\);[\s\S]*?offer\.hidden = true;[\s\S]*?\n\}/);
   assert.ok(!score.includes("go('result');\n});"), 'the submit handler no longer navigates: it unlocks in place');
 });
+
+test('the promise stays true on both pages, and page B counts the questions honestly', () => {
+  assert.ok(score.includes('You’ll see your score straight away, and we’ll email you a full written report.'));
+  assert.ok(lp.includes('<p class="lede">Two quick questions about the business, then fourteen. About ten minutes. You’ll see your score straight away, and we’ll email you a full written report.</p>'));
+  assert.ok(!lp.includes('Fourteen questions, about ten minutes. You’ll'));
+});
