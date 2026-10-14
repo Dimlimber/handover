@@ -136,13 +136,102 @@ test('a visit reads as today, yesterday, or its weekday and date', () => {
   assert.equal(RA.ago(at('y', 12).ts, NOW), '12 days ago');
 });
 
+test('two visits in the last 7 days is Active, not Very active', () => {
+  const D = fixture();
+  D.activity.visits.push({ b: 'z', p: 'z1', d: 1, t: '09:00', dev: 'computer', s: [['sec', 'story', 5]] },
+    { b: 'z', p: 'z1', d: 3, t: '09:00', dev: 'computer', s: [['sec', 'story', 5]] });
+  assert.equal(RA.build(D, [], NOW).buyers.find(b => b.id === 'z').level, 'on');
+});
+
+test('within a label, minutes in the last 7 days rank ahead of minutes overall', () => {
+  const D = fixture();
+  D.activity.visits = [
+    { b: 'y', p: 'y1', d: 1, t: '09:00', dev: 'computer', s: [['sec', 'story', 5]] },
+    { b: 'y', p: 'y1', d: 10, t: '09:00', dev: 'computer', s: [['sec', 'story', 90]] },
+    { b: 'z', p: 'z1', d: 2, t: '09:00', dev: 'computer', s: [['sec', 'story', 20]] }];
+  assert.deepEqual(RA.build(D, [], NOW).buyers.filter(b => b.level === 'on').map(b => b.id), ['z', 'y']);
+});
+
+test('Document room minutes include the time spent reading files', () => {
+  const M = RA.build(fixture(), [], NOW);
+  const w = M.grid.rows.find(r => r.buyer.id === 'w');
+  assert.deepEqual([...w.cells], [12, 20, 0, 25]);
+});
+
+test('a long pause in your own visit counts as 30 minutes', () => {
+  const t0 = NOW - 90 * MIN;
+  const mine = [{ start: t0, end: t0 + 55 * MIN, dev: 'computer', steps: [['sec', 'story', t0], ['sec', 'customers', t0 + 50 * MIN]] }];
+  const v = RA.build(fixture(), mine, NOW).visits.find(x => x.you);
+  assert.deepEqual(v.steps.map(s => s.min), [30, 5]);
+});
+
+test('your own visits change the counts but not the next steps about the made-up buyers', () => {
+  const pick = M => M.signals.map(s => [s.kind, s.buyer || s.file]);
+  assert.deepEqual(pick(RA.build(fixture(), myVisit(), NOW)), pick(RA.build(fixture(), [], NOW)));
+});
+
+test('a broken record in this browser is skipped, not fatal', () => {
+  const mine = [{ start: NOW - 5 * MIN, end: NOW, steps: [['sec', 'story', NOW - 5 * MIN], ['file', 'no-such-file', NOW - 4 * MIN], ['sec', 'nowhere', NOW - 3 * MIN], 'junk'] }, 'junk', null];
+  const M = RA.build(fixture(), mine, NOW);
+  const v = M.visits.find(x => x.you);
+  assert.deepEqual(v.steps.map(s => s.id), ['story']);
+  assert.ok(!M.fileRank.some(r => !r.file));
+});
+
+test('your visit keeps the time it ended', () => {
+  const v = RA.build(fixture(), myVisit(), NOW).visits.find(x => x.you);
+  assert.equal(NOW - v.end, 5 * MIN);
+});
+
+test('dates stay right across a daylight-saving change', () => {
+  // Europe and the US change clocks on these weekends in 2026; NOW is the Monday after, 3 pm.
+  for (const [now, want] of [[[2026, 9, 26], 'Sat 24 Oct, 10:30 am'], [[2026, 10, 2], 'Sat 31 Oct, 10:30 am'],
+    [[2026, 2, 30], 'Sat 28 Mar, 10:30 am'], [[2026, 2, 9], 'Sat 7 Mar, 10:30 am']]) {
+    const at = new Date(now[0], now[1], now[2], 15, 0).getTime();
+    const D = fixture();
+    D.activity.visits = [{ b: 'w', p: 'w1', d: 2, t: '10:30', dev: 'computer', s: [['sec', 'story', 5]] }];
+    const v = RA.build(D, [], at).visits[0];
+    assert.equal(RA.when(v.ts, at), want);
+    assert.equal(RA.daysAgo(v.ts, at), 2, want);
+  }
+});
+
+test('a visit earlier today reads in hours, never as yesterday', () => {
+  assert.equal(RA.ago(new Date(2026, 9, 14, 1, 0).getTime(), NOW), '14 hours ago');
+  assert.equal(RA.ago(new Date(2026, 9, 13, 8, 0).getTime(), NOW), 'yesterday');
+});
+
+test('the short version names the buyers who came in most often', () => {
+  const D = fixture();
+  D.activity.visits = [
+    ...[1, 2, 3, 4, 5, 6].map(d => ({ b: 'x', p: 'x1', d, t: '09:00', dev: 'computer', s: [['sec', 'story', 3]] })),
+    ...[1, 2, 3].map(d => ({ b: 'y', p: 'y1', d, t: '09:00', dev: 'computer', s: [['sec', 'story', 60]] })),
+    ...[1, 2, 3, 4].map(d => ({ b: 'z', p: 'z1', d, t: '09:00', dev: 'computer', s: [['sec', 'story', 25]] }))];
+  assert.match(RA.build(D, [], NOW).short[0], /^Buyer X and Buyer Z .* 10 visits between them\.$/);
+});
+
+test('the headline reads well with no visits and with every buyer in', () => {
+  const none = fixture(); none.activity.visits = [];
+  assert.equal(RA.build(none, [], NOW).headline, 'None of the four buyers has opened the room yet.');
+  const all = fixture(); all.activity.visits.push({ b: 'z', p: 'z1', d: 1, t: '09:00', dev: 'computer', s: [['sec', 'story', 5]] });
+  assert.match(RA.build(all, [], NOW).headline, /^All four buyers have opened the room\./);
+});
+
+test('no em dashes anywhere in the page or in what the model writes', () => {
+  assert.ok(!html.includes('—'), 'page source');
+  for (const [, D] of SAMPLES) {
+    const M = RA.build(D, myVisit(), NOW);
+    assert.ok(![M.headline, ...M.short, ...M.signals.map(s => s.text)].join(' ').includes('—'));
+  }
+});
+
 test('lengths read in seconds, minutes or hours, and no time reads as none', () => {
   assert.deepEqual([0, 0.5, 57, 120, 789].map(RA.dur), ['0 min', '30 sec', '57 min', '2 h', '13 h 9 min']);
 });
 
 test('the headline counts in words', () => {
   const M = RA.build(fixture(), [], NOW);
-  assert.match(M.headline, /^Three of four buyers have opened the room\. One is reading closely\.$/);
+  assert.match(M.headline, /^Three of four buyers have opened the room\. One is very active\.$/);
 });
 
 for (const [id, D] of SAMPLES) {

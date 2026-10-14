@@ -784,6 +784,7 @@ html[data-brand="broker"] .eq-t b{font-weight:700}
 .as-l .ic{width:20px;height:20px}
 .as-txt{font-size:18px;line-height:1.5;max-width:40em}
 .as-txt b{font-weight:700}
+@media (min-width:860px){.act-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:960px){.act-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .act-tiles.bp-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (min-width:1280px){.act-tiles.bp-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -840,7 +841,7 @@ html[data-brand="broker"] .eq-t b{font-weight:700}
 .sw-dot.on{background:var(--mark)}
 .sw-dot.me{background:var(--accent)}
 .sw-dot:hover{transform:scale(1.2)}
-.sw-none{position:absolute;left:0;top:50%;transform:translateY(-50%);padding-right:10px;background:var(--panel);font-size:14px;color:var(--ink3)}
+.sw-none{position:absolute;left:0;top:50%;transform:translateY(-50%);padding-right:10px;background:var(--panel);font-size:14px;color:var(--ink2)}
 .sw-axis{position:relative;height:32px}
 @media (min-width:700px){.sw-axis{margin-left:168px}}
 .sw-axis span{position:absolute;top:9px;transform:translateX(-50%);font-size:13.5px;color:var(--ink2);white-space:nowrap}
@@ -860,11 +861,13 @@ html[data-brand="broker"] .eq-t b{font-weight:700}
 .heat [data-b="1"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 14%,var(--panel))}
 .heat [data-b="2"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 32%,var(--panel))}
 .heat [data-b="3"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 52%,var(--panel))}
-.heat [data-b="4"]{background:var(--mark);background:color-mix(in srgb,var(--mark) 72%,var(--panel))}
+.heat [data-b="4"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 72%,var(--panel))}
 .heat [data-b="5"]{background:var(--accent);color:var(--on-accent);font-weight:700}
 .heat td:hover{outline:2px solid var(--ink);outline-offset:-2px}
 @media (max-width:599px){
+  .heat-wrap{overflow:visible}
   .heat,.heat thead,.heat tbody{display:block;min-width:0}
+  .heat thead{position:sticky;top:var(--tb);z-index:2;padding-top:6px;background:var(--panel)}
   .heat tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;margin-top:3px}
   .heat thead th:first-child{display:none}
   .heat th,.heat td{display:block}
@@ -877,10 +880,10 @@ html[data-brand="broker"] .eq-t b{font-weight:700}
 .heat-key [data-b="1"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 14%,var(--panel))}
 .heat-key [data-b="2"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 32%,var(--panel))}
 .heat-key [data-b="3"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 52%,var(--panel))}
-.heat-key [data-b="4"]{background:var(--mark);background:color-mix(in srgb,var(--mark) 72%,var(--panel))}
+.heat-key [data-b="4"]{background:var(--mark-wash);background:color-mix(in srgb,var(--mark) 72%,var(--panel))}
 .heat-key [data-b="5"]{background:var(--accent)}
 .fr .bar-l{min-width:0}
-.fr-n{text-align:left;font-size:17px;line-height:1.35}
+.fr-n{display:inline-flex;align-items:center;min-height:44px;text-align:left;font-size:17px;line-height:1.35}
 .tried{display:grid;gap:10px}
 .tr{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:4px 14px;align-items:start;padding:16px 18px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
 .tr-ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--paper2);color:var(--ink2)}
@@ -889,6 +892,7 @@ html[data-brand="broker"] .eq-t b{font-weight:700}
 .tr-n{font-size:17px;font-weight:700;line-height:1.35}
 .tr-m{margin-top:2px;font-size:15px;color:var(--ink2)}
 .tr-a{margin-top:6px;font-size:15.5px;line-height:1.45;color:var(--ink2)}
+.tr-a .link{display:inline-flex;align-items:center;min-height:44px}
 .tr-c{font-size:14px;line-height:1.2;color:var(--ink2);text-align:right}
 .tr-c b{display:block;font:var(--head-w2) 28px/1 var(--head);color:var(--ink)}
 html[data-brand="broker"] .tr-c b{font-family:var(--sans);font-weight:700}
@@ -901,7 +905,7 @@ html[data-brand="broker"] .tr-c b{font-family:var(--sans);font-weight:700}
 .vl-when b{display:block;font-size:15.5px;font-weight:700;line-height:1.3}
 .vl-when span{display:block;margin-top:2px;font-size:14.5px;color:var(--ink2)}
 .vl-who{font-size:17px;line-height:1.35}
-.vl-who a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:4px}
+.vl-who a{display:inline-block;padding:11px 0;margin:-11px 0;color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:4px}
 .vl-who a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .vl-meta{margin-top:2px;font-size:14.5px;color:var(--ink2)}
 .vl-path{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
@@ -3538,7 +3542,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
   "opened": 26,
   "buyers": [
    {"id":"a","type":"Regional heating and cooling group, backed by private equity","kind":"Trade buyer","invited":26,"people":[{"id":"a1","role":"Deal lead"},{"id":"a2","role":"Finance director"},{"id":"a3","role":"Operations director"}],"note":"They have tried to open the plan member list three times. It opens after an offer."},
-   {"id":"b","type":"Private equity firm, first deal in heating and cooling","kind":"Financial buyer","invited":26,"people":[{"id":"b1","role":"Partner"},{"id":"b2","role":"Associate"},{"id":"b3","role":"Their lender"}],"note":"Their lender has started on the tax returns, which usually means financing is being lined up."},
+   {"id":"b","type":"Private equity firm, first deal in heating and cooling","kind":"Financial buyer","invited":26,"people":[{"id":"b1","role":"Partner"},{"id":"b2","role":"Associate"},{"id":"b3","role":"Their lender"}],"note":"Their lender has opened the tax returns, a sign they are working on financing."},
    {"id":"c","type":"Search fund: two former operators with investors","kind":"Individual buyer","invited":24,"people":[{"id":"c1","role":"Searcher"},{"id":"c2","role":"Second searcher"}],"note":"They read the whole story first, and they mostly come in during the evening."},
    {"id":"d","type":"Family office","kind":"Long-term investor","invited":22,"people":[{"id":"d1","role":"Investment manager"}]},
    {"id":"e","type":"Plumbing company in the same four counties","kind":"Trade buyer","invited":20,"people":[{"id":"e1","role":"Owner"},{"id":"e2","role":"Their accountant"}],"note":"Their accountant has downloaded all three federal tax returns."},
@@ -8528,8 +8532,8 @@ window.RoomActivity = (function () {
     var m = Math.floor((now - ts) / MIN), k = daysAgo(ts, now);
     if (m < 1) return 'just now';
     if (m < 60) return m + ' min ago';
-    if (m < 12 * 60) { var h = Math.floor(m / 60); return h + (h === 1 ? ' hour ago' : ' hours ago'); }
-    if (k <= 1) return 'yesterday';
+    if (m < 12 * 60 || k === 0) { var h = Math.floor(m / 60); return h + (h === 1 ? ' hour ago' : ' hours ago'); }
+    if (k === 1) return 'yesterday';
     return k + ' days ago';
   }
   function dur(min) {
@@ -8546,16 +8550,22 @@ window.RoomActivity = (function () {
   }
   function timed(s) { return s[0] === 'sec' || s[0] === 'file'; }
 
-  /* A visit made in this browser: each step lasts until the next section or file, capped. */
-  function ownVisit(v) {
-    if (!v || !v.steps || !v.steps.length) return null;
-    var t = v.steps.filter(timed), end = v.end || v.steps[v.steps.length - 1][2];
-    var steps = v.steps.map(function (s) {
+  /* A visit made in this browser: each step lasts until the next section or file, capped.
+     Steps this page wouldn't have written (an unknown section or file, a bad time) are skipped. */
+  function ownVisit(v, F) {
+    if (!v || !Array.isArray(v.steps)) return null;
+    var ok = v.steps.filter(function (s) {
+      if (!Array.isArray(s) || typeof s[2] !== 'number') return false;
+      return s[0] === 'sec' ? s[1] === 'start' || READ.indexOf(s[1]) >= 0 : (s[0] === 'file' || s[0] === 'dl' || s[0] === 'try') && !!F[s[1]];
+    });
+    if (!ok.length) return null;
+    var t = ok.filter(timed), end = typeof v.end === 'number' ? v.end : ok[ok.length - 1][2];
+    var steps = ok.map(function (s) {
       var min = 0;
       if (timed(s)) { var next = t[t.indexOf(s) + 1]; min = Math.min(CAP, Math.max(0, ((next ? next[2] : end) - s[2]) / MIN)); }
       return { k: s[0], id: s[1], min: min };
     });
-    return { person: 'you', ts: v.start || v.steps[0][2], dev: v.dev || 'computer', steps: steps, you: true };
+    return { person: 'you', ts: typeof v.start === 'number' ? v.start : ok[0][2], end: end, dev: v.dev === 'phone' || v.dev === 'tablet' ? v.dev : 'computer', steps: steps, you: true };
   }
 
   function build(D, mine, now) {
@@ -8581,7 +8591,7 @@ window.RoomActivity = (function () {
       return { buyer: B[v.b], person: v.p, ts: stamp(v, now), dev: v.dev, you: false,
         steps: v.s.map(function (s) { return { k: s[0], id: s[1], min: timed(s) ? s[2] : 0 }; }) };
     });
-    var own = (mine || []).map(ownVisit).filter(Boolean);
+    var own = (Array.isArray(mine) ? mine : []).map(function (v) { return ownVisit(v, F); }).filter(Boolean);
     if (own.length) {
       var me = addBuyer({ id: 'you', label: D.meta.buyerName, type: 'You, in this browser', kind: 'Your own clicks in the buyer view', invited: 0, you: true, people: [{ id: 'you', role: 'You' }] });
       own.forEach(function (v) { v.buyer = me; });
@@ -8649,15 +8659,16 @@ window.RoomActivity = (function () {
     function of(level) { return real.filter(function (b) { return b.level === level; }); }
     function labels(a) { return join(a.map(function (b) { return b.label; })); }
     var hot = of('hot'), quiet = of('quiet'), none = of('none'), top = triedRank[0], signals = [];
-    hot.slice(0, 2).forEach(function (b) {
+    var lead = hot.slice().sort(function (a, b) { return b.n7 - a.n7 || b.min7 - a.min7; }).slice(0, 2);
+    lead.forEach(function (b) {
       var crew = b.people.filter(function (p) { return p.recent; }).length;
       signals.push({ kind: 'hot', buyer: b.id, text: b.label + ' has been in ' + times(b.n7) + ' in the last 7 days' + (crew > 1 ? ', ' + words(crew) + ' people from their side' : '') + '.' + (b.note ? ' ' + b.note : '') });
     });
     if (quiet.length === 1) {
       var q = quiet[0];
-      signals.push({ kind: 'quiet', buyer: q.id, text: q.label + ' last came in ' + daysAgo(q.last, now) + ' days ago, after ' + (q.n === 1 ? 'one visit' : words(q.n) + ' visits') + ', and hasn’t been back. A short call from your broker often tells you why.' });
+      signals.push({ kind: 'quiet', buyer: q.id, text: q.label + ' last came in ' + daysAgo(q.last, now) + ' days ago, after ' + (q.n === 1 ? 'one visit' : words(q.n) + ' visits') + ', and hasn’t been back. A short call from your broker can tell you why.' });
     } else if (quiet.length) {
-      signals.push({ kind: 'quiet', buyer: quiet[0].id, text: labels(quiet) + ' haven’t been back for a week or more. A short call from your broker often tells you why.' });
+      signals.push({ kind: 'quiet', buyer: quiet[0].id, text: labels(quiet) + ' haven’t been back for a week or more. A short call from your broker can tell you why.' });
     }
     if (none.length === 1) {
       signals.push({ kind: 'none', buyer: none[0].id, text: none[0].label + ' has had a code for ' + none[0].invited + ' days and hasn’t opened the room yet. Worth a nudge from your broker.' });
@@ -8669,12 +8680,14 @@ window.RoomActivity = (function () {
       signals.push({ kind: 'tried', file: f.id, n: top.buyers, fix: missing ? f.fix : undefined,
         text: cap(words(top.buyers)) + ' buyers tried to open “' + f.name + '”, which ' + (missing ? 'isn’t in the room yet.' + (f.fix ? ' Fix-it item ' + f.fix + ' adds it.' : '') : 'opens after an offer. Your broker can open it early to one buyer.') });
     }
-    var headline = (totals.opened === totals.buyers ? 'All ' + words(totals.buyers) + ' buyers have opened the room. ' : cap(words(totals.opened)) + ' of ' + words(totals.buyers) + ' buyers have opened the room. ') +
-      (totals.hot ? cap(words(totals.hot)) + (totals.hot === 1 ? ' is' : ' are') + ' reading closely.' : 'None is reading closely yet.');
-    var lead = hot.slice(0, 2), leadN = sum(lead, function (b) { return b.n7; });
+    var N = totals.buyers, O = totals.opened, headline;
+    if (!O) headline = N === 1 ? 'The one buyer hasn’t opened the room yet.' : 'None of the ' + words(N) + ' buyers has opened the room yet.';
+    else headline = (O === N ? (N === 1 ? 'The one buyer has opened the room. ' : 'All ' + words(N) + ' buyers have opened the room. ') : cap(words(O)) + ' of ' + words(N) + ' buyers have opened the room. ') +
+      (totals.hot ? cap(words(totals.hot)) + (totals.hot === 1 ? ' is' : ' are') + ' very active.' : 'None is very active yet.');
+    var leadN = sum(lead, function (b) { return b.n7; });
     var short = [
-      lead.length > 1 ? labels(lead) + ' have been in most in the last 7 days: ' + leadN + ' visits between them.'
-        : lead.length ? lead[0].label + ' has been in most in the last 7 days: ' + leadN + ' visits.'
+      lead.length > 1 ? labels(lead) + ' came in most often in the last 7 days: ' + leadN + ' visits between them.'
+        : lead.length ? lead[0].label + ' came in most often in the last 7 days: ' + leadN + ' visits.'
         : 'No buyer has been in three times in the last 7 days yet.',
       quiet.length && none.length ? labels(quiet) + (quiet.length === 1 ? ' has' : ' have') + ' gone quiet, and ' + labels(none) + (none.length === 1 ? ' hasn’t' : ' haven’t') + ' opened the room yet. Worth a call from your broker.'
         : quiet.length ? labels(quiet) + (quiet.length === 1 ? ' has' : ' have') + ' gone quiet. Worth a call from your broker.'
@@ -9168,16 +9181,16 @@ window.RoomActivity = (function () {
     h += '<section data-reveal>' + blockHead('At a glance') + '<div class="tiles act-tiles">' + tiles + '</div>' +
       (M.last ? '<p class="act-last">' + I.clock + '<span>Last visit: <b>' + esc(whoLabel(M.last)) + '</b>, ' + RA.ago(M.last.ts, M.now) + ', ' + DEV[M.last.dev] + '.</span></p>' : '') + '</section>';
     h += '<section data-reveal>' + blockHead('What it tells you', 'What the visits suggest, and what your broker could do next.') + signalsHTML(M) + '</section>';
-    h += '<section data-reveal>' + blockHead('Who’s most interested', 'Ranked by visits in the last 7 days, then by time spent. Tap a buyer to see everything they have opened.') +
+    h += '<section data-reveal>' + blockHead('Who’s most interested', 'Ranked by the labels below, then by time spent in the last 7 days. Tap a buyer to see everything they have opened.') +
       '<div class="bcards">' + M.buyers.map(function (b) { return buyerCard(M, b); }).join('') + '</div>' +
       '<p class="note act-rule"><b>How buyers are labeled.</b> ' + esc(RA.RULE) + '</p></section>';
     h += '<section class="panel" data-reveal>' + blockHead('When they came', 'One row per buyer, one dot per visit, from the day the room opened to today. A bigger dot is a longer visit.') + swimlanes(M) + '</section>';
     h += '<section class="panel" data-reveal>' + blockHead('What they read', 'Minutes spent in each part of the room. Document room includes time reading files.') + heat(M) + '</section>';
     h += '<section class="panel" data-reveal>' + blockHead('The files buyers open most', 'Counted once per buyer, however often they come back to it. Tap a file to open it.') + topFiles(M) + '</section>';
-    h += '<section data-reveal>' + blockHead('Files buyers tried to open', 'Locked until an offer, or not in the room yet. What buyers reach for tells you what they worry about.') + triedList(M.tried) + '</section>';
+    h += '<section data-reveal>' + blockHead('Files buyers tried to open', 'Locked until an offer, or not in the room yet. What buyers reach for shows what they want to check.') + triedList(M.tried) + '</section>';
     var opts = M.buyers.filter(function (b) { return b.n; }).map(function (b) { return '<option value="' + b.id + '"' + (state.vlBuyer === b.id ? ' selected' : '') + '>' + esc(b.label) + '</option>'; }).join('');
     h += '<section data-reveal>' + blockHead('Every visit', 'Newest first. Each visit lists the sections and files in the order they were opened.') +
-      '<div class="vl-tools"><label class="sr" for="vl-f">Show visits from</label><div class="select light"><select id="vl-f" data-vl-filter><option value="">All buyers</option>' + opts + '</select></div></div>' +
+      '<div class="vl-tools"><label class="sr" for="vl-f">Show visits from</label><div class="select light"><select id="vl-f" data-vl-filter><option value="">All buyers</option>' + opts + '</select></div><p class="sr" id="vl-status" role="status" aria-live="polite"></p></div>' +
       '<div id="vlog">' + vlogHTML(M, state.vlBuyer, state.vlAll) + '</div></section>';
     h += '<p class="note act-foot">The buyers and their visits are made up for this demo, except yours. In a real room, every visit, section and download is logged for each person who has a code.</p>';
     return h + pager('activity');
@@ -9187,16 +9200,16 @@ window.RoomActivity = (function () {
     var me = M.buyers.filter(function (b) { return b.you; })[0];
     if (!me) {
       return '<section class="try" data-reveal><span class="try-ic">' + I.eye + '</span><div><p class="h3">Try it: watch your own visit land here</p>' +
-        '<p>Switch to the buyer view, open a section or a file, then switch back to Seller. Your visit shows up on this page as ' + esc(D.meta.buyerName) + '. Nothing leaves this browser.</p></div>' +
+        '<p>Switch to the buyer view, open a section or a file, then switch back to Seller. Your visit shows up on this page as ' + esc(D.meta.buyerName) + '. The record stays in this browser.</p></div>' +
         '<button class="btn" type="button" data-act="try-buyer">' + I.eye + 'See it as a buyer</button></section>';
     }
     var v = me.lastVisit, opened = 0, tried = 0;
     v.steps.forEach(function (s) { if (s.k === 'file') opened++; if (s.k === 'try') tried++; });
     var did = [RA.dur(v.min)];
     if (opened) did.push(plural(opened, 'file', 'files') + ' opened');
-    if (tried) did.push(plural(tried, 'locked file', 'locked files') + ' tried');
-    return '<section class="try done" data-reveal><span class="try-ic">' + I.check + '</span><div><p class="h3">Your visit is in, ' + RA.ago(v.ts, M.now) + '</p>' +
-      '<p>' + esc(did.join(', ')) + '. You are ' + esc(D.meta.buyerName) + ' in the lists below. Nothing left this browser.</p></div>' +
+    if (tried) did.push(plural(tried, 'locked or missing file', 'locked or missing files') + ' tried');
+    return '<section class="try done" data-reveal><span class="try-ic">' + I.check + '</span><div><p class="h3">Your visit is in, ' + RA.ago(v.end || v.ts, M.now) + '</p>' +
+      '<p>' + esc(did.join(', ')) + '. You are ' + esc(D.meta.buyerName) + ' in the lists below. The record stays in this browser.</p></div>' +
       '<div class="try-acts"><a class="btn btn-ghost" href="' + hrefFor('activity', 'you') + '">See your visits</a><button class="link" type="button" data-act="you-clear">Clear my visits</button></div></section>';
   }
 
@@ -9241,7 +9254,7 @@ window.RoomActivity = (function () {
     var body = M.grid.rows.map(function (r) {
       return '<tr role="row"' + (r.buyer.you ? ' class="me"' : '') + '><th scope="row" role="rowheader">' + esc(r.buyer.label) + '</th>' + r.cells.map(function (m, i) {
         var tip = r.buyer.label + ', ' + cols[i] + ': ' + (m ? RA.dur(m) : 'not opened');
-        return '<td role="cell" data-b="' + bin(m) + '" data-tip="' + esc(tip) + '">' + (m ? (m < 1 ? '<1' : Math.round(m)) : '<span class="sr">0</span>') + '</td>';
+        return '<td role="cell" data-b="' + bin(m) + '" data-tip="' + esc(tip) + '">' + (m ? (m < 1 ? '&lt;1' : Math.round(m)) : '<span class="sr">0</span>') + '</td>';
       }).join('') + '</tr>';
     }).join('');
     var key = [['1', '1 to 9'], ['2', '10 to 29'], ['3', '30 to 59'], ['4', '1 to 2 hours'], ['5', '2 hours or more']].map(function (k) {
@@ -9319,7 +9332,7 @@ window.RoomActivity = (function () {
       (b.note ? '<p class="bp-note">' + esc(b.note) + '</p>' : '') + '</header>';
     if (!b.n) {
       h += '<section class="panel"><p class="h3">Code sent ' + plural(b.invited, 'day', 'days') + ' ago, not used yet</p><p class="small" style="margin-top:8px">' +
-        esc(b.label) + ' hasn’t opened the room. A short reminder from your broker usually does it.</p>' +
+        esc(b.label) + ' hasn’t opened the room. A short reminder from your broker may help.</p>' +
         '<div class="demo-acts"><button class="btn" type="button" data-act="demo-nudge" data-who="' + b.id + '">Send a reminder</button><button class="btn btn-ghost" type="button" data-act="demo-revoke" data-who="' + b.id + '">Switch off this code</button></div></section>';
       return h + backToBuyers();
     }
@@ -9793,8 +9806,8 @@ window.RoomActivity = (function () {
   var tip = $('#tip'), tipT = null;
   function showTip(el) {
     var txt = el.getAttribute('data-tip'); if (!txt) return;
-    var parts = txt.split(': ');
-    tip.innerHTML = parts.length > 1 ? '<b>' + esc(parts.slice(1).join(': ')) + '</b>' + esc(parts[0]) : esc(txt);
+    var cut = txt.lastIndexOf(': ');
+    tip.innerHTML = cut > 0 ? '<b>' + esc(txt.slice(cut + 2)) + '</b>' + esc(txt.slice(0, cut)) : esc(txt);
     tip.hidden = false;
     var r = el.getBoundingClientRect();
     var x = Math.min(Math.max(r.left + r.width / 2, 140), window.innerWidth - 140);
@@ -9829,7 +9842,14 @@ window.RoomActivity = (function () {
       state.navigated = true; route();
       return;
     }
-    if (t.hasAttribute('data-vl')) { state.vlAll = true; var lg = $('#vlog'); if (lg && state.act) lg.innerHTML = vlogHTML(state.act, state.vlBuyer, true); return; }
+    if (t.hasAttribute('data-vl')) {
+      state.vlAll = true; var lg = $('#vlog');
+      if (lg && state.act) {
+        lg.innerHTML = vlogHTML(state.act, state.vlBuyer, true);
+        var nx = $$('.vl', lg)[8]; if (nx) { nx.setAttribute('tabindex', '-1'); nx.focus({ preventScroll: true }); }
+      }
+      return;
+    }
     if (t.hasAttribute('data-locked')) { youStep('try', t.getAttribute('data-locked')); toast('This file opens after an offer is accepted. Ask your broker if you need it sooner.'); return; }
     if (t.hasAttribute('data-wf')) {
       var open = t.getAttribute('aria-expanded') === 'true', det = $('#' + t.getAttribute('aria-controls'));
@@ -9875,7 +9895,7 @@ window.RoomActivity = (function () {
     else if (act === 'print') window.print();
     else if (act === 'nodownload') { if (state.role === 'buyer' && parse().doc) youStep('dl', parse().doc); toast('Downloads are switched off in this demo. In a real room, every download is watermarked and logged.'); }
     else if (act === 'try-buyer') { history.replaceState(null, '', hrefFor('start')); state.navigated = true; setRole('buyer'); toast('You’re in the buyer view. Open a section or a file, then switch back to Seller.'); }
-    else if (act === 'you-clear') { youPut(state.sample, []); state.viewKey = null; history.replaceState(null, '', hrefFor('activity')); route(); toast('Your visits are cleared.'); }
+    else if (act === 'you-clear') { youPut(state.sample, []); state.viewKey = null; state.vlBuyer = ''; state.vlAll = false; history.replaceState(null, '', hrefFor('activity')); route(); toast('Your visits are cleared.'); }
     else if (act === 'demo-grant' || act === 'demo-revoke' || act === 'demo-nudge') {
       var who = 'Buyer ' + (t.getAttribute('data-who') || '').toUpperCase(), locked = ALL_FILES.filter(function (f) { return f.status === 'offer'; }).length;
       toast(act === 'demo-grant' ? 'In a real room, ' + who + ' would now see the ' + locked + ' files marked “after an offer”. Every other buyer still sees them locked.'
@@ -9890,7 +9910,15 @@ window.RoomActivity = (function () {
   });
   document.addEventListener('change', function (e) {
     if (e.target.hasAttribute && e.target.hasAttribute('data-sample-select')) { switchSample(e.target.value); return; }
-    if (e.target.hasAttribute && e.target.hasAttribute('data-vl-filter')) { state.vlBuyer = e.target.value; state.vlAll = false; var lg = $('#vlog'); if (lg && state.act) lg.innerHTML = vlogHTML(state.act, state.vlBuyer, false); return; }
+    if (e.target.hasAttribute && e.target.hasAttribute('data-vl-filter')) {
+      state.vlBuyer = e.target.value; state.vlAll = false; var lg = $('#vlog'), st = $('#vl-status');
+      if (lg && state.act) {
+        lg.innerHTML = vlogHTML(state.act, state.vlBuyer, false);
+        var n = state.act.visits.filter(function (v) { return !state.vlBuyer || v.buyer.id === state.vlBuyer; }).length;
+        if (st) st.textContent = 'Showing ' + plural(n, 'visit', 'visits') + (state.vlBuyer ? ' from ' + e.target.options[e.target.selectedIndex].text : ' from all buyers') + '.';
+      }
+      return;
+    }
     var id = e.target.getAttribute && e.target.getAttribute('data-fix');
     if (!id) return;
     state.fix[id] = e.target.checked;
