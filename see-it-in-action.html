@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <script src="/js/analytics.js?v=5"></script>
 <title>See it in action · Sample deal rooms · Handover</title>
-<meta name="description" content="Two sample deal rooms for made-up businesses, an HVAC company and a diner: the story, recast financials, customers, documents, fix-it list and value range, in seller and buyer views.">
+<meta name="description" content="Three sample deal rooms for made-up businesses, an HVAC company, a diner and a machine shop: the story, recast financials, customers, documents, fix-it list and value range, in seller and buyer views.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#1A1A18">
 <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231F4D3A%22%2F%3E%3Cpath%20d%3D%22M8.6%208v16M18.4%208v16%22%20stroke%3D%22%23F6F6F3%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22butt%22%2F%3E%3Cpath%20d%3D%22M8.6%2016.5H24%22%20stroke%3D%22%23F6F6F3%22%20stroke-width%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%2224.6%22%20cy%3D%2216.5%22%20r%3D%222.4%22%20fill%3D%22%23F6F6F3%22%2F%3E%3C%2Fsvg%3E">
@@ -811,7 +811,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
   <div class="gate-in">
     <div class="gate-pick">
       <label for="gate-sample">Sample deal room</label>
-      <div class="select light"><select id="gate-sample" data-sample-select><option value="laurel">HVAC company, Pennsylvania</option><option value="maple">Diner, upstate New York</option></select></div>
+      <div class="select light"><select id="gate-sample" data-sample-select><option value="laurel">HVAC company, Pennsylvania</option><option value="maple">Diner, upstate New York</option><option value="buckeye">Machine shop, Ohio</option></select></div>
     </div>
     <p class="eyebrow">Private deal room</p>
     <h1 class="gate-name" id="gate-title"><span class="pre">Project</span><span class="big" id="gate-big">Laurel</span></h1>
@@ -839,7 +839,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
 <div class="demobar" role="region" aria-label="Demo controls">
   <div class="db-in">
     <span class="db-tag" title="A made-up business. Every figure is invented.">DEMO</span>
-    <div class="select dark db-sample"><label class="sr" for="db-sample">Sample deal room</label><select id="db-sample" data-sample-select><option value="laurel">HVAC company, Pennsylvania</option><option value="maple">Diner, upstate New York</option></select></div>
+    <div class="select dark db-sample"><label class="sr" for="db-sample">Sample deal room</label><select id="db-sample" data-sample-select><option value="laurel">HVAC company, Pennsylvania</option><option value="maple">Diner, upstate New York</option><option value="buckeye">Machine shop, Ohio</option></select></div>
     <div class="db-toggles">
       <div class="tg" role="group" aria-label="View">
         <button type="button" class="tg-l" data-set-role="owner">Seller</button>
@@ -895,7 +895,7 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
     <div class="sheet-sec demo-sec">
       <p class="h3">Demo settings</p>
       <p class="small">The businesses are made up and every figure is invented.</p>
-      <div class="sheet-ctl"><label class="sheet-l" for="sheet-sample">Sample deal room</label><div class="select light"><select id="sheet-sample" data-sample-select><option value="laurel">HVAC company, Pennsylvania</option><option value="maple">Diner, upstate New York</option></select></div></div>
+      <div class="sheet-ctl"><label class="sheet-l" for="sheet-sample">Sample deal room</label><div class="select light"><select id="sheet-sample" data-sample-select><option value="laurel">HVAC company, Pennsylvania</option><option value="maple">Diner, upstate New York</option><option value="buckeye">Machine shop, Ohio</option></select></div></div>
       <div class="sheet-ctl"><span class="sheet-l" id="sheet-view-l">View</span>
         <div class="tg light" role="group" aria-labelledby="sheet-view-l"><button type="button" class="tg-l" data-set-role="owner">Seller</button><button type="button" class="tg-s" role="switch" aria-checked="false" data-toggle="role" aria-label="Buyer view"><span></span></button><button type="button" class="tg-l" data-set-role="buyer">Buyer</button></div></div>
       <div class="sheet-ctl"><span class="sheet-l" id="sheet-brand-l">Branding</span>
@@ -5687,10 +5687,2536 @@ body.buyer .view{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w
  }
 }
 </script>
+<script type="application/json" id="sample-buckeye">
+{
+ "id": "buckeye",
+ "meta": {
+  "codename": "Project Buckeye",
+  "summary": "A precision machining and metal fabrication company in northeast Ohio, making parts and assemblies for makers of industrial equipment. Founded in 1987. The owner is retiring.",
+  "updated": "14 October 2026",
+  "buyerName": "Demo Buyer",
+  "codes": {
+   "owner": "BUCKEYE-SELLER",
+   "buyer": "BUCKEYE-BUYER",
+   "alias": []
+  },
+  "readMinutes": 12,
+  "big": "Buckeye",
+  "slug": "buckeye",
+  "label": "Machine shop, Ohio",
+  "what": "Precision machining and fabrication, northeast Ohio",
+  "gateLine": "A precision machining business in northeast Ohio. Everything inside is confidential."
+ },
+ "glance": [
+  {
+   "id": "revenue",
+   "value": 11.9,
+   "fmt": "$M",
+   "label": "Revenue in the last 12 months"
+  },
+  {
+   "id": "earnings",
+   "value": 2.01,
+   "fmt": "$M",
+   "label": "What it earns, as a buyer reads it"
+  },
+  {
+   "id": "years",
+   "value": 39,
+   "fmt": "n",
+   "label": "Years in business"
+  },
+  {
+   "id": "people",
+   "value": 71,
+   "fmt": "n",
+   "label": "People, including the owner"
+  },
+  {
+   "id": "customers",
+   "value": 61,
+   "fmt": "n",
+   "label": "Active customers"
+  },
+  {
+   "id": "repeat",
+   "value": 87,
+   "fmt": "%",
+   "label": "Revenue from customers of five years or more"
+  }
+ ],
+ "cards": {
+  "story": "About 12 minutes to read",
+  "financials": "Four years, eight adjustments",
+  "customers": "61 customers in four end markets",
+  "documents": "45 files in eight folders"
+ },
+ "years": [
+  "2023",
+  "2024",
+  "2025",
+  "LTM"
+ ],
+ "yearLabels": [
+  "2023",
+  "2024",
+  "2025",
+  "Last 12 months"
+ ],
+ "revenue": {
+  "lines": [
+   {
+    "id": "machining",
+    "name": "CNC machined parts",
+    "values": [
+     5420,
+     5910,
+     6380,
+     6520
+    ],
+    "desc": "Production runs of turned and milled parts, mostly steel and aluminum, for 61 customers. Average order $18,400."
+   },
+   {
+    "id": "fab",
+    "name": "Fabrication and welding",
+    "values": [
+     2160,
+     2290,
+     2450,
+     2490
+    ],
+    "desc": "Sheet-metal parts, weldments and frames, cut, formed and welded in house."
+   },
+   {
+    "id": "assembly",
+    "name": "Assemblies and kitting",
+    "values": [
+     1180,
+     1360,
+     1610,
+     1690
+    ],
+    "desc": "Parts machined and bought in, assembled and tested into sub-assemblies the customer fits straight onto its line."
+   },
+   {
+    "id": "tooling",
+    "name": "Tooling, prototypes and repair",
+    "values": [
+     640,
+     690,
+     720,
+     730
+    ],
+    "desc": "First articles, fixtures, and repair work for local plants. Quoted job by job."
+   },
+   {
+    "id": "other",
+    "name": "Finishing and freight recharged",
+    "values": [
+     410,
+     430,
+     460,
+     470
+    ],
+    "desc": "Plating and heat treatment bought in and recharged, and freight billed to customers."
+   }
+  ],
+  "total": [
+   9810,
+   10680,
+   11620,
+   11900
+  ],
+  "grossProfit": [
+   2963,
+   3300,
+   3672,
+   3784
+  ],
+  "grossMargin": [
+   30.2,
+   30.9,
+   31.6,
+   31.8
+  ]
+ },
+ "monthly": {
+  "label": "2025",
+  "values": [
+   980,
+   930,
+   1020,
+   990,
+   1010,
+   1000,
+   850,
+   960,
+   1030,
+   1040,
+   950,
+   860
+  ]
+ },
+ "bridge": {
+  "start": {
+   "label": "Profit on the tax return",
+   "labelLtm": "Profit in the books",
+   "values": [
+    612,
+    790,
+    1004,
+    1092
+   ],
+   "what": "The profit the company reported to the IRS for the year: ordinary business income on its S corporation return.",
+   "whatLtm": "Profit for the twelve months to 31 August 2026, from the monthly accounts. The 2026 tax return isn’t due until next year.",
+   "docs": [
+    "b02-2023",
+    "b02-2024",
+    "b02-2025",
+    "b01-monthly"
+   ]
+  },
+  "financing": [
+   {
+    "id": "interest",
+    "label": "Interest on equipment loans",
+    "values": [
+     118,
+     131,
+     139,
+     136
+    ],
+    "doc": "b01-balance",
+    "what": "Interest on the loans that paid for the machines, and on the line of credit.",
+    "why": "A new owner will finance the business their own way, so earnings are shown before interest."
+   },
+   {
+    "id": "dep",
+    "label": "Depreciation",
+    "values": [
+     486,
+     512,
+     541,
+     553
+    ],
+    "doc": "b05-machines",
+    "what": "The yearly write-down of machines, tooling and building improvements on the tax return.",
+    "why": "It is an accounting charge, not cash spent in the year. Buyers look at the real cost of replacing machines separately, using the machine list."
+   }
+  ],
+  "ebitdaLabel": "Earnings before interest, tax and depreciation, as filed",
+  "ebitda": [
+   1216,
+   1433,
+   1684,
+   1781
+  ],
+  "adjustments": [
+   {
+    "id": "owner",
+    "label": "Owner’s pay above a general manager’s wage",
+    "values": [
+     142,
+     146,
+     151,
+     154
+    ],
+    "doc": "b01-payroll",
+    "what": "The owner’s pay, including benefits, was $336,000 in 2025. A general manager for a plant this size in the region costs about $185,000. The difference is added back.",
+    "why": "A new owner will pay a manager to run the plant, not the founder’s salary. The benchmark comes from a regional pay survey for manufacturers with 50 to 100 staff."
+   },
+   {
+    "id": "family",
+    "label": "Son’s pay above the cost of his role",
+    "values": [
+     38,
+     40,
+     42,
+     43
+    ],
+    "doc": "b01-payroll",
+    "what": "The owner’s son runs the shipping dock and was paid $98,000 in 2025. Hiring for the same role costs about $56,000.",
+    "why": "He has agreed in writing to stay on after the sale at the market rate, so a new owner carries the lower cost."
+   },
+   {
+    "id": "personal",
+    "label": "Personal vehicles, travel and club dues",
+    "values": [
+     44,
+     47,
+     49,
+     50
+    ],
+    "doc": "b05-vehicles",
+    "what": "Two family vehicles, a hunting lease, country-club dues and three personal trips were paid by the company: $49,000 in 2025.",
+    "why": "None of them are needed to run the business, and each item is listed with its receipt."
+   },
+   {
+    "id": "insurance",
+    "label": "Owner’s personal insurance and planning fees",
+    "values": [
+     16,
+     17,
+     18,
+     18
+    ],
+    "doc": "b06-lifeins",
+    "what": "A life insurance policy for the owner’s family and personal financial-planning fees: $18,000 in 2025.",
+    "why": "They are personal to the owner. A new owner would not carry them."
+   },
+   {
+    "id": "maint",
+    "label": "Maintenance put off on two machines, put back",
+    "values": [
+     -52,
+     -54,
+     -55,
+     -56
+    ],
+    "doc": "b05-maint",
+    "what": "Two of the older machining centers have had only breakdown repairs since 2022. The maintenance plan the builder recommends costs about $55,000 a year more than the company spent in 2025, so that amount is taken off.",
+    "why": "A buyer’s engineer will spot it on the plant tour, and a buyer’s accountant will take it off anyway. Taking it off first keeps the rest of the recast credible, and buyers trust a recast more when it works both ways."
+   },
+   {
+    "id": "baddebt",
+    "label": "One-off: bad debt from a customer’s bankruptcy",
+    "values": [
+     0,
+     86,
+     0,
+     0
+    ],
+    "doc": "b03-baddebt",
+    "what": "A customer filed for Chapter 11 in May 2024 and $86,000 of its invoices were written off.",
+    "why": "It had not happened before and has not happened since. The claim filed with the court and the write-off entry are in the room."
+   },
+   {
+    "id": "install",
+    "label": "One-off: installing the five-axis machining center",
+    "values": [
+     0,
+     0,
+     64,
+     21
+    ],
+    "doc": "b05-install",
+    "what": "A five-axis machining center arrived in March 2025. Rigging, foundation work, programming training and a month of running it at half speed cost $64,000, of which $21,000 fell in September and October.",
+    "why": "The machine is running and the cost will not repeat. Its loan interest and depreciation are handled above."
+   },
+   {
+    "id": "iso",
+    "label": "One-off: ISO 9001 recertification and quality-manual rewrite",
+    "values": [
+     0,
+     0,
+     29,
+     0
+    ],
+    "doc": "b06-iso",
+    "what": "The three-year recertification audit in 2025 came with a consultant to rewrite the quality manual: $29,000 together.",
+    "why": "The yearly surveillance audits stay in the costs. The rewrite was a one-time catch-up, and the next recertification is in 2028."
+   }
+  ],
+  "adjustedLabel": "What the business earns, as a buyer reads it",
+  "adjustedNote": "Buyers call this adjusted EBITDA.",
+  "adjusted": [
+   1404,
+   1715,
+   1982,
+   2011
+  ],
+  "margin": [
+   14.3,
+   16.1,
+   17.1,
+   16.9
+  ],
+  "max": 2200
+ },
+ "storyPage": {
+  "headline": "A 39-year-old precision machining company its customers depend on, ready for its <em>second</em> owner.",
+  "short": [
+   "Buckeye machines, fabricates and assembles metal parts for makers of industrial equipment, trucks, medical devices and aerospace components, from one plant in northeast Ohio.",
+   "It has grown every year since 2021, and 87% of revenue comes from customers it has served for five years or more.",
+   "The founder is retiring and will stay up to a year to hand over."
+  ]
+ },
+ "financialsPage": {
+  "headline": "The business earns <em>$2.01 million</em> a year, once the books are read the way a buyer reads them.",
+  "short": [
+   "The company’s books were prepared for tax reporting, not for a sale, so we restated four periods on the same basis.",
+   "Every adjustment is explained and tied to a document in this room. One of them lowers the earnings: a normal year of maintenance on two older machines, which the company had put off.",
+   "The result is what the business earns before interest, tax and depreciation, after paying a manager to run it: $2.01 million in the last twelve months, 16.9% of revenue."
+  ],
+  "chartTitle": "From the tax return to what the business earns",
+  "trendTitle": "Four periods side by side",
+  "trendLede": "Revenue has grown every year, and earnings have grown faster.",
+  "revenueTitle": "Revenue",
+  "earnTitle": "What it earns, as a buyer reads it",
+  "qaTitle": "What a buyer’s accountant will ask about",
+  "qa": [
+   {
+    "q": "Why is maintenance taken off?",
+    "a": "Two older machining centers have had only breakdown repairs since 2022. The recast charges the builder’s maintenance plan as a normal cost, so a buyer isn’t pricing it in after the sale.",
+    "doc": "b05-maint"
+   },
+   {
+    "q": "Are the one-offs really one-off?",
+    "a": "The bad debt, the five-axis installation and the quality-manual rewrite each happened once, and each has its paperwork in the room. The yearly ISO surveillance audits stay in the costs.",
+    "doc": "b05-install"
+   },
+   {
+    "q": "How was the owner’s pay benchmarked?",
+    "a": "Against what a general manager costs at manufacturers of this size in the region: about $185,000 with benefits.",
+    "doc": "b01-payroll"
+   },
+   {
+    "q": "Is this an audit?",
+    "a": "No, and we never call it one. It is the company’s own numbers, presented the way buyers and lenders read them, with every figure tied back to the tax returns.",
+    "doc": "b01-recon"
+   }
+  ]
+ },
+ "customersPage": {
+  "headline": "Most revenue comes from customers of five years or more, and the largest is <em>18%</em> of sales.",
+  "short": [
+   "Buckeye shipped to 61 customers in 2025, in four end markets, most of them within 300 miles of the plant.",
+   "87% of revenue came from customers it has served for five years or more, and two-thirds is under yearly supply agreements or blanket orders.",
+   "The largest account, a maker of mining and construction equipment, is 18.2% of revenue. The ten largest together are 61.4%. A buyer will ask about that, and the answer is on this page."
+  ],
+  "blocks": [
+   {
+    "type": "stats",
+    "items": [
+     {
+      "v": 87,
+      "f": "%",
+      "l": "of revenue from customers of five years or more"
+     },
+     {
+      "v": 61,
+      "f": "n",
+      "l": "active customers in 2025"
+     },
+     {
+      "v": 97.1,
+      "f": "pct1",
+      "l": "of orders shipped on time in 2025"
+     },
+     {
+      "v": 18.2,
+      "f": "pct1",
+      "l": "the largest customer’s share of revenue"
+     }
+    ]
+   },
+   {
+    "type": "revenue",
+    "title": "Where the revenue comes from",
+    "lede": "Last twelve months, $11.9M in total.",
+    "minis": [
+     {
+      "value": "$18,400",
+      "label": "Average production order"
+     },
+     {
+      "value": "2,900",
+      "label": "Orders shipped in 2025"
+     },
+     {
+      "value": "6.1 weeks",
+      "label": "Backlog, 31 August 2026"
+     },
+     {
+      "value": "38%",
+      "label": "Quotes won"
+     }
+    ]
+   },
+   {
+    "type": "pair",
+    "left": {
+     "type": "cols",
+     "title": "Backlog at each period end",
+     "lede": "Orders on the books, in weeks of production. Up from 4.2 weeks two years ago.",
+     "items": [
+      {
+       "label": "Sep 2024",
+       "v": 4.2,
+       "display": "4.2 wks"
+      },
+      {
+       "label": "Mar 2025",
+       "v": 4.9,
+       "display": "4.9 wks"
+      },
+      {
+       "label": "Sep 2025",
+       "v": 5.4,
+       "display": "5.4 wks"
+      },
+      {
+       "label": "Aug 2026",
+       "v": 6.1,
+       "display": "6.1 wks",
+       "hl": true
+      }
+     ],
+     "max": 7.1
+    },
+    "right": {
+     "type": "bars",
+     "title": "Under contract, or order by order",
+     "lede": "Share of 2025 revenue:",
+     "scale": 100,
+     "sum100": true,
+     "rows": [
+      {
+       "label": "Yearly supply agreements",
+       "share": 29,
+       "hl": true
+      },
+      {
+       "label": "Blanket orders with releases",
+       "share": 38
+      },
+      {
+       "label": "Purchase order by purchase order",
+       "share": 33,
+       "soft": true
+      }
+     ],
+     "note": "Agreements and blanket orders renew in writing. The rest comes back order by order, and has for years: the average customer has bought for <b>11 years</b>."
+    }
+   },
+   {
+    "type": "stack",
+    "title": "One customer is big. The next nine are not.",
+    "lede": "Share of 2025 revenue. Account names are shared after an offer, with the owner’s written say-so.",
+    "sum100": true,
+    "segments": [
+     {
+      "label": "Largest account",
+      "share": 18.2
+     },
+     {
+      "label": "Next nine",
+      "share": 43.2
+     },
+     {
+      "label": "Everyone else",
+      "share": 38.6
+     }
+    ],
+    "table": {
+     "head": [
+      "Account",
+      "Since",
+      "Share of revenue"
+     ],
+     "totalLabel": "The ten largest together",
+     "rows": [
+      {
+       "code": "A",
+       "type": "Mining and construction equipment maker",
+       "share": 18.2,
+       "since": 2004
+      },
+      {
+       "code": "B",
+       "type": "Truck and trailer axle maker",
+       "share": 8.9,
+       "since": 2011
+      },
+      {
+       "code": "C",
+       "type": "Medical device maker, surgical tables",
+       "share": 6.4,
+       "since": 2016
+      },
+      {
+       "code": "D",
+       "type": "Aerospace tier-two supplier",
+       "share": 5.1,
+       "since": 2018
+      },
+      {
+       "code": "E",
+       "type": "Industrial pump maker",
+       "share": 4.8,
+       "since": 2009
+      },
+      {
+       "code": "F",
+       "type": "Packaging machinery maker",
+       "share": 4.3,
+       "since": 2014
+      },
+      {
+       "code": "G",
+       "type": "Agricultural equipment maker",
+       "share": 3.9,
+       "since": 2019
+      },
+      {
+       "code": "H",
+       "type": "Rail components maker",
+       "share": 3.6,
+       "since": 2012
+      },
+      {
+       "code": "I",
+       "type": "Compressor maker",
+       "share": 3.3,
+       "since": 2021
+      },
+      {
+       "code": "J",
+       "type": "Material handling equipment maker",
+       "share": 2.9,
+       "since": 2017
+      }
+     ]
+    }
+   },
+   {
+    "type": "months",
+    "title": "Steady through the year",
+    "lede": "Revenue by month, 2025. The dips are the July shutdown week and the holidays.",
+    "brackets": [
+     {
+      "label": "Shutdown week",
+      "from": 7,
+      "to": 7
+     },
+     {
+      "label": "Holidays",
+      "from": 12,
+      "to": 12
+     }
+    ],
+    "hl": [
+     6,
+     11
+    ]
+   },
+   {
+    "type": "rings",
+    "title": "Close to the plant",
+    "lede": "Share of 2025 revenue, by shipping distance from the plant.",
+    "sum100": true,
+    "rows": [
+     {
+      "label": "Under 100 miles",
+      "share": 46
+     },
+     {
+      "label": "100 to 300 miles",
+      "share": 31
+     },
+     {
+      "label": "300 to 800 miles",
+      "share": 17
+     },
+     {
+      "label": "Over 800 miles",
+      "share": 6
+     }
+    ],
+    "marks": [
+     "100 mi",
+     "300 mi",
+     "800 mi"
+    ],
+    "center": "Plant",
+    "note": "77% of revenue ships within 300 miles, so freight is small and engineers from both sides can visit the same day."
+   },
+   {
+    "type": "bars",
+    "title": "How new customers find Buckeye",
+    "lede": "Where the eleven customers added since 2023 came from.",
+    "sum100": true,
+    "rows": [
+     {
+      "label": "Referrals from existing customers’ engineers",
+      "share": 45,
+      "hl": true
+     },
+     {
+      "label": "Trade shows and the regional manufacturers’ network",
+      "share": 27
+     },
+     {
+      "label": "Requests for quote through the website",
+      "share": 18
+     },
+     {
+      "label": "Other",
+      "share": 10
+     }
+    ]
+   },
+   {
+    "type": "qa",
+    "title": "Questions a buyer will ask",
+    "lede": "And the answers, with the files behind them.",
+    "items": [
+     {
+      "q": "What happens if the largest customer leaves?",
+      "a": "It has bought from Buckeye since 2004 and signed a three-year supply agreement in 2025, which can pass to a new owner with its consent, given in writing. Its share has fallen from 24% in 2023 as other accounts grew.",
+      "doc": "b03-assignletter"
+     },
+     {
+      "q": "Does the business depend on the owner?",
+      "a": "Less than it used to. The owner still prices every job over $25,000 and takes the calls from the five largest customers. The general manager, hired in 2023, runs the plant day to day, and the owner will stay up to twelve months to hand over the accounts.",
+      "doc": "b04-org"
+     },
+     {
+      "q": "Will the machinists stay?",
+      "a": "The average machinist has been with Buckeye for 9.4 years. Pay is at or above the regional median, the shop runs a registered apprenticeship, and six apprentices are in training.",
+      "doc": "b04-staff"
+     },
+     {
+      "q": "Is the quality system in order?",
+      "a": "ISO 9001 certified since 2008, recertified in 2025 with no major findings. Scrap and rework ran at 3.1% of sales in 2025; the quality manager’s plan to bring it to 2% is in the room.",
+      "doc": "b06-iso"
+     }
+    ]
+   }
+  ]
+ },
+ "org": {
+  "owner": {
+   "title": "Owner",
+   "desc": "Prices every job over $25,000. Takes the calls from the five largest customers."
+  },
+  "reports": [
+   {
+    "title": "General manager",
+    "desc": "Hired in 2023; runs the plant day to day"
+   },
+   {
+    "title": "Machining supervisor",
+    "desc": "26 machinists, 6 apprentices"
+   },
+   {
+    "title": "Fabrication supervisor",
+    "desc": "14 fabricators and welders"
+   },
+   {
+    "title": "Quality manager",
+    "desc": "4 inspectors"
+   },
+   {
+    "title": "Engineering and quoting",
+    "desc": "3 engineers, 2 programmers"
+   },
+   {
+    "title": "Office and shipping",
+    "desc": "11: orders, purchasing, invoicing, shipping"
+   }
+  ],
+  "note": "The owner’s son runs the shipping dock, within the office and shipping team, and stays on after the sale. 71 people in all."
+ },
+ "memo": [
+  {
+   "id": "one-page",
+   "title": "The business in one page",
+   "paras": [
+    "Buckeye machines, fabricates and assembles metal parts for makers of industrial equipment, trucks, medical devices and aerospace components. The owner, a toolmaker by trade, started it in 1987 with two used lathes in a rented bay. Today it employs 71 people in a 68,000-square-foot plant in northeast Ohio, with 31 CNC machines.",
+    "In the last twelve months it sold $11.9 million of work and earned $2.01 million before interest, tax and depreciation, after paying a manager’s wage for the owner’s role. Revenue has grown every year since 2021.",
+    "Two-thirds of revenue is under yearly supply agreements or blanket orders, and 87% comes from customers of five years or more. The largest customer is 18% of sales, down from 24% in 2023 as other accounts grew.",
+    "The owner is 66 and retiring, and will stay up to twelve months to hand over. The plant can be leased to a new owner on market terms, or bought."
+   ],
+   "facts": [
+    [
+     "Founded",
+     "1987"
+    ],
+    [
+     "People, including the owner",
+     "71"
+    ],
+    [
+     "CNC machines",
+     "31"
+    ],
+    [
+     "Plant",
+     "68,000 sq ft"
+    ],
+    [
+     "Revenue, last 12 months",
+     "$11.9M"
+    ],
+    [
+     "Earnings, as a buyer reads them",
+     "$2.01M"
+    ],
+    [
+     "On-time delivery, 2025",
+     "97.1%"
+    ],
+    [
+     "ISO 9001 certified since",
+     "2008"
+    ]
+   ]
+  },
+  {
+   "id": "history",
+   "title": "History, and why it has lasted",
+   "paras": [
+    "The company has grown by doing difficult parts well, on time, for customers who came back. It bought machines when the work was there, kept its machinists, and never chased a job it could not hold a tolerance on."
+   ],
+   "timeline": [
+    [
+     "1987",
+     "The owner leaves a tool-and-die shop and starts Buckeye with two used lathes in a rented bay."
+    ],
+    [
+     "1994",
+     "First CNC machining center. Lands the mining-equipment maker that is still the largest customer."
+    ],
+    [
+     "2001",
+     "Moves into the current plant, bought through the owner’s property company."
+    ],
+    [
+     "2008",
+     "ISO 9001 certified. Adds fabrication and welding so customers can buy finished weldments from one supplier."
+    ],
+    [
+     "2014",
+     "Starts building sub-assemblies for a packaging-machinery customer. The assembly line grows from there."
+    ],
+    [
+     "2019",
+     "Registered apprenticeship program with the county career center."
+    ],
+    [
+     "2023",
+     "Hires a general manager from outside the family."
+    ],
+    [
+     "2025",
+     "Five-axis machining center installed. ISO recertification with no major findings."
+    ]
+   ]
+  },
+  {
+   "id": "sells",
+   "title": "What it sells, and to whom",
+   "paras": [
+    "Five lines of work for 61 customers in four end markets: industrial equipment, trucks and trailers, medical devices and aerospace. Figures are for the last twelve months."
+   ],
+   "lines": true
+  },
+  {
+   "id": "why",
+   "title": "Why customers choose it",
+   "paras": [
+    "Customers say the same four things in their supplier reviews, and the records back them up."
+   ],
+   "reasons": [
+    [
+     "On time, and measured",
+     "97.1% of orders shipped on time in 2025, scored on the customers’ own supplier scorecards, which are in the room."
+    ],
+    [
+     "Parts that pass",
+     "Customer rejections ran at 0.4% of parts shipped in 2025. Every rejection has a corrective-action report."
+    ],
+    [
+     "One supplier for the whole part",
+     "Machining, fabrication, assembly and the finishing bought in, so a customer sends one drawing and gets one finished item."
+    ],
+    [
+     "Engineers who answer the phone",
+     "Three engineers quote within 48 hours and sit in on customers’ design reviews. Two customers call it the reason they stay."
+    ]
+   ]
+  },
+  {
+   "id": "team",
+   "title": "The team, and who does what",
+   "paras": [
+    "Buckeye has 71 people. The owner still prices every job over $25,000 and takes the calls from the five largest customers. Everything else runs through the general manager and four supervisors.",
+    "The general manager, hired in 2023, runs the plant day to day. The machining supervisor, with Buckeye for 22 years, runs 26 machinists and 6 apprentices. The fabrication supervisor runs 14 fabricators and welders, the quality manager 4 inspectors, and three engineers and two programmers quote and program the work."
+   ],
+   "org": true
+  },
+  {
+   "id": "numbers",
+   "title": "Financial summary, recast",
+   "paras": [
+    "The company’s books were prepared for tax reporting, not for a sale. The figures below restate four periods on the same basis. Every adjustment is explained, and tied to a document, in the recast financials."
+   ],
+   "fin": true
+  },
+  {
+   "id": "growth",
+   "title": "Where growth would come from",
+   "paras": [
+    "Three realistic ways a new owner could grow Buckeye, without buying anything or moving anywhere."
+   ],
+   "growth": [
+    [
+     "Run the five-axis machine on a second shift",
+     "It runs one shift today. The parts it makes are the highest-margin work in the plant, and its backlog is eight weeks."
+    ],
+    [
+     "Sell assembly to the machining customers",
+     "Only 14 of 61 customers buy assemblies. The others buy parts and assemble them elsewhere, often with the same bought-in components Buckeye already stocks."
+    ],
+    [
+     "Medical and aerospace, where the margins are",
+     "The two end markets are 11% of sales and growing fastest. AS9100 certification, about a year’s work, would open more of the aerospace supply chain."
+    ]
+   ]
+  },
+  {
+   "id": "sale",
+   "title": "What is being sold, and why now",
+   "paras": [
+    "The owner is selling all of the company’s shares. The plant belongs to a separate property company, also owned by the owner. It can be leased to the new owner for ten years, with two five-year options, at market rent, or bought.",
+    "The owner is 66 and wants to retire, and will stay up to twelve months, paid as a consultant, to introduce the new owner to customers, suppliers and staff. The owner’s son runs the shipping dock and stays on.",
+    "Next steps: ask your broker for a call with the owner, then send an indication of interest. Files marked “after an offer” open once an offer is accepted."
+   ]
+  }
+ ],
+ "documentsPage": {
+  "headline": "Every file a buyer’s checks will ask for, in <em>one</em> place.",
+  "sellerShort": [
+   "45 files in eight folders, named and dated the same way, so a buyer’s accountant and lawyer can find things without asking.",
+   "42 are in place. Three are missing and being chased: two of them are on your fix-it list.",
+   "Files with customer or staff names open to buyers only after an offer is accepted."
+  ],
+  "buyerShort": [
+   "45 files in eight folders, named and dated the same way.",
+   "Files with customer or staff names open after an offer is accepted. Three files are to follow.",
+   "Tap any file to read it. Downloads are switched off in this demo."
+  ]
+ },
+ "documents": {
+  "folders": [
+   {
+    "id": "01",
+    "name": "Financials",
+    "files": [
+     {
+      "id": "b01-recast",
+      "name": "Recast financials, 2023 to August 2026",
+      "type": "PDF",
+      "pages": 16,
+      "date": "Sep 2026",
+      "status": "ready",
+      "kind": "recast"
+     },
+     {
+      "id": "b01-monthly",
+      "name": "Monthly profit and loss, January 2023 to August 2026",
+      "type": "XLSX",
+      "date": "Sep 2026",
+      "status": "ready",
+      "kind": "monthly"
+     },
+     {
+      "id": "b01-balance",
+      "name": "Balance sheets, year ends 2023 to 2025 and August 2026",
+      "type": "PDF",
+      "pages": 6,
+      "date": "Sep 2026",
+      "status": "ready"
+     },
+     {
+      "id": "b01-recon",
+      "name": "Reconciliation to the tax returns",
+      "type": "PDF",
+      "pages": 1,
+      "date": "Sep 2026",
+      "status": "ready",
+      "kind": "recon"
+     },
+     {
+      "id": "b01-ar",
+      "name": "Money customers owe, by age, 31 August 2026",
+      "type": "PDF",
+      "pages": 2,
+      "date": "Sep 2026",
+      "status": "ready"
+     },
+     {
+      "id": "b01-inventory",
+      "name": "Inventory count and valuation, 31 August 2026",
+      "type": "XLSX",
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "sheet": true,
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Category",
+          "Count value"
+         ],
+         "rows": [
+          [
+           "Raw material",
+           "$412,000"
+          ],
+          [
+           "Work in progress",
+           "$286,000"
+          ],
+          [
+           "Finished goods",
+           "$154,000"
+          ],
+          [
+           "Obsolete, written down to scrap value",
+           "$61,000"
+          ]
+         ],
+         "total": [
+          "Inventory on the books",
+          "$913,000"
+         ]
+        },
+        {
+         "t": "p",
+         "text": "Counted over the Labor Day weekend by the office team and the quality manager, with the auditor’s count sheets in the file."
+        }
+       ]
+      }
+     },
+     {
+      "id": "b01-payroll",
+      "name": "Payroll register 2025, owner and family lines",
+      "type": "PDF",
+      "pages": 3,
+      "date": "Jan 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Person",
+          "What it covers",
+          "2025"
+         ],
+         "rows": [
+          [
+           "Owner (president)",
+           "Salary, bonus and benefits",
+           "$336,000"
+          ],
+          [
+           "Son (shipping dock)",
+           "Salary and benefits",
+           "$98,000"
+          ]
+         ]
+        },
+        {
+         "t": "p",
+         "text": "Market benchmarks used in the recast:"
+        },
+        {
+         "t": "table",
+         "head": [
+          "Role",
+          "Source",
+          "Cost a year"
+         ],
+         "rows": [
+          [
+           "General manager",
+           "Regional pay survey, manufacturers with 50 to 100 staff",
+           "$185,000"
+          ],
+          [
+           "Shipping lead",
+           "Same survey",
+           "$56,000"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 4
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "id": "02",
+    "name": "Tax returns",
+    "files": [
+     {
+      "id": "b02-2023",
+      "name": "Federal tax return, 2023 (Form 1120-S)",
+      "type": "PDF",
+      "pages": 44,
+      "date": "Sep 2024",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Tax year",
+           "2023"
+          ],
+          [
+           "Gross receipts",
+           "$9,810,000"
+          ],
+          [
+           "Ordinary business income",
+           "$612,000"
+          ],
+          [
+           "Filed",
+           "12 September 2024, on extension"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 7
+        }
+       ]
+      }
+     },
+     {
+      "id": "b02-2024",
+      "name": "Federal tax return, 2024 (Form 1120-S)",
+      "type": "PDF",
+      "pages": 46,
+      "date": "Sep 2025",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Tax year",
+           "2024"
+          ],
+          [
+           "Gross receipts",
+           "$10,680,000"
+          ],
+          [
+           "Ordinary business income",
+           "$790,000"
+          ],
+          [
+           "Filed",
+           "10 September 2025, on extension"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 7
+        }
+       ]
+      }
+     },
+     {
+      "id": "b02-2025",
+      "name": "Federal tax return, 2025 (Form 1120-S)",
+      "type": "PDF",
+      "pages": 47,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Tax year",
+           "2025"
+          ],
+          [
+           "Gross receipts",
+           "$11,620,000"
+          ],
+          [
+           "Ordinary business income",
+           "$1,004,000"
+          ],
+          [
+           "Filed",
+           "14 September 2026, on extension"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 7
+        }
+       ]
+      }
+     },
+     {
+      "id": "b02-oh",
+      "name": "Ohio commercial activity tax filings, 2023 to 2025",
+      "type": "PDF",
+      "pages": 18,
+      "date": "Sep 2026",
+      "status": "ready"
+     },
+     {
+      "id": "b02-exempt",
+      "name": "Customers’ manufacturing exemption certificates, 2024",
+      "type": "PDF",
+      "status": "missing",
+      "ownerNote": "Four certificates lapsed and the office is collecting new ones. It is paperwork, not a problem, so it isn’t on your fix-it list."
+     }
+    ]
+   },
+   {
+    "id": "03",
+    "name": "Customers",
+    "files": [
+     {
+      "id": "b03-sales",
+      "name": "Sales by customer, 2023 to 2025 (names coded)",
+      "type": "XLSX",
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "sheet": true,
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Account",
+          "Type",
+          "2023",
+          "2024",
+          "2025"
+         ],
+         "rows": [
+          [
+           "A",
+           "Mining and construction equipment",
+           "$2,354,000",
+           "$2,243,000",
+           "$2,115,000"
+          ],
+          [
+           "B",
+           "Truck and trailer axles",
+           "$868,000",
+           "$961,000",
+           "$1,034,000"
+          ],
+          [
+           "C",
+           "Medical devices",
+           "$512,000",
+           "$628,000",
+           "$744,000"
+          ],
+          [
+           "D",
+           "Aerospace, tier two",
+           "$401,000",
+           "$481,000",
+           "$593,000"
+          ],
+          [
+           "E",
+           "Industrial pumps",
+           "$498,000",
+           "$534,000",
+           "$558,000"
+          ]
+         ]
+        },
+        {
+         "t": "p",
+         "text": "Rows 6 to 61 continue in the file. Names are replaced with codes; the key is shared after an offer."
+        }
+       ]
+      }
+     },
+     {
+      "id": "b03-agreements",
+      "name": "Supply agreements and blanket orders (14)",
+      "type": "PDF",
+      "pages": 118,
+      "date": "Sep 2026",
+      "status": "offer"
+     },
+     {
+      "id": "b03-assignletter",
+      "name": "Letters from the two largest contract customers: the agreements can transfer",
+      "type": "PDF",
+      "pages": 2,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "p",
+         "text": "Thank you for letting us know you are planning a sale of the company."
+        },
+        {
+         "t": "p",
+         "text": "We confirm that our supply agreement may be assigned to a new owner with our written consent. We expect to give it where the new owner keeps the plant, the quality system and the people we work with today."
+        },
+        {
+         "t": "p",
+         "text": "We value the relationship, now in its twenty-second year, and will support the transition."
+        },
+        {
+         "t": "sign",
+         "text": "Purchasing director, mining and construction equipment maker"
+        }
+       ]
+      }
+     },
+     {
+      "id": "b03-top10",
+      "name": "Largest 10 accounts, with history and contacts",
+      "type": "PDF",
+      "pages": 11,
+      "date": "Sep 2026",
+      "status": "offer"
+     },
+     {
+      "id": "b03-scorecards",
+      "name": "Customer supplier scorecards, 2025",
+      "type": "PDF",
+      "pages": 9,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "On-time delivery, all customers",
+           "97.1%"
+          ],
+          [
+           "Rejections",
+           "0.4% of parts shipped"
+          ],
+          [
+           "Scorecards received",
+           "9 of the 10 largest customers"
+          ],
+          [
+           "Lowest score",
+           "91 of 100"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 6
+        }
+       ]
+      }
+     },
+     {
+      "id": "b03-baddebt",
+      "name": "2024 bad debt: bankruptcy claim and write-off entry",
+      "type": "PDF",
+      "pages": 7,
+      "date": "Jun 2024",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Customer",
+           "A conveyor maker, customer since 2019"
+          ],
+          [
+           "Filed",
+           "Chapter 11, 14 May 2024"
+          ],
+          [
+           "Invoices unpaid",
+           "$86,000"
+          ],
+          [
+           "Claim filed with the court",
+           "2 June 2024"
+          ],
+          [
+           "Recovered to date",
+           "$0; the case is still open"
+          ]
+         ],
+         "hl": [
+          2
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 3
+        }
+       ]
+      }
+     },
+     {
+      "id": "b03-rejects",
+      "name": "Customer rejections and corrective actions, 2023 to 2025",
+      "type": "XLSX",
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "sheet": true,
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Measure",
+          "2023",
+          "2024",
+          "2025"
+         ],
+         "rows": [
+          [
+           "Rejections, share of parts shipped",
+           "0.7%",
+           "0.5%",
+           "0.4%"
+          ],
+          [
+           "Scrap and rework, share of sales",
+           "3.6%",
+           "3.3%",
+           "3.1%"
+          ],
+          [
+           "Corrective-action reports closed",
+           "31",
+           "26",
+           "19"
+          ]
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "id": "04",
+    "name": "People",
+    "files": [
+     {
+      "id": "b04-org",
+      "name": "Organization chart",
+      "type": "PDF",
+      "pages": 1,
+      "date": "Sep 2026",
+      "status": "ready",
+      "kind": "org"
+     },
+     {
+      "id": "b04-staff",
+      "name": "Staff list: roles, tenure and pay (names coded)",
+      "type": "XLSX",
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "sheet": true,
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Role",
+          "People",
+          "Average tenure",
+          "Pay range"
+         ],
+         "rows": [
+          [
+           "Machinists",
+           "26",
+           "9.4 years",
+           "$54,000 to $88,000"
+          ],
+          [
+           "Apprentices",
+           "6",
+           "1.6 years",
+           "$38,000 to $46,000"
+          ],
+          [
+           "Fabricators and welders",
+           "14",
+           "7.8 years",
+           "$50,000 to $76,000"
+          ],
+          [
+           "Inspectors",
+           "4",
+           "6.5 years",
+           "$48,000 to $64,000"
+          ],
+          [
+           "Engineers and programmers",
+           "5",
+           "8.1 years",
+           "$72,000 to $104,000"
+          ],
+          [
+           "Supervisors and managers",
+           "4",
+           "12.3 years",
+           "$88,000 to $132,000"
+          ],
+          [
+           "Office and shipping",
+           "11",
+           "6.9 years",
+           "$38,000 to $58,000"
+          ]
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "id": "b04-handbook",
+      "name": "Employee handbook",
+      "type": "PDF",
+      "pages": 46,
+      "date": "Feb 2025",
+      "status": "ready"
+     },
+     {
+      "id": "b04-apprentice",
+      "name": "Registered apprenticeship agreement with the county career center",
+      "type": "PDF",
+      "pages": 9,
+      "date": "Aug 2024",
+      "status": "ready"
+     },
+     {
+      "id": "b04-certs",
+      "name": "Welder certifications (AWS) and crane operator cards",
+      "type": "PDF",
+      "pages": 27,
+      "date": "Sep 2026",
+      "status": "offer"
+     },
+     {
+      "id": "b04-setups",
+      "name": "Setup sheets and programs for the 40 highest-volume parts",
+      "type": "PDF",
+      "status": "missing",
+      "ownerNote": "Being written by the two senior machinists, an hour a day. It is item 8 on your fix-it list.",
+      "fix": 8
+     }
+    ]
+   },
+   {
+    "id": "05",
+    "name": "Property and equipment",
+    "files": [
+     {
+      "id": "b05-lease",
+      "name": "Plant lease with the owner’s property company",
+      "type": "PDF",
+      "pages": 22,
+      "date": "Dec 2016",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Landlord",
+           "A property company owned by the owner"
+          ],
+          [
+           "Premises",
+           "68,000 sq ft plant and offices on four acres"
+          ],
+          [
+           "Term",
+           "1 January 2017 to 31 December 2027"
+          ],
+          [
+           "Rent",
+           "$26,000 a month ($312,000 a year), fixed"
+          ],
+          [
+           "Costs",
+           "Tenant pays repairs, taxes and insurance"
+          ],
+          [
+           "Renewal",
+           "No renewal option written in"
+          ],
+          [
+           "Assignment",
+           "Needs the landlord’s written consent"
+          ]
+         ],
+         "hl": [
+          5,
+          6
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 5
+        }
+       ]
+      }
+     },
+     {
+      "id": "b05-rent",
+      "name": "Market rent opinion from a commercial agent",
+      "type": "PDF",
+      "pages": 3,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "p",
+         "text": "We inspected the premises and compared six leases of similar plant space within 25 miles, signed since 2024."
+        },
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Market rent",
+           "$4.50 per sq ft a year, tenant paying repairs, taxes and insurance"
+          ],
+          [
+           "For 68,000 sq ft",
+           "About $306,000 a year"
+          ],
+          [
+           "Rent paid today",
+           "$312,000 a year, in line with the market"
+          ]
+         ],
+         "hl": [
+          2
+         ]
+        },
+        {
+         "t": "sign",
+         "text": "Commercial real estate agent, licensed in Ohio"
+        }
+       ]
+      }
+     },
+     {
+      "id": "b05-renewal",
+      "name": "Signed lease a new owner can rely on",
+      "type": "PDF",
+      "status": "missing",
+      "ownerNote": "Being drafted with the landlord. It is item 5 on your fix-it list.",
+      "fix": 5
+     },
+     {
+      "id": "b05-machines",
+      "name": "Machine list: 31 CNC machines and 18 others, with age, hours and condition",
+      "type": "XLSX",
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "sheet": true,
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Type",
+          "Count",
+          "Average age",
+          "Condition"
+         ],
+         "rows": [
+          [
+           "CNC machining centers",
+           "14",
+           "8.9 years",
+           "Good; two need the builder’s plan"
+          ],
+          [
+           "CNC lathes",
+           "11",
+           "10.2 years",
+           "Good"
+          ],
+          [
+           "Five-axis machining center",
+           "1",
+           "1.5 years",
+           "New"
+          ],
+          [
+           "Waterjet, wire EDM and press brakes",
+           "5",
+           "7.4 years",
+           "Good"
+          ],
+          [
+           "Manual and support machines",
+           "18",
+           "19 years",
+           "Fair; three idle all of 2026"
+          ]
+         ],
+         "total": [
+          "All machines",
+          "49",
+          "11.8 years",
+          ""
+         ]
+        },
+        {
+         "t": "p",
+         "text": "Three machines sat idle all of 2026: a manual lathe, a surface grinder and the old press brake."
+        }
+       ]
+      }
+     },
+     {
+      "id": "b05-maint",
+      "name": "Maintenance records and the builder’s plan for the two older machining centers",
+      "type": "PDF",
+      "pages": 14,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Machines",
+           "Two machining centers, built 2009 and 2011"
+          ],
+          [
+           "Spent on them in 2025",
+           "$31,000, breakdown repairs only"
+          ],
+          [
+           "Builder’s maintenance plan",
+           "$86,000 a year for both"
+          ],
+          [
+           "Difference, taken off in the recast",
+           "$55,000"
+          ],
+          [
+           "Unplanned stoppages, 2025",
+           "19 days between them"
+          ]
+         ],
+         "hl": [
+          3
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 4
+        }
+       ]
+      }
+     },
+     {
+      "id": "b05-install",
+      "name": "Five-axis machining center: purchase, rigging and training invoices",
+      "type": "PDF",
+      "pages": 12,
+      "date": "Nov 2025",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Item",
+          "2025"
+         ],
+         "rows": [
+          [
+           "Rigging and foundation work",
+           "$27,500"
+          ],
+          [
+           "Programming training",
+           "$14,800"
+          ],
+          [
+           "Running at half speed for a month",
+           "$21,700"
+          ]
+         ],
+         "total": [
+          "One-off cost, added back",
+          "$64,000"
+         ]
+        },
+        {
+         "t": "p",
+         "text": "Of this, $21,000 fell in September and October 2025, inside the last twelve months. The machine itself is on the balance sheet."
+        }
+       ]
+      }
+     },
+     {
+      "id": "b05-vehicles",
+      "name": "Vehicle use log, club dues and travel, 2025",
+      "type": "PDF",
+      "pages": 12,
+      "date": "Jan 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Item",
+          "2025"
+         ],
+         "rows": [
+          [
+           "Two family vehicles: lease, fuel and insurance",
+           "$28,600"
+          ],
+          [
+           "Country-club dues and a hunting lease",
+           "$9,200"
+          ],
+          [
+           "Three personal trips",
+           "$11,200"
+          ]
+         ],
+         "total": [
+          "Added back",
+          "$49,000"
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 5
+        }
+       ]
+      }
+     },
+     {
+      "id": "b05-env",
+      "name": "Environmental: paint-booth air permit, waste manifests and the 2021 site assessment",
+      "type": "PDF",
+      "pages": 31,
+      "date": "Jul 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Air permit",
+           "Permit-to-install for the paint booth, valid to 2029"
+          ],
+          [
+           "Hazardous waste",
+           "Small-quantity generator; manifests complete"
+          ],
+          [
+           "Phase I site assessment",
+           "2021, no recognized environmental conditions"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 6
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "id": "06",
+    "name": "Quality and insurance",
+    "files": [
+     {
+      "id": "b06-iso",
+      "name": "ISO 9001:2015 certificate and the 2025 recertification report",
+      "type": "PDF",
+      "pages": 24,
+      "date": "Jun 2025",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Certified since",
+           "2008"
+          ],
+          [
+           "Recertified",
+           "June 2025, valid to June 2028"
+          ],
+          [
+           "Major findings",
+           "0"
+          ],
+          [
+           "Minor findings",
+           "3, all closed by September 2025"
+          ]
+         ]
+        },
+        {
+         "t": "table",
+         "head": [
+          "Item",
+          "2025"
+         ],
+         "rows": [
+          [
+           "Recertification audit fee",
+           "$11,500"
+          ],
+          [
+           "Consultant, quality-manual rewrite",
+           "$17,500"
+          ]
+         ],
+         "total": [
+          "One-off cost, added back",
+          "$29,000"
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "id": "b06-scrap",
+      "name": "Scrap and rework: 2025 figures and the quality manager’s plan to reach 2%",
+      "type": "PDF",
+      "pages": 8,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Scrap and rework, 2025",
+           "3.1% of sales, about $360,000"
+          ],
+          [
+           "Target",
+           "2.0% of sales"
+          ],
+          [
+           "Saving at today’s sales",
+           "About $130,000 a year"
+          ],
+          [
+           "Cost",
+           "One added in-process inspector, $48,000 a year, and $24,000 of gauges once"
+          ]
+         ],
+         "hl": [
+          2
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 5
+        }
+       ]
+      }
+     },
+     {
+      "id": "b06-policies",
+      "name": "Insurance policies and five-year claims history",
+      "type": "PDF",
+      "pages": 58,
+      "date": "Jul 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "General liability",
+           "$2 million per claim"
+          ],
+          [
+           "Property",
+           "Plant contents insured for $9.4 million"
+          ],
+          [
+           "Workers’ compensation",
+           "Ohio BWC, all staff"
+          ],
+          [
+           "Claims in five years",
+           "2, both closed"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 6
+        }
+       ]
+      }
+     },
+     {
+      "id": "b06-lifeins",
+      "name": "Owner’s life insurance and planning invoices",
+      "type": "PDF",
+      "pages": 5,
+      "date": "Jan 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "table",
+         "head": [
+          "Item",
+          "2025"
+         ],
+         "rows": [
+          [
+           "Life insurance premium, owner’s family",
+           "$12,400"
+          ],
+          [
+           "Personal financial planning fees",
+           "$5,600"
+          ]
+         ],
+         "total": [
+          "Added back",
+          "$18,000"
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 4
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "id": "07",
+    "name": "Suppliers",
+    "files": [
+     {
+      "id": "b07-steel",
+      "name": "Steel and aluminum supply terms: three mills and two service centers",
+      "type": "PDF",
+      "pages": 14,
+      "date": "Mar 2026",
+      "status": "ready"
+     },
+     {
+      "id": "b07-finishing",
+      "name": "Plating and heat-treatment supplier agreements",
+      "type": "PDF",
+      "pages": 11,
+      "date": "Jan 2026",
+      "status": "ready"
+     },
+     {
+      "id": "b07-passthrough",
+      "name": "Material price-adjustment clauses in the supply agreements",
+      "type": "PDF",
+      "pages": 4,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "p",
+         "text": "Six of the fourteen supply agreements carry a clause that passes changes in steel and aluminum prices through to the customer each quarter, using a published index."
+        },
+        {
+         "t": "p",
+         "text": "The other eight are repriced at each yearly renewal. In 2022, the year of the steepest steel prices, gross margin fell by 1.4 points and recovered the following year."
+        },
+        {
+         "t": "lines",
+         "n": 3
+        }
+       ]
+      }
+     },
+     {
+      "id": "b07-software",
+      "name": "ERP and CAM software licenses",
+      "type": "PDF",
+      "pages": 9,
+      "date": "Feb 2026",
+      "status": "ready"
+     }
+    ]
+   },
+   {
+    "id": "08",
+    "name": "Legal and corporate",
+    "files": [
+     {
+      "id": "b08-articles",
+      "name": "Articles of incorporation and bylaws",
+      "type": "PDF",
+      "pages": 14,
+      "date": "1987, amended 2016",
+      "status": "ready"
+     },
+     {
+      "id": "b08-shares",
+      "name": "Share register",
+      "type": "PDF",
+      "pages": 2,
+      "date": "Sep 2026",
+      "status": "ready",
+      "sample": {
+       "blocks": [
+        {
+         "t": "kv",
+         "rows": [
+          [
+           "Shares issued",
+           "500"
+          ],
+          [
+           "Held by the owner",
+           "500 (100%)"
+          ],
+          [
+           "Options or other claims",
+           "None"
+          ]
+         ]
+        },
+        {
+         "t": "lines",
+         "n": 3
+        }
+       ]
+      }
+     },
+     {
+      "id": "b08-counsel",
+      "name": "Letter from company counsel: no pending claims",
+      "type": "PDF",
+      "pages": 1,
+      "date": "Sep 2026",
+      "status": "ready"
+     },
+     {
+      "id": "b08-minutes",
+      "name": "Board minutes and consents, 2021 to 2026",
+      "type": "PDF",
+      "pages": 17,
+      "date": "Sep 2026",
+      "status": "ready"
+     }
+    ]
+   }
+  ]
+ },
+ "fixit": {
+  "start": 55,
+  "items": [
+   {
+    "id": 1,
+    "when": "week",
+    "title": "Confirm the two long-term supply agreements can pass to a new owner",
+    "why": "Buyers ask on day one. The two agreements are 27% of sales, and one has a change-of-control clause.",
+    "effect": "Closing",
+    "effort": "Two letters",
+    "points": 4,
+    "status": "done",
+    "doc": "b03-assignletter"
+   },
+   {
+    "id": 2,
+    "when": "week",
+    "title": "List every personal expense in the books, 2023 to 2025",
+    "why": "Each one adds back to earnings, and each needs a receipt a buyer’s accountant can check.",
+    "effect": "Price",
+    "effort": "About four hours",
+    "points": 4,
+    "status": "done",
+    "doc": "b05-vehicles"
+   },
+   {
+    "id": 3,
+    "when": "month",
+    "title": "Put the two older machining centers on the builder’s maintenance plan",
+    "why": "A buyer’s engineer will see the deferred upkeep on the plant tour. Done, it turns a deduction into a normal cost and cuts the unplanned stoppages that cost 19 days in 2025.",
+    "effect": "Both",
+    "effort": "Two weeks to set up",
+    "points": 4,
+    "status": "doing",
+    "doc": "b05-maint"
+   },
+   {
+    "id": 4,
+    "when": "month",
+    "title": "Hand quoting and the five largest accounts to the general manager",
+    "why": "You still price every job over $25,000 and take the calls from the five largest customers. Buyers will ask who signs off when you are gone.",
+    "effect": "Price",
+    "effort": "Starts now, runs to year end",
+    "points": 5,
+    "status": "doing",
+    "doc": "b04-org"
+   },
+   {
+    "id": 5,
+    "when": "month",
+    "title": "Sign a lease a new owner and a lender can rely on",
+    "why": "The plant belongs to your property company and the lease ends in 2027. Buyers and their banks need ten years with options, at market rent.",
+    "effect": "Both",
+    "effort": "Two to three weeks",
+    "points": 4,
+    "status": "todo",
+    "doc": "b05-renewal"
+   },
+   {
+    "id": 6,
+    "when": "quarter",
+    "title": "Move three customers from purchase orders to yearly supply agreements",
+    "why": "Agreements turn repeat orders into income a buyer can count on, and buyers pay more for it. Three customers have said yes in principle.",
+    "effect": "Price",
+    "effort": "Six to eight weeks",
+    "points": 3,
+    "status": "todo",
+    "doc": "b03-agreements"
+   },
+   {
+    "id": 7,
+    "when": "quarter",
+    "title": "Cut scrap and rework from 3.1% to 2% of sales with in-process checks",
+    "why": "About $130,000 a year at today’s sales. The quality manager has the plan; it needs the gauges bought and the checks written into the travelers.",
+    "effect": "Price",
+    "effort": "One quarter",
+    "points": 3,
+    "status": "todo",
+    "doc": "b06-scrap"
+   },
+   {
+    "id": 8,
+    "when": "quarter",
+    "title": "Write down the setups and programs that live in two machinists’ heads",
+    "why": "The two senior machinists carry the setups for the 40 highest-volume parts. A buyer wants them on the server, not in the parking lot.",
+    "effect": "Both",
+    "effort": "Eight weeks, an hour a day",
+    "points": 3,
+    "status": "todo",
+    "doc": "b04-setups"
+   },
+   {
+    "id": 9,
+    "when": "quarter",
+    "title": "Sell the three idle machines and the obsolete inventory",
+    "why": "It frees about $140,000 of cash and clears floor space a buyer will otherwise read as waste.",
+    "effect": "Price",
+    "effort": "Three weeks",
+    "points": 2,
+    "status": "todo",
+    "doc": "b05-machines"
+   }
+  ],
+  "skip": [
+   {
+    "title": "Sales dipped in 2023 when the largest customer paused a program",
+    "explain": "Don’t chase it. Explain it with the customer’s own announcement, which is in the room, and point to the three customers added since."
+   },
+   {
+    "title": "The oldest lathe is from 1998",
+    "explain": "Don’t replace it before the sale. It is fully depreciated, it runs one low-volume part, and a buyer will price the plant on the newer machines."
+   }
+  ],
+  "now": 63,
+  "goal": 87,
+  "headline": "Nine things to fix before buyers walk the plant, <em>ranked</em> by what they’re worth.",
+  "short": [
+   "Two are done and two are under way. The other five fit in the next three months.",
+   "Each one moves the price, the chances of closing, or both. The readiness score shows how far you’ve come.",
+   "Buyers never see this page."
+  ]
+ },
+ "value": {
+  "today": {
+   "label": "As it stands today",
+   "earnings": 2011,
+   "low": 4.5,
+   "high": 5.5,
+   "rangeLow": 9000,
+   "rangeHigh": 11100
+  },
+  "closed": {
+   "label": "With the gaps closed",
+   "earnings": 2140,
+   "low": 5.0,
+   "high": 6.0,
+   "rangeLow": 10700,
+   "rangeHigh": 12800
+  },
+  "earningsChange": [
+   {
+    "label": "Scrap and rework at 2% of sales",
+    "value": 130
+   },
+   {
+    "label": "Fewer unplanned stoppages on the two older machines",
+    "value": 35
+   },
+   {
+    "label": "Three idle machines sold: running costs saved",
+    "value": 12
+   },
+   {
+    "label": "One added in-process inspector",
+    "value": -48
+   }
+  ],
+  "moves": [
+   {
+    "text": "Quoting and the five largest accounts in the general manager’s hands for six months before you go to market",
+    "fix": [
+     4
+    ]
+   },
+   {
+    "text": "Three more customers on yearly supply agreements, so half of sales are under contract",
+    "fix": [
+     6
+    ]
+   },
+   {
+    "text": "Setups and programs for the top 40 parts on the server, not in two people’s heads",
+    "fix": [
+     8
+    ]
+   },
+   {
+    "text": "A lease a lender can rely on, and a plant tour with no deferred maintenance to explain",
+    "fix": [
+     3,
+     5
+    ]
+   }
+  ],
+  "comps": [
+   {
+    "m": 3.4,
+    "rev": 6.2,
+    "yr": 2023,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 3.7,
+    "rev": 8.9,
+    "yr": 2024,
+    "kind": "Metal fabricator"
+   },
+   {
+    "m": 3.9,
+    "rev": 5.4,
+    "yr": 2023,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 4.1,
+    "rev": 12.1,
+    "yr": 2024,
+    "kind": "Machining and assembly"
+   },
+   {
+    "m": 4.3,
+    "rev": 7.3,
+    "yr": 2025,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 4.4,
+    "rev": 9.6,
+    "yr": 2023,
+    "kind": "Metal fabricator"
+   },
+   {
+    "m": 4.6,
+    "rev": 14.8,
+    "yr": 2024,
+    "kind": "Contract manufacturer"
+   },
+   {
+    "m": 4.7,
+    "rev": 6.8,
+    "yr": 2025,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 4.8,
+    "rev": 11.2,
+    "yr": 2025,
+    "kind": "Machining and assembly"
+   },
+   {
+    "m": 4.9,
+    "rev": 8.1,
+    "yr": 2024,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 5.0,
+    "rev": 17.5,
+    "yr": 2023,
+    "kind": "Contract manufacturer"
+   },
+   {
+    "m": 5.1,
+    "rev": 9.9,
+    "yr": 2025,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 5.1,
+    "rev": 13.4,
+    "yr": 2026,
+    "kind": "Machining and assembly"
+   },
+   {
+    "m": 5.2,
+    "rev": 21.0,
+    "yr": 2024,
+    "kind": "Contract manufacturer"
+   },
+   {
+    "m": 5.3,
+    "rev": 10.6,
+    "yr": 2025,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 5.4,
+    "rev": 7.9,
+    "yr": 2026,
+    "kind": "Metal fabricator"
+   },
+   {
+    "m": 5.6,
+    "rev": 16.3,
+    "yr": 2025,
+    "kind": "Machining and assembly"
+   },
+   {
+    "m": 5.7,
+    "rev": 24.5,
+    "yr": 2024,
+    "kind": "Contract manufacturer"
+   },
+   {
+    "m": 5.9,
+    "rev": 12.7,
+    "yr": 2026,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 6.1,
+    "rev": 19.8,
+    "yr": 2025,
+    "kind": "Machining and assembly"
+   },
+   {
+    "m": 6.3,
+    "rev": 15.1,
+    "yr": 2026,
+    "kind": "Machine shop"
+   },
+   {
+    "m": 6.6,
+    "rev": 27.2,
+    "yr": 2025,
+    "kind": "Contract manufacturer"
+   },
+   {
+    "m": 7.0,
+    "rev": 22.6,
+    "yr": 2026,
+    "kind": "Machining and assembly"
+   },
+   {
+    "m": 7.6,
+    "rev": 29.4,
+    "yr": 2026,
+    "kind": "Contract manufacturer"
+   }
+  ],
+  "headline": "<em>$9M to $11.1M</em> as it stands today. $10.7M to $12.8M with the gaps closed.",
+  "short": [
+   "We took what the business earns, as a buyer reads it, and applied what similar shops have sold for.",
+   "Closing the gaps on the fix-it list raises the earnings a little and the multiple more: buyers pay more for a plant that runs without its owner, with sales under contract.",
+   "This is an indicative range, not a formal valuation. Buyers never see this page."
+  ],
+  "round": 100,
+  "axis": {
+   "min": 8000,
+   "max": 14000,
+   "step": 1000
+  },
+  "compAxis": {
+   "min": 3,
+   "max": 8,
+   "step": 1
+  },
+  "eq": {
+   "todayEarn": "What it earns today, as a buyer reads it",
+   "todayMult": "Times earnings, paid for shops like this one",
+   "closedEarn": "Earnings with the gaps closed",
+   "closedMult": "Times earnings, paid for a plant that runs without its owner, with half its sales under contract"
+  },
+  "whyMultiple": "Buyers pay more, for each dollar of earnings, for a plant that runs without its owner, with sales under contract, setups written down and no deferred maintenance to price in. Items 3, 4, 5, 6 and 8 on your fix-it list work on those.",
+  "compsTitle": "What similar businesses sold for",
+  "compsLede": "24 sales of precision machining, fabrication and contract manufacturing companies with $5M to $30M of revenue, 2023 to 2026, as a multiple of earnings. Sample data for this demo."
+ }
+}
+</script>
 <script>
 (function () {
   'use strict';
-  var SAMPLE_IDS = ['laurel', 'maple'];
+  var SAMPLE_IDS = ['laurel', 'maple', 'buckeye'];
   var SAMPLES = Object.create(null);
   SAMPLE_IDS.forEach(function (id) { SAMPLES[id] = JSON.parse(document.getElementById('sample-' + id).textContent); });
   var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);

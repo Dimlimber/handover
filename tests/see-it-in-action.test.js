@@ -1,5 +1,6 @@
-// see-it-in-action.html is a demo deal room with two made-up sample businesses
-// (an HVAC company in Pennsylvania and a diner in upstate New York). Each sample's
+// see-it-in-action.html is a demo deal room with three made-up sample businesses
+// (an HVAC company in Pennsylvania, a diner in upstate New York and a machine shop
+// in Ohio). Each sample's
 // figures live in one inline JSON block (#sample-<id>). These tests fail if the
 // invented numbers stop adding up, if a link points at a file that doesn't exist,
 // if the page gets listed, or if the site menu loses its link to the demo.
@@ -15,8 +16,8 @@ const sum = a => a.reduce((s, x) => s + x, 0);
 const r1 = x => Math.round(x * 10) / 10;
 const blocksOf = D => D.customersPage.blocks.flatMap(b => (b.type === 'pair' ? [b.left, b.right] : [b]));
 
-test('the page carries both samples, each with its own codes', () => {
-  assert.deepEqual(SAMPLES.map(([id]) => id), ['laurel', 'maple']);
+test('the page carries every sample, each with its own codes', () => {
+  assert.deepEqual(SAMPLES.map(([id]) => id), ['laurel', 'maple', 'buckeye']);
   const codes = SAMPLES.flatMap(([, D]) => [D.meta.codes.owner, D.meta.codes.buyer, ...D.meta.codes.alias]);
   assert.equal(new Set(codes).size, codes.length, 'every code is unique');
   const fileIds = SAMPLES.flatMap(([, D]) => D.documents.folders.flatMap(f => f.files.map(x => x.id)));
