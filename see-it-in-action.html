@@ -9218,7 +9218,7 @@ window.RoomActivity = (function () {
     var stats = b.n
       ? '<span><b>' + plural(b.n, 'visit', 'visits') + '</b></span><span><b>' + RA.dur(b.min) + '</b> reading</span><span>Last in <b>' + RA.ago(b.last, M.now) + '</b></span>'
       : '<span>Code sent ' + plural(b.invited, 'day', 'days') + ' ago, not used yet</span>';
-    var cover = b.n ? '<span class="bc-cover"><span>Seen ' + b.seen.length + ' of 4 sections and ' + b.files.length + ' of ' + M.ready + ' files</span><span class="bc-bar" aria-hidden="true"><span style="--w:' + (b.cover * 100).toFixed(1) + '%"></span></span></span>' : '';
+    var cover = b.n ? '<span class="bc-cover"><span>Seen ' + b.seen.length + ' of 4 sections and ' + b.files.length + ' of ' + M.ready + ' files</span><span class="bc-bar" aria-hidden="true">' + (b.files.length ? '<span style="--w:' + (b.cover * 100).toFixed(1) + '%"></span>' : '') + '</span></span>' : '';
     return '<a class="bcard' + (b.you ? ' you' : '') + '" href="' + hrefFor('activity', b.id) + '">' +
       '<span class="bc-top"><span class="bc-name">' + esc(b.label) + '</span>' + lvl(b) + '</span>' +
       '<span class="bc-type">' + esc(b.type) + '</span><span class="bc-who">' + esc(b.kind) + ' · ' + esc(who) + '</span>' +
